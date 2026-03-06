@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
-import { Landmark } from 'lucide-react';
+import { Check } from 'lucide-react';
 import Button from '../components/ui/Button';
 import './Landing.css';
 
 export default function Landing() {
     return (
         <div className="landing-page">
+            {/* Saffron Top Line */}
+            <div className="saffron-top-line"></div>
+
             {/* Moving Background Gradients */}
             <div className="landing-gradients">
                 <div className="gradient-saffron"></div>
@@ -15,46 +18,28 @@ export default function Landing() {
             {/* State Emblem Watermark */}
             <div className="landing-watermark"></div>
 
-            {/* Financial Grid Visual Pattern */}
-            <div className="landing-visual-grid">
-                <div className="line-h line-1"></div>
-                <div className="line-h line-2"></div>
-                <div className="line-v line-3"></div>
-                <div className="line-v line-4"></div>
-            </div>
-
             {/* Top Navigation */}
-            <header className="landing-header container animation-fade-in-down">
+            <header className="landing-header container">
                 <div className="landing-brand">
-                    <Landmark size={28} className="brand-emblem" strokeWidth={1.5} />
-                    <h1>BudgetSetu</h1>
+                    <span className="brand-icon">🏛️</span>
+                    <h1>BUDGETSETU</h1>
                 </div>
                 <div className="landing-nav">
-                    <Link to="/login">
-                        <Button variant="outline" size="sm" className="nav-btn">Login</Button>
-                    </Link>
-                    <Link to="/signup">
-                        <Button variant="primary" size="sm" className="nav-btn">Sign Up</Button>
-                    </Link>
+                    <Link to="/login" className="nav-link">Login</Link>
+                    <Link to="/signup" className="nav-link">Sign Up</Link>
                 </div>
             </header>
 
-            {/* Main Hero Content */}
+            {/* Main Content */}
             <main className="landing-main">
-                <div className="hero-content container">
-                    <h1 className="hero-title animation-fade-in-up">BudgetSetu</h1>
-
-                    <h2 className="hero-tagline animation-fade-in-up delay-1">
-                        "Smart Public Budget Intelligence for India"
-                    </h2>
-
-                    <p className="hero-description animation-fade-in-up delay-2">
-                        AI-powered platform for monitoring government budget allocation,
-                        spending patterns, and financial insights across states,
-                        districts, and departments.
+                {/* Hero Section */}
+                <section className="hero-section container">
+                    <h1 className="hero-title">BUDGETSETU</h1>
+                    <h2 className="hero-tagline">Smart Public Budget Intelligence for India</h2>
+                    <p className="hero-description">
+                        AI-powered platform for monitoring government budget allocation, spending patterns, and financial insights across states, districts, and departments.
                     </p>
-
-                    <div className="hero-actions animation-fade-in-up delay-3">
+                    <div className="hero-actions">
                         <Link to="/login">
                             <Button size="lg" className="hero-btn-primary">Login</Button>
                         </Link>
@@ -62,25 +47,107 @@ export default function Landing() {
                             <Button size="lg" className="hero-btn-secondary">Create Account</Button>
                         </Link>
                     </div>
-                </div>
+                </section>
+
+                {/* Network Visualization */}
+                <section className="network-section container">
+                    <div className="section-divider">
+                        <span className="divider-line"></span>
+                        <span className="divider-text">India Budget Intelligence Network</span>
+                        <span className="divider-line"></span>
+                    </div>
+
+                    <div className="network-visual">
+                        <svg className="network-lines" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet">
+                            <line x1="250" y1="50" x2="500" y2="150" className="data-line" />
+                            <line x1="750" y1="50" x2="500" y2="150" className="data-line" />
+                            <line x1="250" y1="250" x2="500" y2="150" className="data-line" />
+                            <line x1="750" y1="250" x2="500" y2="150" className="data-line" />
+                        </svg>
+
+                        <div className="network-nodes-container">
+                            <div className="network-node state-node tl">
+                                <span className="dot"></span> Maharashtra
+                            </div>
+                            <div className="network-node state-node tr">
+                                Karnataka <span className="dot"></span>
+                            </div>
+
+                            <div className="network-node central-node">
+                                <span className="dot center-dot"></span>
+                                <div className="central-label">Central Budget</div>
+                            </div>
+
+                            <div className="network-node state-node bl">
+                                <span className="dot"></span> Gujarat
+                            </div>
+                            <div className="network-node state-node br">
+                                Tamil Nadu <span className="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr className="layout-hr" />
+
+                {/* Features Checklist */}
+                <section className="features-section container">
+                    <h3 className="section-title">Trusted Financial Monitoring System for Government Officials</h3>
+                    <div className="features-list">
+                        <div className="feature-item">
+                            <div className="check-wrapper"><Check size={16} strokeWidth={3} /></div>
+                            <span>Track budget allocations</span>
+                        </div>
+                        <div className="feature-item">
+                            <div className="check-wrapper"><Check size={16} strokeWidth={3} /></div>
+                            <span>Monitor spending patterns</span>
+                        </div>
+                        <div className="feature-item">
+                            <div className="check-wrapper"><Check size={16} strokeWidth={3} /></div>
+                            <span>Detect anomalies using AI</span>
+                        </div>
+                        <div className="feature-item">
+                            <div className="check-wrapper"><Check size={16} strokeWidth={3} /></div>
+                            <span>Improve transparency across departments</span>
+                        </div>
+                    </div>
+                </section>
+
+                <hr className="layout-hr" />
+
+                {/* Data Architecture */}
+                <section className="data-flow-section container">
+                    <h3 className="section-title">Government Data Platform</h3>
+
+                    <div className="flow-primary">
+                        <span>States</span>
+                        <span className="flow-arrow">→</span>
+                        <span>Districts</span>
+                        <span className="flow-arrow">→</span>
+                        <span>Departments</span>
+                    </div>
+
+                    <div className="flow-secondary">
+                        <span>Budget Allocation</span>
+                        <span className="flow-arrow">→</span>
+                        <span>Spending</span>
+                        <span className="flow-arrow">→</span>
+                        <span>Insights</span>
+                    </div>
+                </section>
+
+                <hr className="layout-hr" />
             </main>
 
             {/* Footer */}
-            <footer className="landing-footer animation-fade-in delay-4">
-                <div className="tricolor-divider">
-                    <div className="color-saffron"></div>
-                    <div className="color-white"></div>
-                    <div className="color-green"></div>
+            <footer className="landing-footer container">
+                <div className="footer-copyright">
+                    &copy; 2026 BudgetSetu
                 </div>
-                <div className="container footer-content">
-                    <div className="footer-copyright">
-                        &copy; 2026 BudgetSetu
-                    </div>
-                    <div className="footer-links">
-                        <Link to="#">About</Link>
-                        <Link to="#">Contact</Link>
-                        <Link to="#">Privacy Policy</Link>
-                    </div>
+                <div className="footer-links">
+                    <Link to="#">About</Link>
+                    <Link to="#">Contact</Link>
+                    <Link to="#">Privacy Policy</Link>
                 </div>
             </footer>
         </div>
