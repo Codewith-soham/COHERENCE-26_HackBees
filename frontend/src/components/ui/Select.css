@@ -1,0 +1,56 @@
+.select-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.select-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-field {
+    appearance: none;
+    /* Remove native arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0.625rem 2.5rem 0.625rem 1rem;
+    font-family: inherit;
+    font-size: 0.875rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    cursor: pointer;
+}
+
+.select-field:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(26, 61, 124, 0.1);
+}
+
+.select-field.select-error {
+    border-color: var(--alert);
+}
+
+.select-arrow {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
