@@ -1,0 +1,1105 @@
+id,department,department_id,amount,date,month,day,category,vendor,description,is_anomaly,anomaly_type
+TXN-00102,Education,DEPT-002,34.66,2025-04-06,4,6,infrastructure,Vendor-013,Regular departmental expenditure,False,none
+TXN-00006,Health & Family Welfare,DEPT-001,43.17,2025-06-12,6,12,subsidies,Vendor-003,Regular departmental expenditure,False,none
+TXN-00396,Rural Development,DEPT-005,7.66,2025-11-05,11,5,capital,Vendor-036,Regular departmental expenditure,False,none
+TXN-00489,Urban Development,DEPT-006,2.32,2025-08-04,8,4,infrastructure,Vendor-026,Regular departmental expenditure,False,none
+TXN-00163,Education,DEPT-002,22.35,2025-09-22,9,22,capital,Vendor-030,Regular departmental expenditure,False,none
+TXN-00635,Water Resources,DEPT-007,49.67,2026-03-31,3,31,infrastructure,Vendor-014,Urgent year-end fund utilization,True,march_dumping
+TXN-00787,Public Works - Pune,DEPT-009,7.94,2025-04-10,4,10,revenue,Vendor-039,Regular departmental expenditure,False,none
+TXN-00060,Health & Family Welfare,DEPT-001,43.34,2025-10-01,10,1,grants,Vendor-018,Regular departmental expenditure,False,none
+TXN-01081,Primary Education - Pune,DEPT-012,5.52,2025-12-04,12,4,capital,Vendor-023,Regular departmental expenditure,False,none
+TXN-00316,Agriculture & Farmers,DEPT-004,12.74,2025-09-07,9,7,revenue,Vendor-038,Regular departmental expenditure,False,none
+TXN-00824,Public Works - Pune,DEPT-009,30.89,2026-03-29,3,29,grants,Vendor-013,Urgent year-end fund utilization,True,march_dumping
+TXN-00864,Public Works - Mumbai,DEPT-010,4.5,2025-07-28,7,28,salaries,Vendor-012,Regular departmental expenditure,False,none
+TXN-00478,Urban Development,DEPT-006,5.48,2025-05-19,5,19,subsidies,Vendor-019,Regular departmental expenditure,False,none
+TXN-00545,Urban Development,DEPT-006,49.54,2025-06-09,6,9,subsidies,Vendor-028,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00888,Public Works - Mumbai,DEPT-010,6.14,2025-06-28,6,28,grants,Vendor-045,Regular departmental expenditure,False,none
+TXN-00773,Public Works - Pune,DEPT-009,4.73,2025-09-01,9,1,grants,Vendor-046,Regular departmental expenditure,False,none
+TXN-00365,Agriculture & Farmers,DEPT-004,49.55,2025-12-23,12,23,salaries,Vendor-019,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00037,Health & Family Welfare,DEPT-001,48.0,2025-10-11,10,11,grants,Vendor-017,Regular departmental expenditure,False,none
+TXN-00371,Rural Development,DEPT-005,13.65,2025-05-06,5,6,subsidies,Vendor-029,Regular departmental expenditure,False,none
+TXN-00300,Agriculture & Farmers,DEPT-004,9.76,2025-06-17,6,17,infrastructure,Vendor-044,Regular departmental expenditure,False,none
+TXN-00712,Women & Child Development,DEPT-008,10.69,2025-07-02,7,2,salaries,Vendor-024,Regular departmental expenditure,False,none
+TXN-00202,Road Transport & Highways,DEPT-003,7.65,2025-05-07,5,7,revenue,Vendor-027,Regular departmental expenditure,False,none
+TXN-00940,Public Works - Nagpur,DEPT-011,4.24,2025-09-26,9,26,salaries,Vendor-017,Regular departmental expenditure,False,none
+TXN-00811,Public Works - Pune,DEPT-009,11.14,2025-06-16,6,16,revenue,Vendor-032,Regular departmental expenditure,False,none
+TXN-00716,Women & Child Development,DEPT-008,10.46,2025-08-25,8,25,revenue,Vendor-040,Regular departmental expenditure,False,none
+TXN-00754,Public Works - Pune,DEPT-009,7.31,2025-09-20,9,20,grants,Vendor-041,Regular departmental expenditure,False,none
+TXN-00693,Women & Child Development,DEPT-008,15.77,2025-07-24,7,24,revenue,Vendor-022,Regular departmental expenditure,False,none
+TXN-00457,Rural Development,DEPT-005,250.0,2025-06-14,6,14,salaries,Vendor-049,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00133,Education,DEPT-002,20.71,2025-05-11,5,11,grants,Vendor-039,Regular departmental expenditure,False,none
+TXN-00604,Water Resources,DEPT-007,4.05,2025-06-03,6,3,revenue,Vendor-034,Regular departmental expenditure,False,none
+TXN-00777,Public Works - Pune,DEPT-009,9.89,2025-09-26,9,26,subsidies,Vendor-050,Regular departmental expenditure,False,none
+TXN-00932,Public Works - Nagpur,DEPT-011,4.42,2025-05-01,5,1,subsidies,Vendor-030,Regular departmental expenditure,False,none
+TXN-00836,Public Works - Mumbai,DEPT-010,13.43,2025-10-08,10,8,salaries,Vendor-038,Regular departmental expenditure,False,none
+TXN-00320,Agriculture & Farmers,DEPT-004,19.85,2025-10-09,10,9,revenue,Vendor-012,Regular departmental expenditure,False,none
+TXN-00497,Urban Development,DEPT-006,3.73,2025-05-24,5,24,grants,Vendor-020,Regular departmental expenditure,False,none
+TXN-01100,Primary Education - Pune,DEPT-012,4.52,2025-10-27,10,27,salaries,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00793,Public Works - Pune,DEPT-009,8.18,2025-08-06,8,6,subsidies,Vendor-018,Regular departmental expenditure,False,none
+TXN-00880,Public Works - Mumbai,DEPT-010,8.97,2025-08-18,8,18,salaries,Vendor-016,Regular departmental expenditure,False,none
+TXN-00631,Water Resources,DEPT-007,10.55,2025-05-13,5,13,salaries,Vendor-019,Regular departmental expenditure,False,none
+TXN-00989,Public Works - Nagpur,DEPT-011,3.03,2025-06-06,6,6,infrastructure,Vendor-047,Regular departmental expenditure,False,none
+TXN-00277,Agriculture & Farmers,DEPT-004,16.4,2025-08-11,8,11,grants,Vendor-034,Regular departmental expenditure,False,none
+TXN-01084,Primary Education - Pune,DEPT-012,3.11,2025-12-08,12,8,subsidies,Vendor-028,Regular departmental expenditure,False,none
+TXN-00203,Road Transport & Highways,DEPT-003,14.8,2025-06-22,6,22,capital,Vendor-007,Regular departmental expenditure,False,none
+TXN-00201,Road Transport & Highways,DEPT-003,10.55,2025-12-26,12,26,grants,Vendor-038,Regular departmental expenditure,False,none
+TXN-00922,Public Works - Nagpur,DEPT-011,11.98,2025-10-04,10,4,capital,Vendor-025,Regular departmental expenditure,False,none
+TXN-00942,Public Works - Nagpur,DEPT-011,8.41,2025-11-15,11,15,infrastructure,Vendor-027,Regular departmental expenditure,False,none
+TXN-00239,Road Transport & Highways,DEPT-003,15.64,2025-07-17,7,17,grants,Vendor-039,Regular departmental expenditure,False,none
+TXN-00465,Urban Development,DEPT-006,8.23,2025-11-10,11,10,revenue,Vendor-016,Regular departmental expenditure,False,none
+TXN-00571,Water Resources,DEPT-007,9.68,2025-04-08,4,8,subsidies,Vendor-019,Regular departmental expenditure,False,none
+TXN-00047,Health & Family Welfare,DEPT-001,32.4,2025-06-20,6,20,infrastructure,Vendor-033,Regular departmental expenditure,False,none
+TXN-00031,Health & Family Welfare,DEPT-001,10.39,2025-04-19,4,19,revenue,Vendor-044,Regular departmental expenditure,False,none
+TXN-00252,Road Transport & Highways,DEPT-003,14.45,2025-09-26,9,26,infrastructure,Vendor-015,Regular departmental expenditure,False,none
+TXN-00775,Public Works - Pune,DEPT-009,3.02,2025-12-07,12,7,capital,Vendor-028,Regular departmental expenditure,False,none
+TXN-00973,Public Works - Nagpur,DEPT-011,4.15,2025-05-12,5,12,capital,Vendor-042,Regular departmental expenditure,False,none
+TXN-01004,Public Works - Nagpur,DEPT-011,72.2,2025-04-16,4,16,subsidies,Vendor-002,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00259,Road Transport & Highways,DEPT-003,4.66,2025-05-23,5,23,grants,Vendor-042,Regular departmental expenditure,False,none
+TXN-00774,Public Works - Pune,DEPT-009,11.64,2025-11-19,11,19,infrastructure,Vendor-042,Regular departmental expenditure,False,none
+TXN-00692,Women & Child Development,DEPT-008,9.98,2025-11-04,11,4,infrastructure,Vendor-001,Regular departmental expenditure,False,none
+TXN-00227,Road Transport & Highways,DEPT-003,14.65,2025-11-27,11,27,infrastructure,Vendor-023,Regular departmental expenditure,False,none
+TXN-00746,Public Works - Pune,DEPT-009,9.2,2025-11-20,11,20,salaries,Vendor-024,Regular departmental expenditure,False,none
+TXN-00091,Health & Family Welfare,DEPT-001,26.51,2025-06-17,6,17,grants,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00188,Road Transport & Highways,DEPT-003,26.49,2025-11-20,11,20,salaries,Vendor-008,Regular departmental expenditure,False,none
+TXN-00797,Public Works - Pune,DEPT-009,10.93,2025-11-08,11,8,grants,Vendor-009,Regular departmental expenditure,False,none
+TXN-00796,Public Works - Pune,DEPT-009,7.42,2025-10-23,10,23,infrastructure,Vendor-019,Regular departmental expenditure,False,none
+TXN-00727,Women & Child Development,DEPT-008,59.1,2026-03-31,3,31,capital,Vendor-006,Urgent year-end fund utilization,True,march_dumping
+TXN-00062,Health & Family Welfare,DEPT-001,20.95,2025-05-15,5,15,infrastructure,Vendor-023,Regular departmental expenditure,False,none
+TXN-00721,Women & Child Development,DEPT-008,5.95,2025-09-04,9,4,infrastructure,Vendor-021,Regular departmental expenditure,False,none
+TXN-00178,Education,DEPT-002,49.73,2025-07-25,7,25,revenue,Vendor-045,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00490,Urban Development,DEPT-006,6.03,2025-07-07,7,7,revenue,Vendor-035,Regular departmental expenditure,False,none
+TXN-00397,Rural Development,DEPT-005,7.48,2025-09-09,9,9,subsidies,Vendor-013,Regular departmental expenditure,False,none
+TXN-01089,Primary Education - Pune,DEPT-012,2.55,2025-06-03,6,3,salaries,Vendor-026,Regular departmental expenditure,False,none
+TXN-00350,Agriculture & Farmers,DEPT-004,12.83,2025-08-21,8,21,grants,Vendor-005,Regular departmental expenditure,False,none
+TXN-00487,Urban Development,DEPT-006,3.49,2025-08-19,8,19,revenue,Vendor-035,Regular departmental expenditure,False,none
+TXN-00963,Public Works - Nagpur,DEPT-011,3.25,2025-09-24,9,24,infrastructure,Vendor-035,Regular departmental expenditure,False,none
+TXN-00323,Agriculture & Farmers,DEPT-004,11.32,2025-06-09,6,9,subsidies,Vendor-042,Regular departmental expenditure,False,none
+TXN-00289,Agriculture & Farmers,DEPT-004,17.32,2025-11-02,11,2,subsidies,Vendor-024,Regular departmental expenditure,False,none
+TXN-00624,Water Resources,DEPT-007,14.84,2025-09-10,9,10,revenue,Vendor-021,Regular departmental expenditure,False,none
+TXN-00483,Urban Development,DEPT-006,9.9,2025-04-06,4,6,subsidies,Vendor-020,Regular departmental expenditure,False,none
+TXN-00851,Public Works - Mumbai,DEPT-010,5.78,2025-12-09,12,9,infrastructure,Vendor-010,Regular departmental expenditure,False,none
+TXN-00931,Public Works - Nagpur,DEPT-011,3.47,2025-09-05,9,5,capital,Vendor-048,Regular departmental expenditure,False,none
+TXN-00745,Public Works - Pune,DEPT-009,8.52,2025-10-14,10,14,grants,Vendor-029,Regular departmental expenditure,False,none
+TXN-00673,Women & Child Development,DEPT-008,14.1,2025-10-25,10,25,salaries,Vendor-022,Regular departmental expenditure,False,none
+TXN-00881,Public Works - Mumbai,DEPT-010,10.9,2025-09-19,9,19,subsidies,Vendor-007,Regular departmental expenditure,False,none
+TXN-00854,Public Works - Mumbai,DEPT-010,9.04,2025-04-14,4,14,infrastructure,Vendor-050,Regular departmental expenditure,False,none
+TXN-01098,Primary Education - Pune,DEPT-012,34.18,2025-06-23,6,23,grants,Vendor-043,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00966,Public Works - Nagpur,DEPT-011,7.67,2025-10-14,10,14,capital,Vendor-018,Regular departmental expenditure,False,none
+TXN-00760,Public Works - Pune,DEPT-009,6.89,2025-12-13,12,13,subsidies,Vendor-001,Regular departmental expenditure,False,none
+TXN-01058,Primary Education - Pune,DEPT-012,3.85,2025-10-09,10,9,subsidies,Vendor-030,Regular departmental expenditure,False,none
+TXN-00649,Women & Child Development,DEPT-008,10.85,2025-12-24,12,24,revenue,Vendor-047,Regular departmental expenditure,False,none
+TXN-00895,Public Works - Mumbai,DEPT-010,3.76,2025-11-26,11,26,revenue,Vendor-027,Regular departmental expenditure,False,none
+TXN-01040,Primary Education - Pune,DEPT-012,2.04,2025-09-14,9,14,subsidies,Vendor-043,Regular departmental expenditure,False,none
+TXN-00096,Education,DEPT-002,24.11,2025-12-19,12,19,subsidies,Vendor-009,Regular departmental expenditure,False,none
+TXN-00358,Agriculture & Farmers,DEPT-004,39.03,2026-03-26,3,26,revenue,Vendor-017,Urgent year-end fund utilization,True,march_dumping
+TXN-00405,Rural Development,DEPT-005,3.11,2025-10-28,10,28,grants,Vendor-040,Regular departmental expenditure,False,none
+TXN-00264,Road Transport & Highways,DEPT-003,36.19,2025-04-03,4,3,salaries,Vendor-014,Regular departmental expenditure,False,none
+TXN-00036,Health & Family Welfare,DEPT-001,19.18,2025-08-12,8,12,revenue,Vendor-032,Regular departmental expenditure,False,none
+TXN-00245,Road Transport & Highways,DEPT-003,25.69,2025-12-07,12,7,grants,Vendor-003,Regular departmental expenditure,False,none
+TXN-00853,Public Works - Mumbai,DEPT-010,4.1,2025-09-22,9,22,revenue,Vendor-047,Regular departmental expenditure,False,none
+TXN-00857,Public Works - Mumbai,DEPT-010,4.32,2025-08-17,8,17,infrastructure,Vendor-002,Regular departmental expenditure,False,none
+TXN-00326,Agriculture & Farmers,DEPT-004,30.0,2025-07-13,7,13,salaries,Vendor-032,Regular departmental expenditure,False,none
+TXN-00137,Education,DEPT-002,24.5,2025-08-04,8,4,revenue,Vendor-017,Regular departmental expenditure,False,none
+TXN-00565,Water Resources,DEPT-007,4.95,2025-06-16,6,16,salaries,Vendor-020,Regular departmental expenditure,False,none
+TXN-00814,Public Works - Pune,DEPT-009,4.13,2025-05-02,5,2,salaries,Vendor-045,Regular departmental expenditure,False,none
+TXN-00555,Water Resources,DEPT-007,11.42,2025-04-02,4,2,capital,Vendor-008,Regular departmental expenditure,False,none
+TXN-00661,Women & Child Development,DEPT-008,12.38,2025-09-10,9,10,salaries,Vendor-044,Regular departmental expenditure,False,none
+TXN-00351,Agriculture & Farmers,DEPT-004,13.75,2025-07-21,7,21,revenue,Vendor-024,Regular departmental expenditure,False,none
+TXN-00563,Water Resources,DEPT-007,10.55,2025-11-19,11,19,subsidies,Vendor-042,Regular departmental expenditure,False,none
+TXN-00453,Rural Development,DEPT-005,8.88,2025-11-02,11,2,infrastructure,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00935,Public Works - Nagpur,DEPT-011,1.93,2025-10-20,10,20,capital,Vendor-012,Regular departmental expenditure,False,none
+TXN-00606,Water Resources,DEPT-007,7.33,2025-08-12,8,12,grants,Vendor-039,Regular departmental expenditure,False,none
+TXN-00585,Water Resources,DEPT-007,9.16,2025-11-25,11,25,infrastructure,Vendor-028,Regular departmental expenditure,False,none
+TXN-00954,Public Works - Nagpur,DEPT-011,4.32,2025-11-15,11,15,grants,Vendor-031,Regular departmental expenditure,False,none
+TXN-00280,Agriculture & Farmers,DEPT-004,13.15,2025-08-13,8,13,capital,Vendor-050,Regular departmental expenditure,False,none
+TXN-00142,Education,DEPT-002,9.38,2025-06-27,6,27,salaries,Vendor-032,Regular departmental expenditure,False,none
+TXN-00281,Agriculture & Farmers,DEPT-004,2.19,2025-06-26,6,26,grants,Vendor-040,Regular departmental expenditure,False,none
+TXN-00741,Public Works - Pune,DEPT-009,8.41,2025-08-25,8,25,subsidies,Vendor-014,Regular departmental expenditure,False,none
+TXN-00867,Public Works - Mumbai,DEPT-010,5.34,2025-11-10,11,10,subsidies,Vendor-015,Regular departmental expenditure,False,none
+TXN-00868,Public Works - Mumbai,DEPT-010,7.36,2025-08-20,8,20,grants,Vendor-037,Regular departmental expenditure,False,none
+TXN-00033,Health & Family Welfare,DEPT-001,48.0,2025-04-17,4,17,revenue,Vendor-012,Regular departmental expenditure,False,none
+TXN-01017,Primary Education - Pune,DEPT-012,5.54,2025-11-19,11,19,infrastructure,Vendor-039,Regular departmental expenditure,False,none
+TXN-00449,Rural Development,DEPT-005,99.79,2025-08-22,8,22,revenue,Vendor-032,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00038,Health & Family Welfare,DEPT-001,37.03,2025-09-24,9,24,salaries,Vendor-034,Regular departmental expenditure,False,none
+TXN-01006,Public Works - Nagpur,DEPT-011,6.31,2025-09-10,9,10,salaries,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00927,Public Works - Nagpur,DEPT-011,4.07,2025-10-04,10,4,grants,Vendor-018,Regular departmental expenditure,False,none
+TXN-00782,Public Works - Pune,DEPT-009,12.35,2025-09-21,9,21,salaries,Vendor-005,Regular departmental expenditure,False,none
+TXN-00619,Water Resources,DEPT-007,18.17,2025-07-07,7,7,salaries,Vendor-035,Regular departmental expenditure,False,none
+TXN-00407,Rural Development,DEPT-005,6.86,2025-08-20,8,20,infrastructure,Vendor-022,Regular departmental expenditure,False,none
+TXN-00109,Education,DEPT-002,11.26,2025-07-28,7,28,salaries,Vendor-041,Regular departmental expenditure,False,none
+TXN-01080,Primary Education - Pune,DEPT-012,3.02,2025-05-12,5,12,capital,Vendor-017,Regular departmental expenditure,False,none
+TXN-01001,Public Works - Nagpur,DEPT-011,36.09,2026-03-28,3,28,grants,Vendor-044,Urgent year-end fund utilization,True,march_dumping
+TXN-00643,Water Resources,DEPT-007,50.0,2025-12-17,12,17,revenue,Vendor-029,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00170,Education,DEPT-002,19.04,2025-11-10,11,10,salaries,Vendor-023,Regular departmental expenditure,False,none
+TXN-00968,Public Works - Nagpur,DEPT-011,2.81,2025-12-28,12,28,revenue,Vendor-045,Regular departmental expenditure,False,none
+TXN-00570,Water Resources,DEPT-007,6.87,2025-10-09,10,9,salaries,Vendor-011,Regular departmental expenditure,False,none
+TXN-01103,Primary Education - Pune,DEPT-012,9.63,2025-12-21,12,21,salaries,Vendor-026,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00364,Agriculture & Farmers,DEPT-004,72.86,2026-03-30,3,30,infrastructure,Vendor-004,Urgent year-end fund utilization,True,march_dumping
+TXN-00859,Public Works - Mumbai,DEPT-010,3.14,2025-09-20,9,20,salaries,Vendor-040,Regular departmental expenditure,False,none
+TXN-00353,Agriculture & Farmers,DEPT-004,11.69,2025-05-23,5,23,subsidies,Vendor-038,Regular departmental expenditure,False,none
+TXN-00792,Public Works - Pune,DEPT-009,3.41,2025-07-15,7,15,salaries,Vendor-017,Regular departmental expenditure,False,none
+TXN-00524,Urban Development,DEPT-006,11.12,2025-12-12,12,12,grants,Vendor-046,Regular departmental expenditure,False,none
+TXN-00196,Road Transport & Highways,DEPT-003,24.49,2025-11-09,11,9,infrastructure,Vendor-011,Regular departmental expenditure,False,none
+TXN-00303,Agriculture & Farmers,DEPT-004,12.0,2025-11-28,11,28,infrastructure,Vendor-025,Regular departmental expenditure,False,none
+TXN-00946,Public Works - Nagpur,DEPT-011,2.44,2025-09-27,9,27,revenue,Vendor-018,Regular departmental expenditure,False,none
+TXN-00354,Agriculture & Farmers,DEPT-004,21.51,2025-07-23,7,23,infrastructure,Vendor-045,Regular departmental expenditure,False,none
+TXN-00747,Public Works - Pune,DEPT-009,4.66,2025-12-08,12,8,revenue,Vendor-029,Regular departmental expenditure,False,none
+TXN-00080,Health & Family Welfare,DEPT-001,14.04,2025-04-14,4,14,infrastructure,Vendor-005,Regular departmental expenditure,False,none
+TXN-00195,Road Transport & Highways,DEPT-003,31.97,2025-12-22,12,22,grants,Vendor-029,Regular departmental expenditure,False,none
+TXN-00329,Agriculture & Farmers,DEPT-004,11.45,2025-09-15,9,15,capital,Vendor-007,Regular departmental expenditure,False,none
+TXN-00456,Rural Development,DEPT-005,100.0,2025-12-18,12,18,subsidies,Vendor-022,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00258,Road Transport & Highways,DEPT-003,11.19,2025-09-25,9,25,salaries,Vendor-018,Regular departmental expenditure,False,none
+TXN-01086,Primary Education - Pune,DEPT-012,3.09,2025-11-06,11,6,infrastructure,Vendor-045,Regular departmental expenditure,False,none
+TXN-00159,Education,DEPT-002,14.92,2025-09-05,9,5,capital,Vendor-033,Regular departmental expenditure,False,none
+TXN-00235,Road Transport & Highways,DEPT-003,19.89,2025-12-21,12,21,revenue,Vendor-045,Regular departmental expenditure,False,none
+TXN-00395,Rural Development,DEPT-005,11.63,2025-10-13,10,13,infrastructure,Vendor-036,Regular departmental expenditure,False,none
+TXN-00190,Road Transport & Highways,DEPT-003,13.27,2025-07-26,7,26,grants,Vendor-027,Regular departmental expenditure,False,none
+TXN-00360,Agriculture & Farmers,DEPT-004,137.58,2025-08-16,8,16,capital,Vendor-005,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00654,Women & Child Development,DEPT-008,4.62,2025-05-14,5,14,grants,Vendor-044,Regular departmental expenditure,False,none
+TXN-01072,Primary Education - Pune,DEPT-012,4.63,2025-08-27,8,27,revenue,Vendor-039,Regular departmental expenditure,False,none
+TXN-00983,Public Works - Nagpur,DEPT-011,4.71,2025-07-19,7,19,salaries,Vendor-042,Regular departmental expenditure,False,none
+TXN-00399,Rural Development,DEPT-005,11.03,2025-11-06,11,6,revenue,Vendor-003,Regular departmental expenditure,False,none
+TXN-01065,Primary Education - Pune,DEPT-012,3.45,2025-09-18,9,18,grants,Vendor-007,Regular departmental expenditure,False,none
+TXN-00160,Education,DEPT-002,6.61,2025-08-22,8,22,salaries,Vendor-006,Regular departmental expenditure,False,none
+TXN-00644,Water Resources,DEPT-007,49.33,2026-03-30,3,30,revenue,Vendor-017,Urgent year-end fund utilization,True,march_dumping
+TXN-00225,Road Transport & Highways,DEPT-003,9.23,2025-12-02,12,2,salaries,Vendor-044,Regular departmental expenditure,False,none
+TXN-00953,Public Works - Nagpur,DEPT-011,2.74,2025-05-03,5,3,infrastructure,Vendor-008,Regular departmental expenditure,False,none
+TXN-00603,Water Resources,DEPT-007,24.0,2025-09-21,9,21,grants,Vendor-023,Regular departmental expenditure,False,none
+TXN-00780,Public Works - Pune,DEPT-009,9.22,2025-10-11,10,11,infrastructure,Vendor-024,Regular departmental expenditure,False,none
+TXN-00359,Agriculture & Farmers,DEPT-004,66.3,2025-11-25,11,25,subsidies,Vendor-046,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00710,Women & Child Development,DEPT-008,8.35,2025-10-14,10,14,subsidies,Vendor-046,Regular departmental expenditure,False,none
+TXN-00333,Agriculture & Farmers,DEPT-004,21.44,2025-05-04,5,4,infrastructure,Vendor-039,Regular departmental expenditure,False,none
+TXN-00672,Women & Child Development,DEPT-008,3.6,2025-07-15,7,15,grants,Vendor-009,Regular departmental expenditure,False,none
+TXN-00815,Public Works - Pune,DEPT-009,4.12,2025-11-27,11,27,infrastructure,Vendor-004,Regular departmental expenditure,False,none
+TXN-00421,Rural Development,DEPT-005,6.7,2025-08-02,8,2,subsidies,Vendor-025,Regular departmental expenditure,False,none
+TXN-00204,Road Transport & Highways,DEPT-003,40.31,2025-07-06,7,6,salaries,Vendor-024,Regular departmental expenditure,False,none
+TXN-00141,Education,DEPT-002,18.02,2025-11-04,11,4,capital,Vendor-003,Regular departmental expenditure,False,none
+TXN-00982,Public Works - Nagpur,DEPT-011,7.68,2025-10-13,10,13,subsidies,Vendor-037,Regular departmental expenditure,False,none
+TXN-00406,Rural Development,DEPT-005,7.79,2025-09-05,9,5,subsidies,Vendor-040,Regular departmental expenditure,False,none
+TXN-00995,Public Works - Nagpur,DEPT-011,4.35,2025-05-27,5,27,subsidies,Vendor-010,Regular departmental expenditure,False,none
+TXN-00529,Urban Development,DEPT-006,10.38,2025-12-11,12,11,revenue,Vendor-047,Regular departmental expenditure,False,none
+TXN-00151,Education,DEPT-002,18.99,2025-05-26,5,26,infrastructure,Vendor-035,Regular departmental expenditure,False,none
+TXN-00633,Water Resources,DEPT-007,100.06,2025-09-28,9,28,revenue,Vendor-002,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00243,Road Transport & Highways,DEPT-003,21.1,2025-05-21,5,21,capital,Vendor-009,Regular departmental expenditure,False,none
+TXN-00906,Public Works - Mumbai,DEPT-010,8.84,2025-04-11,4,11,revenue,Vendor-011,Regular departmental expenditure,False,none
+TXN-00290,Agriculture & Farmers,DEPT-004,4.85,2025-06-16,6,16,infrastructure,Vendor-019,Regular departmental expenditure,False,none
+TXN-00127,Education,DEPT-002,15.04,2025-08-21,8,21,salaries,Vendor-010,Regular departmental expenditure,False,none
+TXN-00830,Public Works - Mumbai,DEPT-010,4.79,2025-07-07,7,7,infrastructure,Vendor-010,Regular departmental expenditure,False,none
+TXN-00077,Health & Family Welfare,DEPT-001,21.93,2025-10-05,10,5,infrastructure,Vendor-029,Regular departmental expenditure,False,none
+TXN-00523,Urban Development,DEPT-006,5.58,2025-07-06,7,6,infrastructure,Vendor-019,Regular departmental expenditure,False,none
+TXN-00156,Education,DEPT-002,12.34,2025-07-15,7,15,infrastructure,Vendor-034,Regular departmental expenditure,False,none
+TXN-00428,Rural Development,DEPT-005,7.02,2025-07-04,7,4,capital,Vendor-037,Regular departmental expenditure,False,none
+TXN-00462,Urban Development,DEPT-006,8.62,2025-06-23,6,23,subsidies,Vendor-013,Regular departmental expenditure,False,none
+TXN-00507,Urban Development,DEPT-006,8.0,2025-08-02,8,2,infrastructure,Vendor-048,Regular departmental expenditure,False,none
+TXN-00620,Water Resources,DEPT-007,8.45,2025-12-08,12,8,subsidies,Vendor-045,Regular departmental expenditure,False,none
+TXN-00377,Rural Development,DEPT-005,9.1,2025-05-14,5,14,salaries,Vendor-004,Regular departmental expenditure,False,none
+TXN-00104,Education,DEPT-002,7.61,2025-09-19,9,19,salaries,Vendor-001,Regular departmental expenditure,False,none
+TXN-00455,Rural Development,DEPT-005,142.81,2025-10-09,10,9,grants,Vendor-025,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00869,Public Works - Mumbai,DEPT-010,3.2,2025-11-11,11,11,infrastructure,Vendor-008,Regular departmental expenditure,False,none
+TXN-00029,Health & Family Welfare,DEPT-001,28.73,2025-04-25,4,25,grants,Vendor-013,Regular departmental expenditure,False,none
+TXN-00685,Women & Child Development,DEPT-008,7.91,2025-09-18,9,18,infrastructure,Vendor-010,Regular departmental expenditure,False,none
+TXN-00759,Public Works - Pune,DEPT-009,5.39,2025-09-04,9,4,revenue,Vendor-030,Regular departmental expenditure,False,none
+TXN-01043,Primary Education - Pune,DEPT-012,8.16,2025-09-09,9,9,salaries,Vendor-023,Regular departmental expenditure,False,none
+TXN-00671,Women & Child Development,DEPT-008,4.04,2025-08-04,8,4,salaries,Vendor-007,Regular departmental expenditure,False,none
+TXN-00820,Public Works - Pune,DEPT-009,49.86,2026-03-27,3,27,grants,Vendor-037,Urgent year-end fund utilization,True,march_dumping
+TXN-00005,Health & Family Welfare,DEPT-001,41.55,2025-12-17,12,17,grants,Vendor-042,Regular departmental expenditure,False,none
+TXN-00468,Urban Development,DEPT-006,12.21,2025-12-10,12,10,salaries,Vendor-046,Regular departmental expenditure,False,none
+TXN-00315,Agriculture & Farmers,DEPT-004,8.07,2025-04-13,4,13,subsidies,Vendor-026,Regular departmental expenditure,False,none
+TXN-00255,Road Transport & Highways,DEPT-003,42.0,2025-11-03,11,3,subsidies,Vendor-045,Regular departmental expenditure,False,none
+TXN-00136,Education,DEPT-002,28.36,2025-04-24,4,24,subsidies,Vendor-030,Regular departmental expenditure,False,none
+TXN-00847,Public Works - Mumbai,DEPT-010,9.01,2025-08-19,8,19,salaries,Vendor-012,Regular departmental expenditure,False,none
+TXN-00441,Rural Development,DEPT-005,17.7,2025-04-10,4,10,revenue,Vendor-040,Regular departmental expenditure,False,none
+TXN-00855,Public Works - Mumbai,DEPT-010,16.31,2025-11-22,11,22,subsidies,Vendor-030,Regular departmental expenditure,False,none
+TXN-00311,Agriculture & Farmers,DEPT-004,22.95,2025-09-09,9,9,grants,Vendor-022,Regular departmental expenditure,False,none
+TXN-00646,Women & Child Development,DEPT-008,6.05,2025-06-09,6,9,grants,Vendor-034,Regular departmental expenditure,False,none
+TXN-00208,Road Transport & Highways,DEPT-003,7.75,2025-04-07,4,7,capital,Vendor-032,Regular departmental expenditure,False,none
+TXN-00648,Women & Child Development,DEPT-008,5.38,2025-09-16,9,16,subsidies,Vendor-037,Regular departmental expenditure,False,none
+TXN-00418,Rural Development,DEPT-005,6.38,2025-12-02,12,2,capital,Vendor-033,Regular departmental expenditure,False,none
+TXN-00231,Road Transport & Highways,DEPT-003,13.36,2025-09-18,9,18,salaries,Vendor-042,Regular departmental expenditure,False,none
+TXN-00657,Women & Child Development,DEPT-008,10.49,2025-05-09,5,9,subsidies,Vendor-018,Regular departmental expenditure,False,none
+TXN-00798,Public Works - Pune,DEPT-009,4.04,2025-04-01,4,1,grants,Vendor-003,Regular departmental expenditure,False,none
+TXN-00210,Road Transport & Highways,DEPT-003,17.29,2025-04-13,4,13,salaries,Vendor-030,Regular departmental expenditure,False,none
+TXN-00147,Education,DEPT-002,10.57,2025-04-26,4,26,subsidies,Vendor-001,Regular departmental expenditure,False,none
+TXN-00042,Health & Family Welfare,DEPT-001,16.66,2025-04-08,4,8,revenue,Vendor-040,Regular departmental expenditure,False,none
+TXN-01045,Primary Education - Pune,DEPT-012,6.82,2025-06-01,6,1,subsidies,Vendor-014,Regular departmental expenditure,False,none
+TXN-01097,Primary Education - Pune,DEPT-012,250.0,2025-11-21,11,21,capital,Vendor-025,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00040,Health & Family Welfare,DEPT-001,48.0,2025-06-20,6,20,subsidies,Vendor-036,Regular departmental expenditure,False,none
+TXN-00557,Water Resources,DEPT-007,5.71,2025-06-26,6,26,subsidies,Vendor-029,Regular departmental expenditure,False,none
+TXN-01055,Primary Education - Pune,DEPT-012,3.39,2025-07-18,7,18,subsidies,Vendor-043,Regular departmental expenditure,False,none
+TXN-00763,Public Works - Pune,DEPT-009,4.95,2025-09-16,9,16,infrastructure,Vendor-017,Regular departmental expenditure,False,none
+TXN-00164,Education,DEPT-002,16.13,2025-11-06,11,6,grants,Vendor-002,Regular departmental expenditure,False,none
+TXN-00541,Urban Development,DEPT-006,68.0,2026-03-30,3,30,grants,Vendor-027,Urgent year-end fund utilization,True,march_dumping
+TXN-00186,Road Transport & Highways,DEPT-003,11.44,2025-09-02,9,2,revenue,Vendor-005,Regular departmental expenditure,False,none
+TXN-00194,Road Transport & Highways,DEPT-003,19.46,2025-11-28,11,28,grants,Vendor-012,Regular departmental expenditure,False,none
+TXN-00313,Agriculture & Farmers,DEPT-004,13.56,2025-09-22,9,22,subsidies,Vendor-020,Regular departmental expenditure,False,none
+TXN-00879,Public Works - Mumbai,DEPT-010,16.01,2025-11-20,11,20,revenue,Vendor-027,Regular departmental expenditure,False,none
+TXN-00261,Road Transport & Highways,DEPT-003,24.11,2025-10-14,10,14,subsidies,Vendor-029,Regular departmental expenditure,False,none
+TXN-00409,Rural Development,DEPT-005,5.38,2025-07-01,7,1,revenue,Vendor-045,Regular departmental expenditure,False,none
+TXN-00138,Education,DEPT-002,17.7,2025-04-28,4,28,subsidies,Vendor-024,Regular departmental expenditure,False,none
+TXN-00540,Urban Development,DEPT-006,4.66,2025-12-03,12,3,subsidies,Vendor-013,Regular departmental expenditure,False,none
+TXN-00887,Public Works - Mumbai,DEPT-010,5.37,2025-11-28,11,28,salaries,Vendor-030,Regular departmental expenditure,False,none
+TXN-00030,Health & Family Welfare,DEPT-001,17.6,2025-12-03,12,3,infrastructure,Vendor-008,Regular departmental expenditure,False,none
+TXN-00588,Water Resources,DEPT-007,9.19,2025-05-03,5,3,grants,Vendor-028,Regular departmental expenditure,False,none
+TXN-00072,Health & Family Welfare,DEPT-001,21.33,2025-07-15,7,15,grants,Vendor-040,Regular departmental expenditure,False,none
+TXN-00088,Health & Family Welfare,DEPT-001,231.14,2025-05-19,5,19,subsidies,Vendor-041,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00632,Water Resources,DEPT-007,9.35,2025-09-16,9,16,revenue,Vendor-040,Regular departmental expenditure,False,none
+TXN-01044,Primary Education - Pune,DEPT-012,2.99,2025-05-28,5,28,grants,Vendor-047,Regular departmental expenditure,False,none
+TXN-00288,Agriculture & Farmers,DEPT-004,17.2,2025-10-02,10,2,salaries,Vendor-046,Regular departmental expenditure,False,none
+TXN-00835,Public Works - Mumbai,DEPT-010,4.04,2025-11-14,11,14,grants,Vendor-040,Regular departmental expenditure,False,none
+TXN-01041,Primary Education - Pune,DEPT-012,4.09,2025-08-24,8,24,capital,Vendor-013,Regular departmental expenditure,False,none
+TXN-00343,Agriculture & Farmers,DEPT-004,4.38,2025-12-01,12,1,salaries,Vendor-020,Regular departmental expenditure,False,none
+TXN-00531,Urban Development,DEPT-006,7.01,2025-08-28,8,28,revenue,Vendor-033,Regular departmental expenditure,False,none
+TXN-01093,Primary Education - Pune,DEPT-012,150.0,2025-04-19,4,19,grants,Vendor-028,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00647,Women & Child Development,DEPT-008,12.54,2025-06-13,6,13,grants,Vendor-049,Regular departmental expenditure,False,none
+TXN-00740,Public Works - Pune,DEPT-009,8.44,2025-08-11,8,11,salaries,Vendor-027,Regular departmental expenditure,False,none
+TXN-00175,Education,DEPT-002,9.89,2025-06-03,6,3,infrastructure,Vendor-001,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-01073,Primary Education - Pune,DEPT-012,8.19,2025-06-19,6,19,revenue,Vendor-028,Regular departmental expenditure,False,none
+TXN-00463,Urban Development,DEPT-006,18.85,2025-04-24,4,24,grants,Vendor-019,Regular departmental expenditure,False,none
+TXN-00213,Road Transport & Highways,DEPT-003,13.2,2025-06-04,6,4,capital,Vendor-008,Regular departmental expenditure,False,none
+TXN-00751,Public Works - Pune,DEPT-009,6.54,2025-05-25,5,25,grants,Vendor-016,Regular departmental expenditure,False,none
+TXN-00064,Health & Family Welfare,DEPT-001,11.29,2025-04-09,4,9,grants,Vendor-048,Regular departmental expenditure,False,none
+TXN-00965,Public Works - Nagpur,DEPT-011,3.51,2025-06-09,6,9,subsidies,Vendor-012,Regular departmental expenditure,False,none
+TXN-00901,Public Works - Mumbai,DEPT-010,10.65,2025-07-10,7,10,subsidies,Vendor-031,Regular departmental expenditure,False,none
+TXN-00526,Urban Development,DEPT-006,8.82,2025-10-27,10,27,salaries,Vendor-025,Regular departmental expenditure,False,none
+TXN-00576,Water Resources,DEPT-007,7.35,2025-04-04,4,4,revenue,Vendor-037,Regular departmental expenditure,False,none
+TXN-00680,Women & Child Development,DEPT-008,11.56,2025-11-04,11,4,subsidies,Vendor-011,Regular departmental expenditure,False,none
+TXN-01102,Primary Education - Pune,DEPT-012,25.24,2026-03-28,3,28,infrastructure,Vendor-027,Urgent year-end fund utilization,True,march_dumping
+TXN-00659,Women & Child Development,DEPT-008,8.04,2025-09-22,9,22,capital,Vendor-036,Regular departmental expenditure,False,none
+TXN-00378,Rural Development,DEPT-005,13.19,2025-08-20,8,20,infrastructure,Vendor-027,Regular departmental expenditure,False,none
+TXN-00662,Women & Child Development,DEPT-008,9.71,2025-08-10,8,10,infrastructure,Vendor-013,Regular departmental expenditure,False,none
+TXN-01067,Primary Education - Pune,DEPT-012,3.5,2025-05-04,5,4,capital,Vendor-034,Regular departmental expenditure,False,none
+TXN-00244,Road Transport & Highways,DEPT-003,10.36,2025-11-17,11,17,capital,Vendor-025,Regular departmental expenditure,False,none
+TXN-00220,Road Transport & Highways,DEPT-003,28.54,2025-11-14,11,14,infrastructure,Vendor-043,Regular departmental expenditure,False,none
+TXN-00904,Public Works - Mumbai,DEPT-010,17.77,2025-06-11,6,11,revenue,Vendor-016,Regular departmental expenditure,False,none
+TXN-00039,Health & Family Welfare,DEPT-001,26.82,2025-04-09,4,9,subsidies,Vendor-006,Regular departmental expenditure,False,none
+TXN-00057,Health & Family Welfare,DEPT-001,8.2,2025-09-03,9,3,subsidies,Vendor-041,Regular departmental expenditure,False,none
+TXN-00070,Health & Family Welfare,DEPT-001,21.46,2025-09-11,9,11,subsidies,Vendor-037,Regular departmental expenditure,False,none
+TXN-00714,Women & Child Development,DEPT-008,5.9,2025-08-24,8,24,subsidies,Vendor-023,Regular departmental expenditure,False,none
+TXN-00454,Rural Development,DEPT-005,12.08,2025-05-11,5,11,revenue,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00539,Urban Development,DEPT-006,15.05,2025-07-12,7,12,capital,Vendor-039,Regular departmental expenditure,False,none
+TXN-00388,Rural Development,DEPT-005,5.89,2025-12-18,12,18,grants,Vendor-036,Regular departmental expenditure,False,none
+TXN-00858,Public Works - Mumbai,DEPT-010,6.41,2025-07-22,7,22,revenue,Vendor-011,Regular departmental expenditure,False,none
+TXN-00393,Rural Development,DEPT-005,6.69,2025-09-07,9,7,capital,Vendor-049,Regular departmental expenditure,False,none
+TXN-00374,Rural Development,DEPT-005,10.89,2025-10-06,10,6,infrastructure,Vendor-050,Regular departmental expenditure,False,none
+TXN-00330,Agriculture & Farmers,DEPT-004,8.55,2025-04-21,4,21,revenue,Vendor-024,Regular departmental expenditure,False,none
+TXN-00596,Water Resources,DEPT-007,10.74,2025-11-24,11,24,grants,Vendor-003,Regular departmental expenditure,False,none
+TXN-00086,Health & Family Welfare,DEPT-001,9.77,2025-06-11,6,11,subsidies,Vendor-037,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00808,Public Works - Pune,DEPT-009,6.41,2025-06-22,6,22,capital,Vendor-007,Regular departmental expenditure,False,none
+TXN-01022,Primary Education - Pune,DEPT-012,2.88,2025-06-14,6,14,infrastructure,Vendor-023,Regular departmental expenditure,False,none
+TXN-00589,Water Resources,DEPT-007,21.13,2025-10-08,10,8,grants,Vendor-048,Regular departmental expenditure,False,none
+TXN-00684,Women & Child Development,DEPT-008,18.0,2025-05-15,5,15,salaries,Vendor-021,Regular departmental expenditure,False,none
+TXN-00362,Agriculture & Farmers,DEPT-004,170.8,2025-12-16,12,16,capital,Vendor-013,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00419,Rural Development,DEPT-005,9.88,2025-09-14,9,14,salaries,Vendor-003,Regular departmental expenditure,False,none
+TXN-00020,Health & Family Welfare,DEPT-001,21.81,2025-05-01,5,1,infrastructure,Vendor-024,Regular departmental expenditure,False,none
+TXN-00167,Education,DEPT-002,17.25,2025-04-12,4,12,capital,Vendor-026,Regular departmental expenditure,False,none
+TXN-00416,Rural Development,DEPT-005,17.19,2025-12-15,12,15,salaries,Vendor-035,Regular departmental expenditure,False,none
+TXN-00810,Public Works - Pune,DEPT-009,5.42,2025-06-11,6,11,salaries,Vendor-046,Regular departmental expenditure,False,none
+TXN-00242,Road Transport & Highways,DEPT-003,16.49,2025-07-19,7,19,grants,Vendor-043,Regular departmental expenditure,False,none
+TXN-00240,Road Transport & Highways,DEPT-003,32.01,2025-11-03,11,3,infrastructure,Vendor-034,Regular departmental expenditure,False,none
+TXN-01046,Primary Education - Pune,DEPT-012,3.08,2025-06-28,6,28,capital,Vendor-003,Regular departmental expenditure,False,none
+TXN-01069,Primary Education - Pune,DEPT-012,3.89,2025-10-25,10,25,salaries,Vendor-016,Regular departmental expenditure,False,none
+TXN-00918,Public Works - Mumbai,DEPT-010,8.35,2025-05-03,5,3,revenue,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00309,Agriculture & Farmers,DEPT-004,9.1,2025-04-08,4,8,salaries,Vendor-018,Regular departmental expenditure,False,none
+TXN-00670,Women & Child Development,DEPT-008,8.26,2025-04-23,4,23,revenue,Vendor-007,Regular departmental expenditure,False,none
+TXN-01003,Public Works - Nagpur,DEPT-011,4.47,2025-06-10,6,10,grants,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00332,Agriculture & Farmers,DEPT-004,7.96,2025-06-09,6,9,subsidies,Vendor-034,Regular departmental expenditure,False,none
+TXN-00874,Public Works - Mumbai,DEPT-010,6.96,2025-11-03,11,3,subsidies,Vendor-048,Regular departmental expenditure,False,none
+TXN-00124,Education,DEPT-002,13.03,2025-08-26,8,26,capital,Vendor-022,Regular departmental expenditure,False,none
+TXN-00139,Education,DEPT-002,15.99,2025-05-13,5,13,infrastructure,Vendor-043,Regular departmental expenditure,False,none
+TXN-00250,Road Transport & Highways,DEPT-003,29.76,2025-12-12,12,12,grants,Vendor-026,Regular departmental expenditure,False,none
+TXN-00008,Health & Family Welfare,DEPT-001,30.32,2025-12-28,12,28,infrastructure,Vendor-050,Regular departmental expenditure,False,none
+TXN-00430,Rural Development,DEPT-005,15.78,2025-10-18,10,18,salaries,Vendor-035,Regular departmental expenditure,False,none
+TXN-00495,Urban Development,DEPT-006,9.82,2025-07-18,7,18,revenue,Vendor-043,Regular departmental expenditure,False,none
+TXN-00504,Urban Development,DEPT-006,20.33,2025-04-24,4,24,salaries,Vendor-034,Regular departmental expenditure,False,none
+TXN-00307,Agriculture & Farmers,DEPT-004,8.91,2025-09-16,9,16,capital,Vendor-022,Regular departmental expenditure,False,none
+TXN-00627,Water Resources,DEPT-007,18.31,2025-08-13,8,13,salaries,Vendor-009,Regular departmental expenditure,False,none
+TXN-00689,Women & Child Development,DEPT-008,6.07,2025-06-23,6,23,infrastructure,Vendor-018,Regular departmental expenditure,False,none
+TXN-00626,Water Resources,DEPT-007,7.67,2025-06-19,6,19,revenue,Vendor-008,Regular departmental expenditure,False,none
+TXN-00898,Public Works - Mumbai,DEPT-010,14.84,2025-10-02,10,2,infrastructure,Vendor-018,Regular departmental expenditure,False,none
+TXN-00401,Rural Development,DEPT-005,4.72,2025-06-02,6,2,infrastructure,Vendor-008,Regular departmental expenditure,False,none
+TXN-00370,Rural Development,DEPT-005,9.83,2025-05-14,5,14,capital,Vendor-003,Regular departmental expenditure,False,none
+TXN-01024,Primary Education - Pune,DEPT-012,4.48,2025-12-08,12,8,capital,Vendor-020,Regular departmental expenditure,False,none
+TXN-00580,Water Resources,DEPT-007,5.87,2025-05-19,5,19,infrastructure,Vendor-009,Regular departmental expenditure,False,none
+TXN-00437,Rural Development,DEPT-005,3.75,2025-07-23,7,23,salaries,Vendor-026,Regular departmental expenditure,False,none
+TXN-00214,Road Transport & Highways,DEPT-003,2.94,2025-10-07,10,7,grants,Vendor-032,Regular departmental expenditure,False,none
+TXN-00085,Health & Family Welfare,DEPT-001,273.44,2025-07-24,7,24,revenue,Vendor-012,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00970,Public Works - Nagpur,DEPT-011,12.0,2025-10-09,10,9,capital,Vendor-014,Regular departmental expenditure,False,none
+TXN-00004,Health & Family Welfare,DEPT-001,16.28,2025-11-12,11,12,infrastructure,Vendor-038,Regular departmental expenditure,False,none
+TXN-00394,Rural Development,DEPT-005,22.69,2025-10-24,10,24,subsidies,Vendor-046,Regular departmental expenditure,False,none
+TXN-00257,Road Transport & Highways,DEPT-003,32.79,2025-10-15,10,15,capital,Vendor-004,Regular departmental expenditure,False,none
+TXN-00223,Road Transport & Highways,DEPT-003,34.67,2025-04-15,4,15,salaries,Vendor-020,Regular departmental expenditure,False,none
+TXN-00145,Education,DEPT-002,5.13,2025-05-17,5,17,infrastructure,Vendor-026,Regular departmental expenditure,False,none
+TXN-00668,Women & Child Development,DEPT-008,13.09,2025-09-21,9,21,revenue,Vendor-047,Regular departmental expenditure,False,none
+TXN-00578,Water Resources,DEPT-007,6.1,2025-06-15,6,15,capital,Vendor-039,Regular departmental expenditure,False,none
+TXN-00838,Public Works - Mumbai,DEPT-010,6.19,2025-07-12,7,12,grants,Vendor-031,Regular departmental expenditure,False,none
+TXN-00034,Health & Family Welfare,DEPT-001,21.82,2025-10-02,10,2,grants,Vendor-049,Regular departmental expenditure,False,none
+TXN-00385,Rural Development,DEPT-005,8.68,2025-12-15,12,15,revenue,Vendor-024,Regular departmental expenditure,False,none
+TXN-00766,Public Works - Pune,DEPT-009,4.99,2025-12-27,12,27,revenue,Vendor-019,Regular departmental expenditure,False,none
+TXN-00666,Women & Child Development,DEPT-008,6.53,2025-12-04,12,4,revenue,Vendor-026,Regular departmental expenditure,False,none
+TXN-00675,Women & Child Development,DEPT-008,5.17,2025-10-12,10,12,revenue,Vendor-004,Regular departmental expenditure,False,none
+TXN-00458,Rural Development,DEPT-005,49.59,2025-10-07,10,7,subsidies,Vendor-049,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00651,Women & Child Development,DEPT-008,8.25,2025-04-04,4,4,capital,Vendor-030,Regular departmental expenditure,False,none
+TXN-00831,Public Works - Mumbai,DEPT-010,12.64,2025-07-23,7,23,infrastructure,Vendor-024,Regular departmental expenditure,False,none
+TXN-00119,Education,DEPT-002,10.06,2025-07-27,7,27,infrastructure,Vendor-017,Regular departmental expenditure,False,none
+TXN-00928,Public Works - Nagpur,DEPT-011,4.68,2025-08-28,8,28,grants,Vendor-022,Regular departmental expenditure,False,none
+TXN-00742,Public Works - Pune,DEPT-009,5.6,2025-08-22,8,22,grants,Vendor-033,Regular departmental expenditure,False,none
+TXN-00636,Water Resources,DEPT-007,49.83,2025-08-07,8,7,capital,Vendor-001,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-01035,Primary Education - Pune,DEPT-012,4.41,2025-10-14,10,14,grants,Vendor-026,Regular departmental expenditure,False,none
+TXN-00414,Rural Development,DEPT-005,20.16,2025-04-10,4,10,infrastructure,Vendor-018,Regular departmental expenditure,False,none
+TXN-00915,Public Works - Mumbai,DEPT-010,63.52,2025-06-26,6,26,infrastructure,Vendor-035,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00443,Rural Development,DEPT-005,6.22,2025-04-15,4,15,capital,Vendor-023,Regular departmental expenditure,False,none
+TXN-00017,Health & Family Welfare,DEPT-001,19.57,2025-04-12,4,12,grants,Vendor-017,Regular departmental expenditure,False,none
+TXN-00802,Public Works - Pune,DEPT-009,6.26,2025-10-24,10,24,revenue,Vendor-017,Regular departmental expenditure,False,none
+TXN-00509,Urban Development,DEPT-006,8.46,2025-10-22,10,22,subsidies,Vendor-024,Regular departmental expenditure,False,none
+TXN-00009,Health & Family Welfare,DEPT-001,18.65,2025-05-20,5,20,subsidies,Vendor-047,Regular departmental expenditure,False,none
+TXN-00293,Agriculture & Farmers,DEPT-004,10.0,2025-04-12,4,12,infrastructure,Vendor-017,Regular departmental expenditure,False,none
+TXN-01014,Primary Education - Pune,DEPT-012,6.79,2025-07-22,7,22,infrastructure,Vendor-016,Regular departmental expenditure,False,none
+TXN-00023,Health & Family Welfare,DEPT-001,23.96,2025-10-27,10,27,capital,Vendor-015,Regular departmental expenditure,False,none
+TXN-01094,Primary Education - Pune,DEPT-012,250.0,2025-04-05,4,5,grants,Vendor-026,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00876,Public Works - Mumbai,DEPT-010,7.13,2025-08-24,8,24,revenue,Vendor-009,Regular departmental expenditure,False,none
+TXN-01050,Primary Education - Pune,DEPT-012,2.2,2025-04-09,4,9,revenue,Vendor-010,Regular departmental expenditure,False,none
+TXN-00011,Health & Family Welfare,DEPT-001,30.17,2025-05-06,5,6,infrastructure,Vendor-042,Regular departmental expenditure,False,none
+TXN-00923,Public Works - Nagpur,DEPT-011,5.38,2025-08-25,8,25,subsidies,Vendor-049,Regular departmental expenditure,False,none
+TXN-00135,Education,DEPT-002,33.56,2025-06-02,6,2,subsidies,Vendor-038,Regular departmental expenditure,False,none
+TXN-00403,Rural Development,DEPT-005,10.57,2025-12-23,12,23,revenue,Vendor-030,Regular departmental expenditure,False,none
+TXN-00806,Public Works - Pune,DEPT-009,7.04,2025-12-22,12,22,subsidies,Vendor-009,Regular departmental expenditure,False,none
+TXN-00514,Urban Development,DEPT-006,4.12,2025-11-12,11,12,capital,Vendor-042,Regular departmental expenditure,False,none
+TXN-00053,Health & Family Welfare,DEPT-001,12.82,2025-09-06,9,6,salaries,Vendor-008,Regular departmental expenditure,False,none
+TXN-00510,Urban Development,DEPT-006,15.75,2025-11-06,11,6,subsidies,Vendor-010,Regular departmental expenditure,False,none
+TXN-01083,Primary Education - Pune,DEPT-012,3.51,2025-12-28,12,28,grants,Vendor-027,Regular departmental expenditure,False,none
+TXN-00262,Road Transport & Highways,DEPT-003,16.06,2025-04-21,4,21,subsidies,Vendor-016,Regular departmental expenditure,False,none
+TXN-00505,Urban Development,DEPT-006,14.93,2025-10-22,10,22,capital,Vendor-017,Regular departmental expenditure,False,none
+TXN-01068,Primary Education - Pune,DEPT-012,2.02,2025-11-22,11,22,revenue,Vendor-044,Regular departmental expenditure,False,none
+TXN-00552,Urban Development,DEPT-006,70.68,2025-06-11,6,11,revenue,Vendor-046,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00051,Health & Family Welfare,DEPT-001,10.29,2025-11-08,11,8,grants,Vendor-017,Regular departmental expenditure,False,none
+TXN-00733,Women & Child Development,DEPT-008,45.48,2026-03-28,3,28,grants,Vendor-024,Urgent year-end fund utilization,True,march_dumping
+TXN-00829,Public Works - Mumbai,DEPT-010,4.17,2025-08-26,8,26,infrastructure,Vendor-013,Regular departmental expenditure,False,none
+TXN-00246,Road Transport & Highways,DEPT-003,38.97,2025-05-05,5,5,subsidies,Vendor-044,Regular departmental expenditure,False,none
+TXN-00884,Public Works - Mumbai,DEPT-010,2.81,2025-04-17,4,17,salaries,Vendor-006,Regular departmental expenditure,False,none
+TXN-00581,Water Resources,DEPT-007,16.11,2025-07-06,7,6,grants,Vendor-002,Regular departmental expenditure,False,none
+TXN-00012,Health & Family Welfare,DEPT-001,10.86,2025-07-22,7,22,salaries,Vendor-018,Regular departmental expenditure,False,none
+TXN-00728,Women & Child Development,DEPT-008,60.77,2026-03-30,3,30,revenue,Vendor-017,Urgent year-end fund utilization,True,march_dumping
+TXN-00778,Public Works - Pune,DEPT-009,5.33,2025-08-15,8,15,subsidies,Vendor-018,Regular departmental expenditure,False,none
+TXN-00969,Public Works - Nagpur,DEPT-011,2.09,2025-12-14,12,14,revenue,Vendor-030,Regular departmental expenditure,False,none
+TXN-00997,Public Works - Nagpur,DEPT-011,8.86,2025-10-21,10,21,grants,Vendor-024,Regular departmental expenditure,False,none
+TXN-00451,Rural Development,DEPT-005,76.71,2026-03-27,3,27,subsidies,Vendor-049,Urgent year-end fund utilization,True,march_dumping
+TXN-00238,Road Transport & Highways,DEPT-003,36.22,2025-04-19,4,19,salaries,Vendor-036,Regular departmental expenditure,False,none
+TXN-00423,Rural Development,DEPT-005,9.65,2025-07-18,7,18,salaries,Vendor-006,Regular departmental expenditure,False,none
+TXN-00637,Water Resources,DEPT-007,71.93,2025-08-19,8,19,capital,Vendor-019,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00339,Agriculture & Farmers,DEPT-004,27.03,2025-07-02,7,2,infrastructure,Vendor-017,Regular departmental expenditure,False,none
+TXN-01051,Primary Education - Pune,DEPT-012,4.38,2025-05-06,5,6,grants,Vendor-033,Regular departmental expenditure,False,none
+TXN-00420,Rural Development,DEPT-005,15.05,2025-06-09,6,9,infrastructure,Vendor-025,Regular departmental expenditure,False,none
+TXN-00100,Education,DEPT-002,8.25,2025-08-10,8,10,revenue,Vendor-039,Regular departmental expenditure,False,none
+TXN-00322,Agriculture & Farmers,DEPT-004,17.57,2025-07-16,7,16,subsidies,Vendor-006,Regular departmental expenditure,False,none
+TXN-00711,Women & Child Development,DEPT-008,7.54,2025-06-15,6,15,grants,Vendor-040,Regular departmental expenditure,False,none
+TXN-00268,Road Transport & Highways,DEPT-003,49.69,2025-12-07,12,7,grants,Vendor-004,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00977,Public Works - Nagpur,DEPT-011,4.78,2025-07-07,7,7,infrastructure,Vendor-002,Regular departmental expenditure,False,none
+TXN-00837,Public Works - Mumbai,DEPT-010,8.43,2025-04-22,4,22,salaries,Vendor-038,Regular departmental expenditure,False,none
+TXN-00469,Urban Development,DEPT-006,4.95,2025-12-16,12,16,salaries,Vendor-009,Regular departmental expenditure,False,none
+TXN-00564,Water Resources,DEPT-007,7.91,2025-04-25,4,25,salaries,Vendor-045,Regular departmental expenditure,False,none
+TXN-00276,Road Transport & Highways,DEPT-003,9.55,2025-12-02,12,2,revenue,Vendor-012,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00084,Health & Family Welfare,DEPT-001,207.88,2025-07-16,7,16,revenue,Vendor-024,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00813,Public Works - Pune,DEPT-009,7.99,2025-07-25,7,25,capital,Vendor-045,Regular departmental expenditure,False,none
+TXN-00380,Rural Development,DEPT-005,14.69,2025-05-02,5,2,capital,Vendor-013,Regular departmental expenditure,False,none
+TXN-00916,Public Works - Mumbai,DEPT-010,9.95,2025-11-01,11,1,revenue,Vendor-012,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00254,Road Transport & Highways,DEPT-003,29.63,2025-05-20,5,20,grants,Vendor-018,Regular departmental expenditure,False,none
+TXN-00681,Women & Child Development,DEPT-008,5.0,2025-07-06,7,6,infrastructure,Vendor-047,Regular departmental expenditure,False,none
+TXN-00614,Water Resources,DEPT-007,9.76,2025-04-24,4,24,subsidies,Vendor-041,Regular departmental expenditure,False,none
+TXN-00719,Women & Child Development,DEPT-008,11.26,2025-12-05,12,5,salaries,Vendor-023,Regular departmental expenditure,False,none
+TXN-00511,Urban Development,DEPT-006,3.1,2025-08-20,8,20,revenue,Vendor-004,Regular departmental expenditure,False,none
+TXN-00999,Public Works - Nagpur,DEPT-011,6.6,2025-04-01,4,1,grants,Vendor-028,Regular departmental expenditure,False,none
+TXN-00234,Road Transport & Highways,DEPT-003,25.05,2025-08-27,8,27,capital,Vendor-031,Regular departmental expenditure,False,none
+TXN-00066,Health & Family Welfare,DEPT-001,25.27,2025-10-25,10,25,subsidies,Vendor-045,Regular departmental expenditure,False,none
+TXN-00304,Agriculture & Farmers,DEPT-004,21.85,2025-04-21,4,21,grants,Vendor-046,Regular departmental expenditure,False,none
+TXN-00412,Rural Development,DEPT-005,14.25,2025-07-18,7,18,infrastructure,Vendor-035,Regular departmental expenditure,False,none
+TXN-00149,Education,DEPT-002,22.37,2025-10-14,10,14,revenue,Vendor-045,Regular departmental expenditure,False,none
+TXN-00282,Agriculture & Farmers,DEPT-004,8.09,2025-05-08,5,8,grants,Vendor-013,Regular departmental expenditure,False,none
+TXN-00822,Public Works - Pune,DEPT-009,5.47,2025-10-03,10,3,salaries,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00819,Public Works - Pune,DEPT-009,50.0,2025-08-16,8,16,infrastructure,Vendor-045,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00382,Rural Development,DEPT-005,8.94,2025-10-24,10,24,capital,Vendor-042,Regular departmental expenditure,False,none
+TXN-00828,Public Works - Pune,DEPT-009,45.84,2025-09-03,9,3,salaries,Vendor-030,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00924,Public Works - Nagpur,DEPT-011,5.2,2025-07-22,7,22,salaries,Vendor-033,Regular departmental expenditure,False,none
+TXN-00269,Road Transport & Highways,DEPT-003,250.0,2025-09-21,9,21,infrastructure,Vendor-045,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00486,Urban Development,DEPT-006,4.52,2025-04-22,4,22,salaries,Vendor-006,Regular departmental expenditure,False,none
+TXN-00896,Public Works - Mumbai,DEPT-010,8.5,2025-10-14,10,14,grants,Vendor-026,Regular departmental expenditure,False,none
+TXN-00218,Road Transport & Highways,DEPT-003,17.76,2025-09-25,9,25,salaries,Vendor-003,Regular departmental expenditure,False,none
+TXN-00140,Education,DEPT-002,11.79,2025-06-15,6,15,capital,Vendor-023,Regular departmental expenditure,False,none
+TXN-00460,Rural Development,DEPT-005,150.0,2025-09-22,9,22,capital,Vendor-043,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00682,Women & Child Development,DEPT-008,4.0,2025-12-14,12,14,revenue,Vendor-026,Regular departmental expenditure,False,none
+TXN-00638,Water Resources,DEPT-007,62.29,2025-04-23,4,23,infrastructure,Vendor-023,Bulk procurement - emergency purchase,True,spending_spike
+TXN-01012,Public Works - Nagpur,DEPT-011,250.0,2025-07-07,7,7,salaries,Vendor-024,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00630,Water Resources,DEPT-007,6.46,2025-09-11,9,11,grants,Vendor-008,Regular departmental expenditure,False,none
+TXN-00645,Women & Child Development,DEPT-008,2.66,2025-12-28,12,28,grants,Vendor-001,Regular departmental expenditure,False,none
+TXN-00860,Public Works - Mumbai,DEPT-010,13.08,2025-04-20,4,20,subsidies,Vendor-016,Regular departmental expenditure,False,none
+TXN-00706,Women & Child Development,DEPT-008,6.82,2025-11-19,11,19,salaries,Vendor-035,Regular departmental expenditure,False,none
+TXN-00063,Health & Family Welfare,DEPT-001,20.59,2025-05-26,5,26,capital,Vendor-040,Regular departmental expenditure,False,none
+TXN-00679,Women & Child Development,DEPT-008,5.96,2025-06-11,6,11,salaries,Vendor-008,Regular departmental expenditure,False,none
+TXN-00301,Agriculture & Farmers,DEPT-004,4.96,2025-09-15,9,15,revenue,Vendor-035,Regular departmental expenditure,False,none
+TXN-00121,Education,DEPT-002,7.03,2025-06-06,6,6,revenue,Vendor-005,Regular departmental expenditure,False,none
+TXN-00817,Public Works - Pune,DEPT-009,99.8,2025-05-17,5,17,subsidies,Vendor-009,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00744,Public Works - Pune,DEPT-009,2.56,2025-10-04,10,4,capital,Vendor-013,Regular departmental expenditure,False,none
+TXN-00558,Water Resources,DEPT-007,9.47,2025-09-08,9,8,salaries,Vendor-038,Regular departmental expenditure,False,none
+TXN-01020,Primary Education - Pune,DEPT-012,3.55,2025-05-05,5,5,salaries,Vendor-027,Regular departmental expenditure,False,none
+TXN-00577,Water Resources,DEPT-007,9.0,2025-07-17,7,17,capital,Vendor-012,Regular departmental expenditure,False,none
+TXN-00655,Women & Child Development,DEPT-008,8.37,2025-07-02,7,2,capital,Vendor-009,Regular departmental expenditure,False,none
+TXN-00299,Agriculture & Farmers,DEPT-004,18.97,2025-07-22,7,22,grants,Vendor-027,Regular departmental expenditure,False,none
+TXN-00598,Water Resources,DEPT-007,12.27,2025-06-18,6,18,infrastructure,Vendor-015,Regular departmental expenditure,False,none
+TXN-00233,Road Transport & Highways,DEPT-003,42.0,2025-10-21,10,21,revenue,Vendor-022,Regular departmental expenditure,False,none
+TXN-00715,Women & Child Development,DEPT-008,6.9,2025-08-09,8,9,capital,Vendor-006,Regular departmental expenditure,False,none
+TXN-00336,Agriculture & Farmers,DEPT-004,3.99,2025-11-04,11,4,infrastructure,Vendor-023,Regular departmental expenditure,False,none
+TXN-00148,Education,DEPT-002,16.69,2025-11-17,11,17,grants,Vendor-015,Regular departmental expenditure,False,none
+TXN-00466,Urban Development,DEPT-006,14.97,2025-11-01,11,1,subsidies,Vendor-005,Regular departmental expenditure,False,none
+TXN-00943,Public Works - Nagpur,DEPT-011,3.5,2025-11-03,11,3,subsidies,Vendor-006,Regular departmental expenditure,False,none
+TXN-00348,Agriculture & Farmers,DEPT-004,15.5,2025-05-14,5,14,revenue,Vendor-009,Regular departmental expenditure,False,none
+TXN-01091,Primary Education - Pune,DEPT-012,1.86,2025-10-22,10,22,infrastructure,Vendor-019,Regular departmental expenditure,False,none
+TXN-00475,Urban Development,DEPT-006,7.39,2025-07-17,7,17,subsidies,Vendor-029,Regular departmental expenditure,False,none
+TXN-00842,Public Works - Mumbai,DEPT-010,5.56,2025-11-18,11,18,capital,Vendor-032,Regular departmental expenditure,False,none
+TXN-00967,Public Works - Nagpur,DEPT-011,6.24,2025-08-15,8,15,subsidies,Vendor-023,Regular departmental expenditure,False,none
+TXN-00664,Women & Child Development,DEPT-008,4.25,2025-06-25,6,25,grants,Vendor-047,Regular departmental expenditure,False,none
+TXN-00266,Road Transport & Highways,DEPT-003,246.81,2025-12-15,12,15,capital,Vendor-049,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00025,Health & Family Welfare,DEPT-001,13.53,2025-10-13,10,13,grants,Vendor-029,Regular departmental expenditure,False,none
+TXN-01057,Primary Education - Pune,DEPT-012,3.85,2025-07-05,7,5,capital,Vendor-039,Regular departmental expenditure,False,none
+TXN-00622,Water Resources,DEPT-007,9.03,2025-08-13,8,13,infrastructure,Vendor-031,Regular departmental expenditure,False,none
+TXN-00613,Water Resources,DEPT-007,7.61,2025-09-11,9,11,subsidies,Vendor-005,Regular departmental expenditure,False,none
+TXN-00809,Public Works - Pune,DEPT-009,3.1,2025-05-09,5,9,salaries,Vendor-015,Regular departmental expenditure,False,none
+TXN-00962,Public Works - Nagpur,DEPT-011,5.53,2025-04-04,4,4,subsidies,Vendor-017,Regular departmental expenditure,False,none
+TXN-00408,Rural Development,DEPT-005,14.84,2025-05-08,5,8,capital,Vendor-016,Regular departmental expenditure,False,none
+TXN-00400,Rural Development,DEPT-005,7.4,2025-09-12,9,12,salaries,Vendor-003,Regular departmental expenditure,False,none
+TXN-00473,Urban Development,DEPT-006,21.34,2025-11-22,11,22,grants,Vendor-026,Regular departmental expenditure,False,none
+TXN-00302,Agriculture & Farmers,DEPT-004,9.42,2025-04-25,4,25,subsidies,Vendor-018,Regular departmental expenditure,False,none
+TXN-00046,Health & Family Welfare,DEPT-001,38.45,2025-08-05,8,5,grants,Vendor-009,Regular departmental expenditure,False,none
+TXN-00263,Road Transport & Highways,DEPT-003,14.01,2025-10-20,10,20,salaries,Vendor-001,Regular departmental expenditure,False,none
+TXN-00118,Education,DEPT-002,24.44,2025-07-26,7,26,revenue,Vendor-050,Regular departmental expenditure,False,none
+TXN-00373,Rural Development,DEPT-005,4.42,2025-07-15,7,15,grants,Vendor-048,Regular departmental expenditure,False,none
+TXN-00356,Agriculture & Farmers,DEPT-004,16.09,2025-09-05,9,5,infrastructure,Vendor-047,Regular departmental expenditure,False,none
+TXN-01029,Primary Education - Pune,DEPT-012,2.7,2025-07-13,7,13,subsidies,Vendor-009,Regular departmental expenditure,False,none
+TXN-01095,Primary Education - Pune,DEPT-012,30.26,2026-03-30,3,30,infrastructure,Vendor-013,Urgent year-end fund utilization,True,march_dumping
+TXN-00355,Agriculture & Farmers,DEPT-004,8.67,2025-08-01,8,1,salaries,Vendor-032,Regular departmental expenditure,False,none
+TXN-00676,Women & Child Development,DEPT-008,5.03,2025-11-09,11,9,salaries,Vendor-032,Regular departmental expenditure,False,none
+TXN-00055,Health & Family Welfare,DEPT-001,17.52,2025-08-28,8,28,salaries,Vendor-048,Regular departmental expenditure,False,none
+TXN-00049,Health & Family Welfare,DEPT-001,23.16,2025-05-14,5,14,revenue,Vendor-002,Regular departmental expenditure,False,none
+TXN-00955,Public Works - Nagpur,DEPT-011,5.6,2025-12-16,12,16,grants,Vendor-030,Regular departmental expenditure,False,none
+TXN-00650,Women & Child Development,DEPT-008,7.93,2025-10-21,10,21,salaries,Vendor-043,Regular departmental expenditure,False,none
+TXN-00319,Agriculture & Farmers,DEPT-004,25.16,2025-09-09,9,9,infrastructure,Vendor-009,Regular departmental expenditure,False,none
+TXN-00919,Public Works - Mumbai,DEPT-010,70.0,2026-03-28,3,28,revenue,Vendor-040,Urgent year-end fund utilization,True,march_dumping
+TXN-00177,Education,DEPT-002,150.0,2025-08-05,8,5,grants,Vendor-005,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00076,Health & Family Welfare,DEPT-001,45.9,2025-09-16,9,16,capital,Vendor-040,Regular departmental expenditure,False,none
+TXN-00417,Rural Development,DEPT-005,13.08,2025-05-14,5,14,subsidies,Vendor-018,Regular departmental expenditure,False,none
+TXN-00533,Urban Development,DEPT-006,6.46,2025-12-23,12,23,infrastructure,Vendor-017,Regular departmental expenditure,False,none
+TXN-00275,Road Transport & Highways,DEPT-003,15.12,2025-12-24,12,24,grants,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00877,Public Works - Mumbai,DEPT-010,5.73,2025-05-19,5,19,subsidies,Vendor-040,Regular departmental expenditure,False,none
+TXN-01075,Primary Education - Pune,DEPT-012,3.37,2025-07-15,7,15,subsidies,Vendor-021,Regular departmental expenditure,False,none
+TXN-00450,Rural Development,DEPT-005,50.0,2025-11-08,11,8,capital,Vendor-025,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00131,Education,DEPT-002,28.38,2025-05-12,5,12,capital,Vendor-044,Regular departmental expenditure,False,none
+TXN-00181,Education,DEPT-002,209.94,2025-10-02,10,2,salaries,Vendor-014,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00480,Urban Development,DEPT-006,8.98,2025-09-21,9,21,subsidies,Vendor-019,Regular departmental expenditure,False,none
+TXN-00517,Urban Development,DEPT-006,9.52,2025-11-28,11,28,subsidies,Vendor-041,Regular departmental expenditure,False,none
+TXN-00520,Urban Development,DEPT-006,17.08,2025-09-12,9,12,revenue,Vendor-007,Regular departmental expenditure,False,none
+TXN-00092,Health & Family Welfare,DEPT-001,100.0,2025-04-07,4,7,infrastructure,Vendor-032,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00174,Education,DEPT-002,20.72,2025-05-14,5,14,salaries,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00959,Public Works - Nagpur,DEPT-011,5.68,2025-09-10,9,10,revenue,Vendor-015,Regular departmental expenditure,False,none
+TXN-00794,Public Works - Pune,DEPT-009,7.37,2025-09-22,9,22,capital,Vendor-030,Regular departmental expenditure,False,none
+TXN-00981,Public Works - Nagpur,DEPT-011,2.43,2025-10-16,10,16,infrastructure,Vendor-010,Regular departmental expenditure,False,none
+TXN-00026,Health & Family Welfare,DEPT-001,24.72,2025-07-13,7,13,grants,Vendor-022,Regular departmental expenditure,False,none
+TXN-00436,Rural Development,DEPT-005,17.13,2025-07-17,7,17,grants,Vendor-049,Regular departmental expenditure,False,none
+TXN-00346,Agriculture & Farmers,DEPT-004,6.51,2025-08-12,8,12,salaries,Vendor-049,Regular departmental expenditure,False,none
+TXN-00019,Health & Family Welfare,DEPT-001,28.36,2025-12-28,12,28,capital,Vendor-008,Regular departmental expenditure,False,none
+TXN-00840,Public Works - Mumbai,DEPT-010,12.63,2025-04-03,4,3,subsidies,Vendor-011,Regular departmental expenditure,False,none
+TXN-00890,Public Works - Mumbai,DEPT-010,6.8,2025-06-10,6,10,grants,Vendor-012,Regular departmental expenditure,False,none
+TXN-00476,Urban Development,DEPT-006,7.33,2025-06-24,6,24,salaries,Vendor-016,Regular departmental expenditure,False,none
+TXN-00556,Water Resources,DEPT-007,13.78,2025-10-15,10,15,subsidies,Vendor-012,Regular departmental expenditure,False,none
+TXN-00952,Public Works - Nagpur,DEPT-011,4.18,2025-07-08,7,8,grants,Vendor-016,Regular departmental expenditure,False,none
+TXN-00958,Public Works - Nagpur,DEPT-011,9.82,2025-10-05,10,5,infrastructure,Vendor-006,Regular departmental expenditure,False,none
+TXN-00205,Road Transport & Highways,DEPT-003,29.42,2025-09-26,9,26,subsidies,Vendor-050,Regular departmental expenditure,False,none
+TXN-01038,Primary Education - Pune,DEPT-012,6.07,2025-04-03,4,3,grants,Vendor-047,Regular departmental expenditure,False,none
+TXN-00107,Education,DEPT-002,4.66,2025-10-27,10,27,revenue,Vendor-026,Regular departmental expenditure,False,none
+TXN-01033,Primary Education - Pune,DEPT-012,3.45,2025-06-26,6,26,grants,Vendor-013,Regular departmental expenditure,False,none
+TXN-00404,Rural Development,DEPT-005,12.08,2025-12-23,12,23,subsidies,Vendor-017,Regular departmental expenditure,False,none
+TXN-00338,Agriculture & Farmers,DEPT-004,25.74,2025-09-13,9,13,capital,Vendor-047,Regular departmental expenditure,False,none
+TXN-00752,Public Works - Pune,DEPT-009,4.23,2025-05-28,5,28,revenue,Vendor-038,Regular departmental expenditure,False,none
+TXN-00761,Public Works - Pune,DEPT-009,6.13,2025-04-09,4,9,subsidies,Vendor-019,Regular departmental expenditure,False,none
+TXN-00433,Rural Development,DEPT-005,19.83,2025-08-10,8,10,revenue,Vendor-039,Regular departmental expenditure,False,none
+TXN-00812,Public Works - Pune,DEPT-009,4.77,2025-11-22,11,22,infrastructure,Vendor-012,Regular departmental expenditure,False,none
+TXN-01030,Primary Education - Pune,DEPT-012,4.75,2025-10-04,10,4,grants,Vendor-019,Regular departmental expenditure,False,none
+TXN-00749,Public Works - Pune,DEPT-009,6.13,2025-05-26,5,26,subsidies,Vendor-041,Regular departmental expenditure,False,none
+TXN-01031,Primary Education - Pune,DEPT-012,5.81,2025-12-22,12,22,subsidies,Vendor-047,Regular departmental expenditure,False,none
+TXN-00496,Urban Development,DEPT-006,8.27,2025-12-21,12,21,subsidies,Vendor-050,Regular departmental expenditure,False,none
+TXN-01061,Primary Education - Pune,DEPT-012,2.45,2025-11-24,11,24,infrastructure,Vendor-019,Regular departmental expenditure,False,none
+TXN-00936,Public Works - Nagpur,DEPT-011,3.25,2025-04-23,4,23,infrastructure,Vendor-040,Regular departmental expenditure,False,none
+TXN-00341,Agriculture & Farmers,DEPT-004,29.49,2025-07-13,7,13,grants,Vendor-010,Regular departmental expenditure,False,none
+TXN-00168,Education,DEPT-002,3.81,2025-09-05,9,5,infrastructure,Vendor-011,Regular departmental expenditure,False,none
+TXN-00803,Public Works - Pune,DEPT-009,4.74,2025-04-03,4,3,revenue,Vendor-049,Regular departmental expenditure,False,none
+TXN-00861,Public Works - Mumbai,DEPT-010,11.38,2025-11-16,11,16,grants,Vendor-023,Regular departmental expenditure,False,none
+TXN-00960,Public Works - Nagpur,DEPT-011,4.15,2025-11-26,11,26,capital,Vendor-037,Regular departmental expenditure,False,none
+TXN-00642,Water Resources,DEPT-007,39.37,2026-03-26,3,26,capital,Vendor-011,Urgent year-end fund utilization,True,march_dumping
+TXN-00337,Agriculture & Farmers,DEPT-004,6.25,2025-05-23,5,23,salaries,Vendor-005,Regular departmental expenditure,False,none
+TXN-00911,Public Works - Mumbai,DEPT-010,57.56,2026-03-27,3,27,subsidies,Vendor-039,Urgent year-end fund utilization,True,march_dumping
+TXN-00832,Public Works - Mumbai,DEPT-010,9.81,2025-07-26,7,26,salaries,Vendor-020,Regular departmental expenditure,False,none
+TXN-00561,Water Resources,DEPT-007,9.01,2025-12-01,12,1,infrastructure,Vendor-006,Regular departmental expenditure,False,none
+TXN-00725,Women & Child Development,DEPT-008,50.0,2025-08-05,8,5,capital,Vendor-038,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00120,Education,DEPT-002,7.68,2025-12-01,12,1,salaries,Vendor-020,Regular departmental expenditure,False,none
+TXN-00366,Agriculture & Farmers,DEPT-004,9.93,2025-09-07,9,7,salaries,Vendor-025,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00424,Rural Development,DEPT-005,12.75,2025-05-28,5,28,grants,Vendor-031,Regular departmental expenditure,False,none
+TXN-01090,Primary Education - Pune,DEPT-012,2.08,2025-09-13,9,13,subsidies,Vendor-024,Regular departmental expenditure,False,none
+TXN-01085,Primary Education - Pune,DEPT-012,2.41,2025-05-16,5,16,grants,Vendor-026,Regular departmental expenditure,False,none
+TXN-00041,Health & Family Welfare,DEPT-001,20.09,2025-06-20,6,20,subsidies,Vendor-041,Regular departmental expenditure,False,none
+TXN-00926,Public Works - Nagpur,DEPT-011,3.47,2025-08-24,8,24,capital,Vendor-005,Regular departmental expenditure,False,none
+TXN-00117,Education,DEPT-002,14.19,2025-08-08,8,8,revenue,Vendor-028,Regular departmental expenditure,False,none
+TXN-00427,Rural Development,DEPT-005,8.32,2025-06-07,6,7,subsidies,Vendor-033,Regular departmental expenditure,False,none
+TXN-00176,Education,DEPT-002,250.0,2025-11-11,11,11,salaries,Vendor-041,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00101,Education,DEPT-002,17.64,2025-05-15,5,15,subsidies,Vendor-009,Regular departmental expenditure,False,none
+TXN-00537,Urban Development,DEPT-006,10.37,2025-04-08,4,8,grants,Vendor-004,Regular departmental expenditure,False,none
+TXN-01027,Primary Education - Pune,DEPT-012,3.76,2025-07-06,7,6,salaries,Vendor-048,Regular departmental expenditure,False,none
+TXN-00862,Public Works - Mumbai,DEPT-010,17.06,2025-11-09,11,9,grants,Vendor-020,Regular departmental expenditure,False,none
+TXN-00512,Urban Development,DEPT-006,8.84,2025-07-22,7,22,salaries,Vendor-015,Regular departmental expenditure,False,none
+TXN-00444,Rural Development,DEPT-005,3.39,2025-11-13,11,13,grants,Vendor-005,Regular departmental expenditure,False,none
+TXN-00944,Public Works - Nagpur,DEPT-011,7.83,2025-08-22,8,22,revenue,Vendor-049,Regular departmental expenditure,False,none
+TXN-00883,Public Works - Mumbai,DEPT-010,5.77,2025-12-08,12,8,salaries,Vendor-045,Regular departmental expenditure,False,none
+TXN-00730,Women & Child Development,DEPT-008,10.5,2025-04-12,4,12,salaries,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-01028,Primary Education - Pune,DEPT-012,1.47,2025-06-01,6,1,grants,Vendor-035,Regular departmental expenditure,False,none
+TXN-00656,Women & Child Development,DEPT-008,3.86,2025-09-11,9,11,infrastructure,Vendor-022,Regular departmental expenditure,False,none
+TXN-00292,Agriculture & Farmers,DEPT-004,27.51,2025-08-22,8,22,subsidies,Vendor-020,Regular departmental expenditure,False,none
+TXN-00805,Public Works - Pune,DEPT-009,10.03,2025-06-15,6,15,salaries,Vendor-043,Regular departmental expenditure,False,none
+TXN-00913,Public Works - Mumbai,DEPT-010,10.65,2025-07-22,7,22,revenue,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00848,Public Works - Mumbai,DEPT-010,2.62,2025-05-04,5,4,infrastructure,Vendor-049,Regular departmental expenditure,False,none
+TXN-00187,Road Transport & Highways,DEPT-003,14.71,2025-09-13,9,13,subsidies,Vendor-045,Regular departmental expenditure,False,none
+TXN-00705,Women & Child Development,DEPT-008,8.35,2025-12-04,12,4,salaries,Vendor-011,Regular departmental expenditure,False,none
+TXN-00743,Public Works - Pune,DEPT-009,4.59,2025-06-22,6,22,salaries,Vendor-002,Regular departmental expenditure,False,none
+TXN-00527,Urban Development,DEPT-006,7.0,2025-08-03,8,3,salaries,Vendor-028,Regular departmental expenditure,False,none
+TXN-01000,Public Works - Nagpur,DEPT-011,12.0,2025-04-15,4,15,subsidies,Vendor-042,Regular departmental expenditure,False,none
+TXN-00885,Public Works - Mumbai,DEPT-010,18.0,2025-09-04,9,4,subsidies,Vendor-039,Regular departmental expenditure,False,none
+TXN-00961,Public Works - Nagpur,DEPT-011,4.65,2025-11-27,11,27,grants,Vendor-042,Regular departmental expenditure,False,none
+TXN-00903,Public Works - Mumbai,DEPT-010,2.65,2025-09-15,9,15,capital,Vendor-044,Regular departmental expenditure,False,none
+TXN-00074,Health & Family Welfare,DEPT-001,21.95,2025-10-26,10,26,salaries,Vendor-026,Regular departmental expenditure,False,none
+TXN-00607,Water Resources,DEPT-007,5.38,2025-11-03,11,3,salaries,Vendor-047,Regular departmental expenditure,False,none
+TXN-00807,Public Works - Pune,DEPT-009,11.18,2025-12-22,12,22,capital,Vendor-044,Regular departmental expenditure,False,none
+TXN-00678,Women & Child Development,DEPT-008,14.72,2025-10-10,10,10,capital,Vendor-026,Regular departmental expenditure,False,none
+TXN-00226,Road Transport & Highways,DEPT-003,42.0,2025-06-20,6,20,revenue,Vendor-022,Regular departmental expenditure,False,none
+TXN-00090,Health & Family Welfare,DEPT-001,50.0,2025-08-25,8,25,revenue,Vendor-036,Capital expenditure - project payment,True,round_amount_fraud
+TXN-01104,Primary Education - Pune,DEPT-012,4.43,2025-07-05,7,5,infrastructure,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00103,Education,DEPT-002,11.65,2025-05-05,5,5,salaries,Vendor-037,Regular departmental expenditure,False,none
+TXN-00947,Public Works - Nagpur,DEPT-011,6.55,2025-10-12,10,12,grants,Vendor-043,Regular departmental expenditure,False,none
+TXN-00180,Education,DEPT-002,9.84,2025-10-15,10,15,capital,Vendor-033,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00863,Public Works - Mumbai,DEPT-010,10.58,2025-10-25,10,25,salaries,Vendor-030,Regular departmental expenditure,False,none
+TXN-00573,Water Resources,DEPT-007,4.54,2025-10-28,10,28,revenue,Vendor-005,Regular departmental expenditure,False,none
+TXN-00826,Public Works - Pune,DEPT-009,99.72,2025-05-18,5,18,grants,Vendor-012,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00043,Health & Family Welfare,DEPT-001,16.47,2025-12-18,12,18,infrastructure,Vendor-042,Regular departmental expenditure,False,none
+TXN-01076,Primary Education - Pune,DEPT-012,5.33,2025-06-13,6,13,salaries,Vendor-003,Regular departmental expenditure,False,none
+TXN-00032,Health & Family Welfare,DEPT-001,48.0,2025-11-15,11,15,grants,Vendor-032,Regular departmental expenditure,False,none
+TXN-00314,Agriculture & Farmers,DEPT-004,7.92,2025-04-10,4,10,revenue,Vendor-033,Regular departmental expenditure,False,none
+TXN-00515,Urban Development,DEPT-006,5.53,2025-07-23,7,23,capital,Vendor-050,Regular departmental expenditure,False,none
+TXN-00583,Water Resources,DEPT-007,13.22,2025-06-11,6,11,capital,Vendor-045,Regular departmental expenditure,False,none
+TXN-00169,Education,DEPT-002,13.59,2025-06-01,6,1,infrastructure,Vendor-050,Regular departmental expenditure,False,none
+TXN-00825,Public Works - Pune,DEPT-009,9.87,2025-05-12,5,12,subsidies,Vendor-010,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00677,Women & Child Development,DEPT-008,14.31,2025-09-09,9,9,capital,Vendor-026,Regular departmental expenditure,False,none
+TXN-00579,Water Resources,DEPT-007,24.0,2025-05-19,5,19,grants,Vendor-013,Regular departmental expenditure,False,none
+TXN-00720,Women & Child Development,DEPT-008,14.64,2025-05-05,5,5,capital,Vendor-048,Regular departmental expenditure,False,none
+TXN-00978,Public Works - Nagpur,DEPT-011,4.91,2025-11-07,11,7,infrastructure,Vendor-040,Regular departmental expenditure,False,none
+TXN-01052,Primary Education - Pune,DEPT-012,1.7,2025-04-12,4,12,salaries,Vendor-034,Regular departmental expenditure,False,none
+TXN-00821,Public Works - Pune,DEPT-009,250.0,2025-10-28,10,28,subsidies,Vendor-009,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00734,Women & Child Development,DEPT-008,10.29,2025-12-01,12,1,capital,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00605,Water Resources,DEPT-007,6.74,2025-04-21,4,21,infrastructure,Vendor-044,Regular departmental expenditure,False,none
+TXN-00786,Public Works - Pune,DEPT-009,2.62,2025-12-13,12,13,infrastructure,Vendor-032,Regular departmental expenditure,False,none
+TXN-00779,Public Works - Pune,DEPT-009,4.56,2025-12-13,12,13,subsidies,Vendor-022,Regular departmental expenditure,False,none
+TXN-00185,Road Transport & Highways,DEPT-003,13.91,2025-08-27,8,27,capital,Vendor-004,Regular departmental expenditure,False,none
+TXN-00652,Women & Child Development,DEPT-008,7.76,2025-12-21,12,21,subsidies,Vendor-019,Regular departmental expenditure,False,none
+TXN-00567,Water Resources,DEPT-007,11.61,2025-04-26,4,26,salaries,Vendor-049,Regular departmental expenditure,False,none
+TXN-00949,Public Works - Nagpur,DEPT-011,7.23,2025-11-24,11,24,salaries,Vendor-017,Regular departmental expenditure,False,none
+TXN-00615,Water Resources,DEPT-007,9.4,2025-07-06,7,6,revenue,Vendor-036,Regular departmental expenditure,False,none
+TXN-00844,Public Works - Mumbai,DEPT-010,6.14,2025-06-25,6,25,subsidies,Vendor-029,Regular departmental expenditure,False,none
+TXN-00044,Health & Family Welfare,DEPT-001,12.85,2025-06-07,6,7,subsidies,Vendor-016,Regular departmental expenditure,False,none
+TXN-00640,Water Resources,DEPT-007,79.98,2026-03-28,3,28,infrastructure,Vendor-024,Urgent year-end fund utilization,True,march_dumping
+TXN-00461,Urban Development,DEPT-006,8.59,2025-07-27,7,27,revenue,Vendor-031,Regular departmental expenditure,False,none
+TXN-00410,Rural Development,DEPT-005,10.13,2025-05-09,5,9,salaries,Vendor-002,Regular departmental expenditure,False,none
+TXN-00641,Water Resources,DEPT-007,250.0,2025-10-08,10,8,subsidies,Vendor-018,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00279,Agriculture & Farmers,DEPT-004,11.11,2025-05-06,5,6,salaries,Vendor-048,Regular departmental expenditure,False,none
+TXN-00755,Public Works - Pune,DEPT-009,6.62,2025-07-03,7,3,revenue,Vendor-030,Regular departmental expenditure,False,none
+TXN-01071,Primary Education - Pune,DEPT-012,2.1,2025-08-23,8,23,salaries,Vendor-042,Regular departmental expenditure,False,none
+TXN-00211,Road Transport & Highways,DEPT-003,20.36,2025-04-14,4,14,grants,Vendor-047,Regular departmental expenditure,False,none
+TXN-00695,Women & Child Development,DEPT-008,4.01,2025-11-02,11,2,grants,Vendor-022,Regular departmental expenditure,False,none
+TXN-01101,Primary Education - Pune,DEPT-012,100.0,2025-11-19,11,19,grants,Vendor-047,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00501,Urban Development,DEPT-006,10.42,2025-06-19,6,19,capital,Vendor-021,Regular departmental expenditure,False,none
+TXN-00438,Rural Development,DEPT-005,24.0,2025-07-02,7,2,subsidies,Vendor-048,Regular departmental expenditure,False,none
+TXN-00129,Education,DEPT-002,10.8,2025-07-01,7,1,capital,Vendor-040,Regular departmental expenditure,False,none
+TXN-00801,Public Works - Pune,DEPT-009,3.61,2025-04-21,4,21,salaries,Vendor-029,Regular departmental expenditure,False,none
+TXN-00150,Education,DEPT-002,15.53,2025-11-19,11,19,grants,Vendor-047,Regular departmental expenditure,False,none
+TXN-00795,Public Works - Pune,DEPT-009,5.21,2025-06-04,6,4,revenue,Vendor-009,Regular departmental expenditure,False,none
+TXN-00081,Health & Family Welfare,DEPT-001,100.0,2025-08-07,8,7,capital,Vendor-036,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00750,Public Works - Pune,DEPT-009,7.25,2025-04-27,4,27,capital,Vendor-012,Regular departmental expenditure,False,none
+TXN-01019,Primary Education - Pune,DEPT-012,4.43,2025-04-09,4,9,infrastructure,Vendor-047,Regular departmental expenditure,False,none
+TXN-00010,Health & Family Welfare,DEPT-001,19.67,2025-10-12,10,12,salaries,Vendor-008,Regular departmental expenditure,False,none
+TXN-00002,Health & Family Welfare,DEPT-001,18.66,2025-10-11,10,11,grants,Vendor-024,Regular departmental expenditure,False,none
+TXN-00608,Water Resources,DEPT-007,10.87,2025-05-11,5,11,subsidies,Vendor-017,Regular departmental expenditure,False,none
+TXN-00639,Water Resources,DEPT-007,71.01,2026-03-30,3,30,revenue,Vendor-020,Urgent year-end fund utilization,True,march_dumping
+TXN-00016,Health & Family Welfare,DEPT-001,34.17,2025-12-15,12,15,salaries,Vendor-001,Regular departmental expenditure,False,none
+TXN-00590,Water Resources,DEPT-007,12.57,2025-12-22,12,22,subsidies,Vendor-033,Regular departmental expenditure,False,none
+TXN-00206,Road Transport & Highways,DEPT-003,12.34,2025-08-17,8,17,capital,Vendor-020,Regular departmental expenditure,False,none
+TXN-00452,Rural Development,DEPT-005,50.0,2025-12-25,12,25,revenue,Vendor-050,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00162,Education,DEPT-002,4.8,2025-06-08,6,8,salaries,Vendor-036,Regular departmental expenditure,False,none
+TXN-00108,Education,DEPT-002,12.58,2025-06-07,6,7,infrastructure,Vendor-003,Regular departmental expenditure,False,none
+TXN-01062,Primary Education - Pune,DEPT-012,1.78,2025-08-18,8,18,infrastructure,Vendor-037,Regular departmental expenditure,False,none
+TXN-00391,Rural Development,DEPT-005,7.61,2025-06-28,6,28,grants,Vendor-010,Regular departmental expenditure,False,none
+TXN-00535,Urban Development,DEPT-006,9.17,2025-07-16,7,16,revenue,Vendor-002,Regular departmental expenditure,False,none
+TXN-00667,Women & Child Development,DEPT-008,4.16,2025-04-08,4,8,subsidies,Vendor-012,Regular departmental expenditure,False,none
+TXN-00724,Women & Child Development,DEPT-008,5.01,2025-09-25,9,25,capital,Vendor-004,Regular departmental expenditure,False,none
+TXN-00586,Water Resources,DEPT-007,4.76,2025-08-22,8,22,grants,Vendor-018,Regular departmental expenditure,False,none
+TXN-00767,Public Works - Pune,DEPT-009,14.39,2025-12-09,12,9,revenue,Vendor-050,Regular departmental expenditure,False,none
+TXN-00769,Public Works - Pune,DEPT-009,5.78,2025-08-11,8,11,revenue,Vendor-040,Regular departmental expenditure,False,none
+TXN-00934,Public Works - Nagpur,DEPT-011,6.35,2025-09-28,9,28,revenue,Vendor-030,Regular departmental expenditure,False,none
+TXN-00054,Health & Family Welfare,DEPT-001,13.3,2025-05-21,5,21,infrastructure,Vendor-033,Regular departmental expenditure,False,none
+TXN-00061,Health & Family Welfare,DEPT-001,28.53,2025-06-08,6,8,infrastructure,Vendor-024,Regular departmental expenditure,False,none
+TXN-00980,Public Works - Nagpur,DEPT-011,3.29,2025-11-05,11,5,revenue,Vendor-016,Regular departmental expenditure,False,none
+TXN-00839,Public Works - Mumbai,DEPT-010,10.14,2025-06-13,6,13,grants,Vendor-035,Regular departmental expenditure,False,none
+TXN-00219,Road Transport & Highways,DEPT-003,18.8,2025-11-02,11,2,grants,Vendor-032,Regular departmental expenditure,False,none
+TXN-00975,Public Works - Nagpur,DEPT-011,4.62,2025-06-21,6,21,grants,Vendor-026,Regular departmental expenditure,False,none
+TXN-00321,Agriculture & Farmers,DEPT-004,15.22,2025-07-15,7,15,grants,Vendor-007,Regular departmental expenditure,False,none
+TXN-00816,Public Works - Pune,DEPT-009,5.73,2025-07-11,7,11,revenue,Vendor-031,Regular departmental expenditure,False,none
+TXN-00114,Education,DEPT-002,18.22,2025-08-04,8,4,grants,Vendor-019,Regular departmental expenditure,False,none
+TXN-00783,Public Works - Pune,DEPT-009,9.21,2025-07-19,7,19,grants,Vendor-004,Regular departmental expenditure,False,none
+TXN-00569,Water Resources,DEPT-007,11.12,2025-11-21,11,21,grants,Vendor-039,Regular departmental expenditure,False,none
+TXN-01077,Primary Education - Pune,DEPT-012,4.33,2025-08-25,8,25,infrastructure,Vendor-034,Regular departmental expenditure,False,none
+TXN-00764,Public Works - Pune,DEPT-009,7.4,2025-05-27,5,27,infrastructure,Vendor-050,Regular departmental expenditure,False,none
+TXN-00729,Women & Child Development,DEPT-008,9.89,2025-09-06,9,6,subsidies,Vendor-020,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00110,Education,DEPT-002,7.11,2025-10-01,10,1,grants,Vendor-013,Regular departmental expenditure,False,none
+TXN-00207,Road Transport & Highways,DEPT-003,42.0,2025-09-28,9,28,salaries,Vendor-040,Regular departmental expenditure,False,none
+TXN-00471,Urban Development,DEPT-006,6.08,2025-05-21,5,21,capital,Vendor-020,Regular departmental expenditure,False,none
+TXN-00398,Rural Development,DEPT-005,6.02,2025-04-28,4,28,revenue,Vendor-005,Regular departmental expenditure,False,none
+TXN-00294,Agriculture & Farmers,DEPT-004,13.77,2025-09-01,9,1,infrastructure,Vendor-026,Regular departmental expenditure,False,none
+TXN-00789,Public Works - Pune,DEPT-009,7.0,2025-08-10,8,10,capital,Vendor-012,Regular departmental expenditure,False,none
+TXN-00122,Education,DEPT-002,21.07,2025-12-02,12,2,revenue,Vendor-030,Regular departmental expenditure,False,none
+TXN-00402,Rural Development,DEPT-005,5.14,2025-09-12,9,12,revenue,Vendor-036,Regular departmental expenditure,False,none
+TXN-00912,Public Works - Mumbai,DEPT-010,9.67,2025-11-06,11,6,revenue,Vendor-028,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00158,Education,DEPT-002,30.07,2025-09-20,9,20,revenue,Vendor-034,Regular departmental expenditure,False,none
+TXN-00543,Urban Development,DEPT-006,99.51,2025-07-17,7,17,infrastructure,Vendor-025,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00610,Water Resources,DEPT-007,16.99,2025-08-07,8,7,salaries,Vendor-008,Regular departmental expenditure,False,none
+TXN-00957,Public Works - Nagpur,DEPT-011,3.92,2025-05-11,5,11,infrastructure,Vendor-045,Regular departmental expenditure,False,none
+TXN-00425,Rural Development,DEPT-005,7.09,2025-05-24,5,24,capital,Vendor-023,Regular departmental expenditure,False,none
+TXN-00717,Women & Child Development,DEPT-008,5.2,2025-07-03,7,3,grants,Vendor-022,Regular departmental expenditure,False,none
+TXN-00413,Rural Development,DEPT-005,12.0,2025-08-20,8,20,revenue,Vendor-012,Regular departmental expenditure,False,none
+TXN-00941,Public Works - Nagpur,DEPT-011,4.01,2025-09-03,9,3,infrastructure,Vendor-014,Regular departmental expenditure,False,none
+TXN-00212,Road Transport & Highways,DEPT-003,31.36,2025-05-02,5,2,infrastructure,Vendor-028,Regular departmental expenditure,False,none
+TXN-00459,Rural Development,DEPT-005,104.4,2025-08-13,8,13,infrastructure,Vendor-021,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00534,Urban Development,DEPT-006,3.26,2025-08-12,8,12,grants,Vendor-030,Regular departmental expenditure,False,none
+TXN-00286,Agriculture & Farmers,DEPT-004,22.43,2025-12-19,12,19,revenue,Vendor-010,Regular departmental expenditure,False,none
+TXN-00574,Water Resources,DEPT-007,15.64,2025-11-25,11,25,grants,Vendor-046,Regular departmental expenditure,False,none
+TXN-00865,Public Works - Mumbai,DEPT-010,8.9,2025-06-14,6,14,grants,Vendor-034,Regular departmental expenditure,False,none
+TXN-00083,Health & Family Welfare,DEPT-001,96.53,2026-03-26,3,26,revenue,Vendor-019,Urgent year-end fund utilization,True,march_dumping
+TXN-00738,Public Works - Pune,DEPT-009,9.97,2025-11-07,11,7,infrastructure,Vendor-003,Regular departmental expenditure,False,none
+TXN-00986,Public Works - Nagpur,DEPT-011,3.53,2025-05-05,5,5,infrastructure,Vendor-036,Regular departmental expenditure,False,none
+TXN-00536,Urban Development,DEPT-006,9.63,2025-06-08,6,8,subsidies,Vendor-047,Regular departmental expenditure,False,none
+TXN-00369,Rural Development,DEPT-005,8.59,2025-06-08,6,8,infrastructure,Vendor-014,Regular departmental expenditure,False,none
+TXN-00241,Road Transport & Highways,DEPT-003,22.69,2025-09-05,9,5,capital,Vendor-036,Regular departmental expenditure,False,none
+TXN-00065,Health & Family Welfare,DEPT-001,8.12,2025-06-18,6,18,capital,Vendor-024,Regular departmental expenditure,False,none
+TXN-00411,Rural Development,DEPT-005,10.45,2025-06-20,6,20,infrastructure,Vendor-023,Regular departmental expenditure,False,none
+TXN-00532,Urban Development,DEPT-006,14.78,2025-08-03,8,3,subsidies,Vendor-034,Regular departmental expenditure,False,none
+TXN-01026,Primary Education - Pune,DEPT-012,3.65,2025-04-26,4,26,salaries,Vendor-047,Regular departmental expenditure,False,none
+TXN-00198,Road Transport & Highways,DEPT-003,16.43,2025-09-23,9,23,capital,Vendor-001,Regular departmental expenditure,False,none
+TXN-00964,Public Works - Nagpur,DEPT-011,9.48,2025-09-01,9,1,subsidies,Vendor-022,Regular departmental expenditure,False,none
+TXN-00696,Women & Child Development,DEPT-008,10.15,2025-08-27,8,27,capital,Vendor-029,Regular departmental expenditure,False,none
+TXN-00435,Rural Development,DEPT-005,12.31,2025-08-18,8,18,salaries,Vendor-045,Regular departmental expenditure,False,none
+TXN-00882,Public Works - Mumbai,DEPT-010,18.0,2025-12-03,12,3,revenue,Vendor-016,Regular departmental expenditure,False,none
+TXN-00431,Rural Development,DEPT-005,5.57,2025-10-05,10,5,salaries,Vendor-022,Regular departmental expenditure,False,none
+TXN-01037,Primary Education - Pune,DEPT-012,2.32,2025-09-17,9,17,revenue,Vendor-028,Regular departmental expenditure,False,none
+TXN-00474,Urban Development,DEPT-006,7.37,2025-08-06,8,6,salaries,Vendor-040,Regular departmental expenditure,False,none
+TXN-00363,Agriculture & Farmers,DEPT-004,14.96,2025-12-11,12,11,subsidies,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00052,Health & Family Welfare,DEPT-001,19.75,2025-04-16,4,16,subsidies,Vendor-022,Regular departmental expenditure,False,none
+TXN-00494,Urban Development,DEPT-006,5.59,2025-12-13,12,13,infrastructure,Vendor-044,Regular departmental expenditure,False,none
+TXN-00068,Health & Family Welfare,DEPT-001,18.76,2025-05-23,5,23,infrastructure,Vendor-025,Regular departmental expenditure,False,none
+TXN-00193,Road Transport & Highways,DEPT-003,25.61,2025-11-18,11,18,capital,Vendor-033,Regular departmental expenditure,False,none
+TXN-00506,Urban Development,DEPT-006,2.87,2025-05-06,5,6,infrastructure,Vendor-006,Regular departmental expenditure,False,none
+TXN-00470,Urban Development,DEPT-006,11.24,2025-07-04,7,4,infrastructure,Vendor-042,Regular departmental expenditure,False,none
+TXN-00737,Public Works - Pune,DEPT-009,2.85,2025-09-19,9,19,capital,Vendor-037,Regular departmental expenditure,False,none
+TXN-00296,Agriculture & Farmers,DEPT-004,8.63,2025-04-06,4,6,grants,Vendor-011,Regular departmental expenditure,False,none
+TXN-00618,Water Resources,DEPT-007,5.61,2025-06-21,6,21,infrastructure,Vendor-027,Regular departmental expenditure,False,none
+TXN-01092,Primary Education - Pune,DEPT-012,1.71,2025-05-12,5,12,subsidies,Vendor-028,Regular departmental expenditure,False,none
+TXN-00248,Road Transport & Highways,DEPT-003,12.59,2025-11-19,11,19,salaries,Vendor-017,Regular departmental expenditure,False,none
+TXN-00071,Health & Family Welfare,DEPT-001,43.64,2025-08-07,8,7,subsidies,Vendor-006,Regular departmental expenditure,False,none
+TXN-00900,Public Works - Mumbai,DEPT-010,7.96,2025-08-21,8,21,capital,Vendor-040,Regular departmental expenditure,False,none
+TXN-00499,Urban Development,DEPT-006,11.48,2025-12-05,12,5,revenue,Vendor-021,Regular departmental expenditure,False,none
+TXN-00182,Education,DEPT-002,99.93,2025-09-03,9,3,grants,Vendor-007,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00658,Women & Child Development,DEPT-008,4.39,2025-06-28,6,28,infrastructure,Vendor-044,Regular departmental expenditure,False,none
+TXN-00823,Public Works - Pune,DEPT-009,55.34,2026-03-29,3,29,infrastructure,Vendor-022,Urgent year-end fund utilization,True,march_dumping
+TXN-00770,Public Works - Pune,DEPT-009,5.32,2025-05-03,5,3,infrastructure,Vendor-033,Regular departmental expenditure,False,none
+TXN-00925,Public Works - Nagpur,DEPT-011,5.95,2025-07-15,7,15,infrastructure,Vendor-025,Regular departmental expenditure,False,none
+TXN-00295,Agriculture & Farmers,DEPT-004,30.0,2025-07-12,7,12,salaries,Vendor-011,Regular departmental expenditure,False,none
+TXN-00171,Education,DEPT-002,7.45,2025-11-02,11,2,subsidies,Vendor-001,Regular departmental expenditure,False,none
+TXN-00229,Road Transport & Highways,DEPT-003,20.41,2025-12-07,12,7,capital,Vendor-022,Regular departmental expenditure,False,none
+TXN-00113,Education,DEPT-002,15.35,2025-08-16,8,16,infrastructure,Vendor-021,Regular departmental expenditure,False,none
+TXN-00694,Women & Child Development,DEPT-008,6.72,2025-09-12,9,12,capital,Vendor-037,Regular departmental expenditure,False,none
+TXN-00018,Health & Family Welfare,DEPT-001,17.43,2025-11-03,11,3,grants,Vendor-033,Regular departmental expenditure,False,none
+TXN-00440,Rural Development,DEPT-005,23.53,2025-08-10,8,10,salaries,Vendor-049,Regular departmental expenditure,False,none
+TXN-01011,Public Works - Nagpur,DEPT-011,49.84,2025-12-14,12,14,salaries,Vendor-002,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00790,Public Works - Pune,DEPT-009,2.04,2025-10-16,10,16,grants,Vendor-030,Regular departmental expenditure,False,none
+TXN-00056,Health & Family Welfare,DEPT-001,48.0,2025-06-04,6,4,grants,Vendor-049,Regular departmental expenditure,False,none
+TXN-00472,Urban Development,DEPT-006,12.45,2025-06-23,6,23,infrastructure,Vendor-019,Regular departmental expenditure,False,none
+TXN-00599,Water Resources,DEPT-007,5.78,2025-08-10,8,10,subsidies,Vendor-037,Regular departmental expenditure,False,none
+TXN-00889,Public Works - Mumbai,DEPT-010,11.46,2025-09-08,9,8,infrastructure,Vendor-006,Regular departmental expenditure,False,none
+TXN-00988,Public Works - Nagpur,DEPT-011,7.95,2025-07-22,7,22,subsidies,Vendor-047,Regular departmental expenditure,False,none
+TXN-00845,Public Works - Mumbai,DEPT-010,6.29,2025-12-20,12,20,grants,Vendor-023,Regular departmental expenditure,False,none
+TXN-00700,Women & Child Development,DEPT-008,18.0,2025-06-03,6,3,capital,Vendor-039,Regular departmental expenditure,False,none
+TXN-00228,Road Transport & Highways,DEPT-003,19.9,2025-04-18,4,18,grants,Vendor-017,Regular departmental expenditure,False,none
+TXN-00762,Public Works - Pune,DEPT-009,5.28,2025-04-10,4,10,subsidies,Vendor-009,Regular departmental expenditure,False,none
+TXN-00105,Education,DEPT-002,12.8,2025-10-25,10,25,salaries,Vendor-004,Regular departmental expenditure,False,none
+TXN-01007,Public Works - Nagpur,DEPT-011,6.12,2025-07-18,7,18,grants,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00929,Public Works - Nagpur,DEPT-011,12.0,2025-11-18,11,18,revenue,Vendor-025,Regular departmental expenditure,False,none
+TXN-00161,Education,DEPT-002,13.53,2025-11-23,11,23,capital,Vendor-003,Regular departmental expenditure,False,none
+TXN-00544,Urban Development,DEPT-006,87.87,2026-03-30,3,30,capital,Vendor-048,Urgent year-end fund utilization,True,march_dumping
+TXN-00909,Public Works - Mumbai,DEPT-010,39.2,2026-03-29,3,29,capital,Vendor-008,Urgent year-end fund utilization,True,march_dumping
+TXN-00683,Women & Child Development,DEPT-008,4.94,2025-09-01,9,1,revenue,Vendor-038,Regular departmental expenditure,False,none
+TXN-00892,Public Works - Mumbai,DEPT-010,8.26,2025-08-26,8,26,subsidies,Vendor-039,Regular departmental expenditure,False,none
+TXN-00818,Public Works - Pune,DEPT-009,100.0,2025-11-15,11,15,capital,Vendor-048,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00125,Education,DEPT-002,17.07,2025-04-02,4,2,capital,Vendor-035,Regular departmental expenditure,False,none
+TXN-00260,Road Transport & Highways,DEPT-003,25.2,2025-05-27,5,27,salaries,Vendor-013,Regular departmental expenditure,False,none
+TXN-00856,Public Works - Mumbai,DEPT-010,11.49,2025-09-03,9,3,subsidies,Vendor-026,Regular departmental expenditure,False,none
+TXN-00985,Public Works - Nagpur,DEPT-011,3.97,2025-07-02,7,2,infrastructure,Vendor-032,Regular departmental expenditure,False,none
+TXN-00513,Urban Development,DEPT-006,7.78,2025-04-02,4,2,capital,Vendor-003,Regular departmental expenditure,False,none
+TXN-00097,Education,DEPT-002,17.64,2025-07-19,7,19,revenue,Vendor-047,Regular departmental expenditure,False,none
+TXN-00908,Public Works - Mumbai,DEPT-010,11.55,2025-08-08,8,8,infrastructure,Vendor-022,Regular departmental expenditure,False,none
+TXN-00530,Urban Development,DEPT-006,7.26,2025-12-21,12,21,revenue,Vendor-022,Regular departmental expenditure,False,none
+TXN-00609,Water Resources,DEPT-007,6.37,2025-09-25,9,25,revenue,Vendor-019,Regular departmental expenditure,False,none
+TXN-00251,Road Transport & Highways,DEPT-003,18.82,2025-10-17,10,17,revenue,Vendor-021,Regular departmental expenditure,False,none
+TXN-00422,Rural Development,DEPT-005,11.92,2025-07-13,7,13,subsidies,Vendor-012,Regular departmental expenditure,False,none
+TXN-00157,Education,DEPT-002,36.0,2025-06-10,6,10,capital,Vendor-037,Regular departmental expenditure,False,none
+TXN-00939,Public Works - Nagpur,DEPT-011,1.69,2025-11-15,11,15,capital,Vendor-017,Regular departmental expenditure,False,none
+TXN-00674,Women & Child Development,DEPT-008,8.21,2025-07-08,7,8,grants,Vendor-029,Regular departmental expenditure,False,none
+TXN-00278,Agriculture & Farmers,DEPT-004,21.49,2025-11-28,11,28,infrastructure,Vendor-008,Regular departmental expenditure,False,none
+TXN-00910,Public Works - Mumbai,DEPT-010,55.08,2025-11-17,11,17,grants,Vendor-021,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00342,Agriculture & Farmers,DEPT-004,26.96,2025-06-22,6,22,infrastructure,Vendor-016,Regular departmental expenditure,False,none
+TXN-00972,Public Works - Nagpur,DEPT-011,3.11,2025-08-22,8,22,salaries,Vendor-007,Regular departmental expenditure,False,none
+TXN-00265,Road Transport & Highways,DEPT-003,88.8,2026-03-30,3,30,capital,Vendor-037,Urgent year-end fund utilization,True,march_dumping
+TXN-00697,Women & Child Development,DEPT-008,18.0,2025-07-09,7,9,infrastructure,Vendor-027,Regular departmental expenditure,False,none
+TXN-00426,Rural Development,DEPT-005,9.69,2025-06-09,6,9,grants,Vendor-021,Regular departmental expenditure,False,none
+TXN-00709,Women & Child Development,DEPT-008,3.69,2025-11-09,11,9,grants,Vendor-048,Regular departmental expenditure,False,none
+TXN-00713,Women & Child Development,DEPT-008,12.73,2025-05-25,5,25,capital,Vendor-023,Regular departmental expenditure,False,none
+TXN-00833,Public Works - Mumbai,DEPT-010,4.53,2025-04-05,4,5,infrastructure,Vendor-006,Regular departmental expenditure,False,none
+TXN-00878,Public Works - Mumbai,DEPT-010,4.34,2025-04-15,4,15,revenue,Vendor-015,Regular departmental expenditure,False,none
+TXN-01042,Primary Education - Pune,DEPT-012,5.67,2025-12-22,12,22,infrastructure,Vendor-004,Regular departmental expenditure,False,none
+TXN-01078,Primary Education - Pune,DEPT-012,6.67,2025-12-22,12,22,capital,Vendor-037,Regular departmental expenditure,False,none
+TXN-00448,Rural Development,DEPT-005,19.14,2025-06-07,6,7,grants,Vendor-028,Regular departmental expenditure,False,none
+TXN-00660,Women & Child Development,DEPT-008,6.33,2025-08-28,8,28,grants,Vendor-035,Regular departmental expenditure,False,none
+TXN-00069,Health & Family Welfare,DEPT-001,21.56,2025-04-20,4,20,revenue,Vendor-006,Regular departmental expenditure,False,none
+TXN-00996,Public Works - Nagpur,DEPT-011,2.01,2025-05-02,5,2,subsidies,Vendor-024,Regular departmental expenditure,False,none
+TXN-00593,Water Resources,DEPT-007,19.25,2025-04-17,4,17,infrastructure,Vendor-005,Regular departmental expenditure,False,none
+TXN-00390,Rural Development,DEPT-005,5.69,2025-05-01,5,1,salaries,Vendor-017,Regular departmental expenditure,False,none
+TXN-01074,Primary Education - Pune,DEPT-012,1.94,2025-06-06,6,6,subsidies,Vendor-047,Regular departmental expenditure,False,none
+TXN-00800,Public Works - Pune,DEPT-009,10.17,2025-09-01,9,1,revenue,Vendor-029,Regular departmental expenditure,False,none
+TXN-00132,Education,DEPT-002,14.33,2025-08-27,8,27,capital,Vendor-017,Regular departmental expenditure,False,none
+TXN-01013,Primary Education - Pune,DEPT-012,1.74,2025-09-24,9,24,infrastructure,Vendor-036,Regular departmental expenditure,False,none
+TXN-00503,Urban Development,DEPT-006,6.64,2025-12-07,12,7,infrastructure,Vendor-033,Regular departmental expenditure,False,none
+TXN-00442,Rural Development,DEPT-005,5.71,2025-08-28,8,28,grants,Vendor-034,Regular departmental expenditure,False,none
+TXN-00992,Public Works - Nagpur,DEPT-011,9.03,2025-08-22,8,22,revenue,Vendor-004,Regular departmental expenditure,False,none
+TXN-00625,Water Resources,DEPT-007,17.73,2025-11-03,11,3,infrastructure,Vendor-030,Regular departmental expenditure,False,none
+TXN-00128,Education,DEPT-002,15.36,2025-06-17,6,17,salaries,Vendor-014,Regular departmental expenditure,False,none
+TXN-01010,Public Works - Nagpur,DEPT-011,44.47,2026-03-31,3,31,capital,Vendor-002,Urgent year-end fund utilization,True,march_dumping
+TXN-00306,Agriculture & Farmers,DEPT-004,12.65,2025-07-14,7,14,capital,Vendor-030,Regular departmental expenditure,False,none
+TXN-00784,Public Works - Pune,DEPT-009,9.69,2025-08-01,8,1,subsidies,Vendor-012,Regular departmental expenditure,False,none
+TXN-01064,Primary Education - Pune,DEPT-012,3.13,2025-10-01,10,1,grants,Vendor-015,Regular departmental expenditure,False,none
+TXN-00291,Agriculture & Farmers,DEPT-004,14.16,2025-05-28,5,28,subsidies,Vendor-015,Regular departmental expenditure,False,none
+TXN-00022,Health & Family Welfare,DEPT-001,47.42,2025-06-05,6,5,infrastructure,Vendor-003,Regular departmental expenditure,False,none
+TXN-00757,Public Works - Pune,DEPT-009,9.93,2025-12-01,12,1,infrastructure,Vendor-041,Regular departmental expenditure,False,none
+TXN-00445,Rural Development,DEPT-005,10.45,2025-08-08,8,8,salaries,Vendor-008,Regular departmental expenditure,False,none
+TXN-00597,Water Resources,DEPT-007,9.5,2025-09-11,9,11,grants,Vendor-042,Regular departmental expenditure,False,none
+TXN-00340,Agriculture & Farmers,DEPT-004,30.0,2025-12-25,12,25,subsidies,Vendor-002,Regular departmental expenditure,False,none
+TXN-00093,Education,DEPT-002,6.97,2025-10-13,10,13,capital,Vendor-035,Regular departmental expenditure,False,none
+TXN-00094,Education,DEPT-002,17.99,2025-12-17,12,17,capital,Vendor-020,Regular departmental expenditure,False,none
+TXN-00568,Water Resources,DEPT-007,11.55,2025-09-09,9,9,capital,Vendor-024,Regular departmental expenditure,False,none
+TXN-00601,Water Resources,DEPT-007,10.07,2025-07-17,7,17,salaries,Vendor-032,Regular departmental expenditure,False,none
+TXN-00357,Agriculture & Farmers,DEPT-004,95.39,2026-03-31,3,31,grants,Vendor-026,Urgent year-end fund utilization,True,march_dumping
+TXN-00875,Public Works - Mumbai,DEPT-010,7.95,2025-04-23,4,23,revenue,Vendor-042,Regular departmental expenditure,False,none
+TXN-00386,Rural Development,DEPT-005,12.22,2025-12-10,12,10,capital,Vendor-026,Regular departmental expenditure,False,none
+TXN-00310,Agriculture & Farmers,DEPT-004,20.57,2025-05-14,5,14,infrastructure,Vendor-032,Regular departmental expenditure,False,none
+TXN-00347,Agriculture & Farmers,DEPT-004,15.13,2025-09-12,9,12,grants,Vendor-020,Regular departmental expenditure,False,none
+TXN-00392,Rural Development,DEPT-005,6.26,2025-12-14,12,14,salaries,Vendor-025,Regular departmental expenditure,False,none
+TXN-00014,Health & Family Welfare,DEPT-001,31.08,2025-08-16,8,16,salaries,Vendor-018,Regular departmental expenditure,False,none
+TXN-01096,Primary Education - Pune,DEPT-012,200.0,2025-06-28,6,28,infrastructure,Vendor-045,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00765,Public Works - Pune,DEPT-009,6.72,2025-12-28,12,28,subsidies,Vendor-029,Regular departmental expenditure,False,none
+TXN-00704,Women & Child Development,DEPT-008,10.81,2025-12-09,12,9,salaries,Vendor-001,Regular departmental expenditure,False,none
+TXN-00477,Urban Development,DEPT-006,12.99,2025-11-24,11,24,revenue,Vendor-030,Regular departmental expenditure,False,none
+TXN-00998,Public Works - Nagpur,DEPT-011,5.55,2025-04-11,4,11,salaries,Vendor-004,Regular departmental expenditure,False,none
+TXN-00082,Health & Family Welfare,DEPT-001,21.58,2025-09-05,9,5,subsidies,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00098,Education,DEPT-002,14.06,2025-08-05,8,5,grants,Vendor-012,Regular departmental expenditure,False,none
+TXN-00349,Agriculture & Farmers,DEPT-004,17.99,2025-04-23,4,23,grants,Vendor-006,Regular departmental expenditure,False,none
+TXN-00334,Agriculture & Farmers,DEPT-004,12.26,2025-06-19,6,19,revenue,Vendor-012,Regular departmental expenditure,False,none
+TXN-00236,Road Transport & Highways,DEPT-003,28.6,2025-04-26,4,26,salaries,Vendor-028,Regular departmental expenditure,False,none
+TXN-00846,Public Works - Mumbai,DEPT-010,16.39,2025-11-11,11,11,infrastructure,Vendor-034,Regular departmental expenditure,False,none
+TXN-00866,Public Works - Mumbai,DEPT-010,8.75,2025-05-07,5,7,subsidies,Vendor-034,Regular departmental expenditure,False,none
+TXN-00950,Public Works - Nagpur,DEPT-011,2.9,2025-10-11,10,11,revenue,Vendor-001,Regular departmental expenditure,False,none
+TXN-00891,Public Works - Mumbai,DEPT-010,13.53,2025-08-20,8,20,capital,Vendor-041,Regular departmental expenditure,False,none
+TXN-00781,Public Works - Pune,DEPT-009,4.69,2025-05-25,5,25,capital,Vendor-038,Regular departmental expenditure,False,none
+TXN-00753,Public Works - Pune,DEPT-009,6.27,2025-10-27,10,27,salaries,Vendor-047,Regular departmental expenditure,False,none
+TXN-00917,Public Works - Mumbai,DEPT-010,200.0,2025-12-15,12,15,subsidies,Vendor-016,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00256,Road Transport & Highways,DEPT-003,20.74,2025-05-03,5,3,salaries,Vendor-043,Regular departmental expenditure,False,none
+TXN-00701,Women & Child Development,DEPT-008,2.95,2025-05-13,5,13,subsidies,Vendor-029,Regular departmental expenditure,False,none
+TXN-00352,Agriculture & Farmers,DEPT-004,7.99,2025-05-25,5,25,revenue,Vendor-029,Regular departmental expenditure,False,none
+TXN-00488,Urban Development,DEPT-006,9.8,2025-06-05,6,5,salaries,Vendor-037,Regular departmental expenditure,False,none
+TXN-00984,Public Works - Nagpur,DEPT-011,12.0,2025-08-05,8,5,grants,Vendor-029,Regular departmental expenditure,False,none
+TXN-00559,Water Resources,DEPT-007,22.7,2025-07-23,7,23,subsidies,Vendor-028,Regular departmental expenditure,False,none
+TXN-01088,Primary Education - Pune,DEPT-012,3.6,2025-10-13,10,13,revenue,Vendor-047,Regular departmental expenditure,False,none
+TXN-00907,Public Works - Mumbai,DEPT-010,18.0,2025-04-26,4,26,salaries,Vendor-021,Regular departmental expenditure,False,none
+TXN-00591,Water Resources,DEPT-007,20.11,2025-08-07,8,7,subsidies,Vendor-037,Regular departmental expenditure,False,none
+TXN-00776,Public Works - Pune,DEPT-009,5.06,2025-04-22,4,22,salaries,Vendor-009,Regular departmental expenditure,False,none
+TXN-01079,Primary Education - Pune,DEPT-012,1.5,2025-11-24,11,24,capital,Vendor-025,Regular departmental expenditure,False,none
+TXN-00804,Public Works - Pune,DEPT-009,3.16,2025-10-21,10,21,capital,Vendor-049,Regular departmental expenditure,False,none
+TXN-00562,Water Resources,DEPT-007,4.17,2025-09-25,9,25,revenue,Vendor-017,Regular departmental expenditure,False,none
+TXN-00271,Road Transport & Highways,DEPT-003,255.02,2025-11-06,11,6,salaries,Vendor-005,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00027,Health & Family Welfare,DEPT-001,23.16,2025-12-21,12,21,infrastructure,Vendor-028,Regular departmental expenditure,False,none
+TXN-01005,Public Works - Nagpur,DEPT-011,200.0,2025-12-10,12,10,capital,Vendor-042,Capital expenditure - project payment,True,round_amount_fraud
+TXN-01047,Primary Education - Pune,DEPT-012,1.42,2025-11-25,11,25,grants,Vendor-038,Regular departmental expenditure,False,none
+TXN-00335,Agriculture & Farmers,DEPT-004,8.93,2025-08-15,8,15,capital,Vendor-035,Regular departmental expenditure,False,none
+TXN-00498,Urban Development,DEPT-006,5.39,2025-11-15,11,15,salaries,Vendor-042,Regular departmental expenditure,False,none
+TXN-00718,Women & Child Development,DEPT-008,4.5,2025-07-28,7,28,subsidies,Vendor-038,Regular departmental expenditure,False,none
+TXN-00502,Urban Development,DEPT-006,4.57,2025-12-09,12,9,capital,Vendor-050,Regular departmental expenditure,False,none
+TXN-00050,Health & Family Welfare,DEPT-001,13.99,2025-09-03,9,3,salaries,Vendor-041,Regular departmental expenditure,False,none
+TXN-00850,Public Works - Mumbai,DEPT-010,7.27,2025-11-23,11,23,grants,Vendor-021,Regular departmental expenditure,False,none
+TXN-00663,Women & Child Development,DEPT-008,3.5,2025-09-17,9,17,subsidies,Vendor-014,Regular departmental expenditure,False,none
+TXN-00628,Water Resources,DEPT-007,4.87,2025-04-04,4,4,grants,Vendor-002,Regular departmental expenditure,False,none
+TXN-00024,Health & Family Welfare,DEPT-001,43.15,2025-06-07,6,7,capital,Vendor-032,Regular departmental expenditure,False,none
+TXN-00785,Public Works - Pune,DEPT-009,6.31,2025-10-25,10,25,salaries,Vendor-024,Regular departmental expenditure,False,none
+TXN-00095,Education,DEPT-002,11.55,2025-06-17,6,17,subsidies,Vendor-012,Regular departmental expenditure,False,none
+TXN-00415,Rural Development,DEPT-005,20.92,2025-09-03,9,3,subsidies,Vendor-014,Regular departmental expenditure,False,none
+TXN-00317,Agriculture & Farmers,DEPT-004,30.0,2025-05-15,5,15,revenue,Vendor-042,Regular departmental expenditure,False,none
+TXN-00253,Road Transport & Highways,DEPT-003,10.19,2025-11-18,11,18,grants,Vendor-023,Regular departmental expenditure,False,none
+TXN-00368,Agriculture & Farmers,DEPT-004,250.0,2025-12-01,12,1,capital,Vendor-049,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00447,Rural Development,DEPT-005,6.69,2025-07-11,7,11,subsidies,Vendor-015,Regular departmental expenditure,False,none
+TXN-00976,Public Works - Nagpur,DEPT-011,4.94,2025-09-25,9,25,subsidies,Vendor-043,Regular departmental expenditure,False,none
+TXN-00116,Education,DEPT-002,19.24,2025-04-21,4,21,infrastructure,Vendor-003,Regular departmental expenditure,False,none
+TXN-00611,Water Resources,DEPT-007,9.85,2025-07-22,7,22,grants,Vendor-027,Regular departmental expenditure,False,none
+TXN-00446,Rural Development,DEPT-005,23.66,2025-12-23,12,23,grants,Vendor-001,Regular departmental expenditure,False,none
+TXN-00687,Women & Child Development,DEPT-008,9.38,2025-09-09,9,9,subsidies,Vendor-035,Regular departmental expenditure,False,none
+TXN-00372,Rural Development,DEPT-005,10.3,2025-12-12,12,12,salaries,Vendor-034,Regular departmental expenditure,False,none
+TXN-00003,Health & Family Welfare,DEPT-001,12.85,2025-06-22,6,22,salaries,Vendor-002,Regular departmental expenditure,False,none
+TXN-00224,Road Transport & Highways,DEPT-003,28.26,2025-05-03,5,3,subsidies,Vendor-020,Regular departmental expenditure,False,none
+TXN-00560,Water Resources,DEPT-007,14.49,2025-07-22,7,22,subsidies,Vendor-045,Regular departmental expenditure,False,none
+TXN-00389,Rural Development,DEPT-005,8.85,2025-08-15,8,15,capital,Vendor-035,Regular departmental expenditure,False,none
+TXN-00432,Rural Development,DEPT-005,4.06,2025-08-23,8,23,revenue,Vendor-027,Regular departmental expenditure,False,none
+TXN-00739,Public Works - Pune,DEPT-009,3.06,2025-11-28,11,28,capital,Vendor-049,Regular departmental expenditure,False,none
+TXN-01023,Primary Education - Pune,DEPT-012,7.79,2025-09-02,9,2,salaries,Vendor-005,Regular departmental expenditure,False,none
+TXN-00933,Public Works - Nagpur,DEPT-011,4.17,2025-10-26,10,26,salaries,Vendor-008,Regular departmental expenditure,False,none
+TXN-00699,Women & Child Development,DEPT-008,1.76,2025-06-20,6,20,subsidies,Vendor-030,Regular departmental expenditure,False,none
+TXN-00165,Education,DEPT-002,36.0,2025-06-13,6,13,subsidies,Vendor-005,Regular departmental expenditure,False,none
+TXN-00484,Urban Development,DEPT-006,12.01,2025-09-15,9,15,infrastructure,Vendor-011,Regular departmental expenditure,False,none
+TXN-00575,Water Resources,DEPT-007,10.75,2025-05-18,5,18,revenue,Vendor-004,Regular departmental expenditure,False,none
+TXN-00690,Women & Child Development,DEPT-008,3.34,2025-09-04,9,4,subsidies,Vendor-029,Regular departmental expenditure,False,none
+TXN-00298,Agriculture & Farmers,DEPT-004,30.0,2025-12-07,12,7,salaries,Vendor-029,Regular departmental expenditure,False,none
+TXN-00843,Public Works - Mumbai,DEPT-010,5.1,2025-06-03,6,3,salaries,Vendor-021,Regular departmental expenditure,False,none
+TXN-00123,Education,DEPT-002,14.46,2025-04-18,4,18,capital,Vendor-011,Regular departmental expenditure,False,none
+TXN-00553,Water Resources,DEPT-007,24.0,2025-07-05,7,5,grants,Vendor-044,Regular departmental expenditure,False,none
+TXN-00087,Health & Family Welfare,DEPT-001,9.52,2025-05-19,5,19,grants,Vendor-050,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00172,Education,DEPT-002,16.83,2025-08-09,8,9,capital,Vendor-009,Regular departmental expenditure,False,none
+TXN-00230,Road Transport & Highways,DEPT-003,7.44,2025-07-26,7,26,revenue,Vendor-029,Regular departmental expenditure,False,none
+TXN-00464,Urban Development,DEPT-006,7.02,2025-10-07,10,7,subsidies,Vendor-047,Regular departmental expenditure,False,none
+TXN-00731,Women & Child Development,DEPT-008,60.9,2025-07-04,7,4,capital,Vendor-018,Bulk procurement - emergency purchase,True,spending_spike
+TXN-01087,Primary Education - Pune,DEPT-012,3.4,2025-09-18,9,18,revenue,Vendor-002,Regular departmental expenditure,False,none
+TXN-00283,Agriculture & Farmers,DEPT-004,16.74,2025-06-16,6,16,subsidies,Vendor-033,Regular departmental expenditure,False,none
+TXN-00971,Public Works - Nagpur,DEPT-011,3.97,2025-06-11,6,11,grants,Vendor-021,Regular departmental expenditure,False,none
+TXN-00616,Water Resources,DEPT-007,5.56,2025-09-11,9,11,capital,Vendor-024,Regular departmental expenditure,False,none
+TXN-00237,Road Transport & Highways,DEPT-003,14.19,2025-05-28,5,28,infrastructure,Vendor-043,Regular departmental expenditure,False,none
+TXN-00758,Public Works - Pune,DEPT-009,2.2,2025-07-27,7,27,subsidies,Vendor-002,Regular departmental expenditure,False,none
+TXN-00387,Rural Development,DEPT-005,6.51,2025-11-19,11,19,subsidies,Vendor-039,Regular departmental expenditure,False,none
+TXN-00379,Rural Development,DEPT-005,10.29,2025-11-16,11,16,revenue,Vendor-036,Regular departmental expenditure,False,none
+TXN-00035,Health & Family Welfare,DEPT-001,16.04,2025-04-01,4,1,grants,Vendor-002,Regular departmental expenditure,False,none
+TXN-00708,Women & Child Development,DEPT-008,5.92,2025-08-21,8,21,infrastructure,Vendor-004,Regular departmental expenditure,False,none
+TXN-00312,Agriculture & Farmers,DEPT-004,18.12,2025-06-24,6,24,capital,Vendor-017,Regular departmental expenditure,False,none
+TXN-00200,Road Transport & Highways,DEPT-003,30.24,2025-12-21,12,21,capital,Vendor-010,Regular departmental expenditure,False,none
+TXN-01039,Primary Education - Pune,DEPT-012,8.05,2025-07-25,7,25,subsidies,Vendor-026,Regular departmental expenditure,False,none
+TXN-00669,Women & Child Development,DEPT-008,6.66,2025-09-07,9,7,salaries,Vendor-025,Regular departmental expenditure,False,none
+TXN-00897,Public Works - Mumbai,DEPT-010,9.3,2025-08-17,8,17,subsidies,Vendor-025,Regular departmental expenditure,False,none
+TXN-01053,Primary Education - Pune,DEPT-012,4.22,2025-09-26,9,26,subsidies,Vendor-001,Regular departmental expenditure,False,none
+TXN-00905,Public Works - Mumbai,DEPT-010,5.64,2025-12-08,12,8,grants,Vendor-012,Regular departmental expenditure,False,none
+TXN-00327,Agriculture & Farmers,DEPT-004,30.0,2025-05-19,5,19,infrastructure,Vendor-037,Regular departmental expenditure,False,none
+TXN-00059,Health & Family Welfare,DEPT-001,48.0,2025-04-20,4,20,salaries,Vendor-021,Regular departmental expenditure,False,none
+TXN-00994,Public Works - Nagpur,DEPT-011,4.51,2025-06-25,6,25,salaries,Vendor-031,Regular departmental expenditure,False,none
+TXN-00736,Women & Child Development,DEPT-008,99.8,2025-12-20,12,20,subsidies,Vendor-031,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00112,Education,DEPT-002,7.37,2025-08-06,8,6,revenue,Vendor-044,Regular departmental expenditure,False,none
+TXN-01018,Primary Education - Pune,DEPT-012,2.26,2025-09-12,9,12,capital,Vendor-045,Regular departmental expenditure,False,none
+TXN-01025,Primary Education - Pune,DEPT-012,2.69,2025-06-20,6,20,infrastructure,Vendor-003,Regular departmental expenditure,False,none
+TXN-00328,Agriculture & Farmers,DEPT-004,11.91,2025-11-09,11,9,grants,Vendor-003,Regular departmental expenditure,False,none
+TXN-00993,Public Works - Nagpur,DEPT-011,4.14,2025-12-10,12,10,subsidies,Vendor-019,Regular departmental expenditure,False,none
+TXN-00222,Road Transport & Highways,DEPT-003,10.31,2025-10-01,10,1,salaries,Vendor-019,Regular departmental expenditure,False,none
+TXN-01009,Public Works - Nagpur,DEPT-011,100.0,2025-12-10,12,10,capital,Vendor-032,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00184,Education,DEPT-002,155.02,2025-10-27,10,27,salaries,Vendor-036,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00566,Water Resources,DEPT-007,9.59,2025-11-17,11,17,salaries,Vendor-038,Regular departmental expenditure,False,none
+TXN-01070,Primary Education - Pune,DEPT-012,5.77,2025-10-28,10,28,subsidies,Vendor-049,Regular departmental expenditure,False,none
+TXN-00688,Women & Child Development,DEPT-008,9.03,2025-11-27,11,27,revenue,Vendor-012,Regular departmental expenditure,False,none
+TXN-00602,Water Resources,DEPT-007,10.81,2025-09-04,9,4,salaries,Vendor-037,Regular departmental expenditure,False,none
+TXN-00078,Health & Family Welfare,DEPT-001,26.7,2025-10-03,10,3,subsidies,Vendor-026,Regular departmental expenditure,False,none
+TXN-00189,Road Transport & Highways,DEPT-003,14.13,2025-05-27,5,27,grants,Vendor-036,Regular departmental expenditure,False,none
+TXN-00166,Education,DEPT-002,33.71,2025-09-26,9,26,infrastructure,Vendor-004,Regular departmental expenditure,False,none
+TXN-00075,Health & Family Welfare,DEPT-001,13.6,2025-04-15,4,15,revenue,Vendor-032,Regular departmental expenditure,False,none
+TXN-00899,Public Works - Mumbai,DEPT-010,18.0,2025-05-14,5,14,infrastructure,Vendor-018,Regular departmental expenditure,False,none
+TXN-00284,Agriculture & Farmers,DEPT-004,10.44,2025-12-13,12,13,grants,Vendor-045,Regular departmental expenditure,False,none
+TXN-00482,Urban Development,DEPT-006,8.17,2025-07-17,7,17,grants,Vendor-028,Regular departmental expenditure,False,none
+TXN-01036,Primary Education - Pune,DEPT-012,2.55,2025-09-02,9,2,grants,Vendor-019,Regular departmental expenditure,False,none
+TXN-00115,Education,DEPT-002,15.18,2025-12-17,12,17,infrastructure,Vendor-015,Regular departmental expenditure,False,none
+TXN-00383,Rural Development,DEPT-005,6.63,2025-09-01,9,1,subsidies,Vendor-045,Regular departmental expenditure,False,none
+TXN-00538,Urban Development,DEPT-006,7.91,2025-12-15,12,15,infrastructure,Vendor-015,Regular departmental expenditure,False,none
+TXN-00331,Agriculture & Farmers,DEPT-004,4.92,2025-07-28,7,28,revenue,Vendor-049,Regular departmental expenditure,False,none
+TXN-00152,Education,DEPT-002,20.77,2025-06-15,6,15,capital,Vendor-037,Regular departmental expenditure,False,none
+TXN-00686,Women & Child Development,DEPT-008,9.21,2025-06-06,6,6,salaries,Vendor-008,Regular departmental expenditure,False,none
+TXN-00849,Public Works - Mumbai,DEPT-010,10.65,2025-05-27,5,27,infrastructure,Vendor-018,Regular departmental expenditure,False,none
+TXN-00439,Rural Development,DEPT-005,9.17,2025-12-20,12,20,salaries,Vendor-038,Regular departmental expenditure,False,none
+TXN-00948,Public Works - Nagpur,DEPT-011,4.5,2025-06-17,6,17,grants,Vendor-019,Regular departmental expenditure,False,none
+TXN-00126,Education,DEPT-002,27.78,2025-04-21,4,21,infrastructure,Vendor-028,Regular departmental expenditure,False,none
+TXN-00285,Agriculture & Farmers,DEPT-004,21.31,2025-09-28,9,28,salaries,Vendor-043,Regular departmental expenditure,False,none
+TXN-01099,Primary Education - Pune,DEPT-012,4.86,2025-10-15,10,15,capital,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00215,Road Transport & Highways,DEPT-003,22.63,2025-05-28,5,28,capital,Vendor-023,Regular departmental expenditure,False,none
+TXN-00914,Public Works - Mumbai,DEPT-010,58.62,2025-07-26,7,26,capital,Vendor-032,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00920,Public Works - Mumbai,DEPT-010,99.85,2025-06-26,6,26,capital,Vendor-027,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00518,Urban Development,DEPT-006,4.38,2025-07-05,7,5,salaries,Vendor-008,Regular departmental expenditure,False,none
+TXN-00921,Public Works - Nagpur,DEPT-011,3.11,2025-05-23,5,23,revenue,Vendor-020,Regular departmental expenditure,False,none
+TXN-00548,Urban Development,DEPT-006,7.63,2025-04-09,4,9,capital,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00546,Urban Development,DEPT-006,13.27,2025-12-27,12,27,subsidies,Vendor-042,Repeat vendor contract payment,True,vendor_concentration
+TXN-00522,Urban Development,DEPT-006,17.22,2025-04-23,4,23,salaries,Vendor-032,Regular departmental expenditure,False,none
+TXN-00155,Education,DEPT-002,5.05,2025-12-13,12,13,revenue,Vendor-047,Regular departmental expenditure,False,none
+TXN-00007,Health & Family Welfare,DEPT-001,24.64,2025-12-07,12,7,revenue,Vendor-004,Regular departmental expenditure,False,none
+TXN-00173,Education,DEPT-002,99.76,2025-10-03,10,3,capital,Vendor-030,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00703,Women & Child Development,DEPT-008,4.09,2025-07-20,7,20,revenue,Vendor-011,Regular departmental expenditure,False,none
+TXN-00273,Road Transport & Highways,DEPT-003,49.74,2025-05-17,5,17,grants,Vendor-024,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00554,Water Resources,DEPT-007,15.37,2025-04-21,4,21,salaries,Vendor-009,Regular departmental expenditure,False,none
+TXN-00595,Water Resources,DEPT-007,6.26,2025-04-13,4,13,revenue,Vendor-005,Regular departmental expenditure,False,none
+TXN-00500,Urban Development,DEPT-006,11.88,2025-05-05,5,5,grants,Vendor-023,Regular departmental expenditure,False,none
+TXN-00592,Water Resources,DEPT-007,24.0,2025-11-01,11,1,capital,Vendor-047,Regular departmental expenditure,False,none
+TXN-01008,Public Works - Nagpur,DEPT-011,9.5,2025-12-02,12,2,capital,Vendor-012,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00722,Women & Child Development,DEPT-008,9.45,2025-09-21,9,21,capital,Vendor-016,Regular departmental expenditure,False,none
+TXN-00584,Water Resources,DEPT-007,15.82,2025-08-21,8,21,infrastructure,Vendor-049,Regular departmental expenditure,False,none
+TXN-00691,Women & Child Development,DEPT-008,7.6,2025-05-02,5,2,salaries,Vendor-042,Regular departmental expenditure,False,none
+TXN-00232,Road Transport & Highways,DEPT-003,11.86,2025-07-09,7,9,infrastructure,Vendor-034,Regular departmental expenditure,False,none
+TXN-00111,Education,DEPT-002,11.45,2025-04-25,4,25,capital,Vendor-038,Regular departmental expenditure,False,none
+TXN-00987,Public Works - Nagpur,DEPT-011,2.06,2025-05-13,5,13,grants,Vendor-029,Regular departmental expenditure,False,none
+TXN-00305,Agriculture & Farmers,DEPT-004,10.39,2025-08-24,8,24,subsidies,Vendor-003,Regular departmental expenditure,False,none
+TXN-00974,Public Works - Nagpur,DEPT-011,3.88,2025-05-22,5,22,grants,Vendor-011,Regular departmental expenditure,False,none
+TXN-01063,Primary Education - Pune,DEPT-012,4.88,2025-10-09,10,9,infrastructure,Vendor-021,Regular departmental expenditure,False,none
+TXN-00519,Urban Development,DEPT-006,7.2,2025-11-18,11,18,revenue,Vendor-020,Regular departmental expenditure,False,none
+TXN-00612,Water Resources,DEPT-007,7.53,2025-08-02,8,2,grants,Vendor-045,Regular departmental expenditure,False,none
+TXN-00870,Public Works - Mumbai,DEPT-010,5.95,2025-11-28,11,28,revenue,Vendor-039,Regular departmental expenditure,False,none
+TXN-00991,Public Works - Nagpur,DEPT-011,4.14,2025-07-23,7,23,infrastructure,Vendor-011,Regular departmental expenditure,False,none
+TXN-00945,Public Works - Nagpur,DEPT-011,12.0,2025-08-26,8,26,subsidies,Vendor-006,Regular departmental expenditure,False,none
+TXN-00270,Road Transport & Highways,DEPT-003,58.25,2026-03-25,3,25,capital,Vendor-026,Urgent year-end fund utilization,True,march_dumping
+TXN-01016,Primary Education - Pune,DEPT-012,3.12,2025-10-13,10,13,grants,Vendor-016,Regular departmental expenditure,False,none
+TXN-00547,Urban Development,DEPT-006,70.34,2025-07-14,7,14,salaries,Vendor-038,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00951,Public Works - Nagpur,DEPT-011,11.11,2025-09-26,9,26,infrastructure,Vendor-037,Regular departmental expenditure,False,none
+TXN-00492,Urban Development,DEPT-006,7.16,2025-12-20,12,20,capital,Vendor-036,Regular departmental expenditure,False,none
+TXN-00217,Road Transport & Highways,DEPT-003,16.74,2025-10-03,10,3,grants,Vendor-008,Regular departmental expenditure,False,none
+TXN-01056,Primary Education - Pune,DEPT-012,3.09,2025-12-18,12,18,subsidies,Vendor-029,Regular departmental expenditure,False,none
+TXN-00324,Agriculture & Farmers,DEPT-004,24.15,2025-05-22,5,22,subsidies,Vendor-023,Regular departmental expenditure,False,none
+TXN-00361,Agriculture & Farmers,DEPT-004,68.0,2026-03-26,3,26,infrastructure,Vendor-050,Urgent year-end fund utilization,True,march_dumping
+TXN-00216,Road Transport & Highways,DEPT-003,15.1,2025-10-28,10,28,revenue,Vendor-007,Regular departmental expenditure,False,none
+TXN-00384,Rural Development,DEPT-005,9.28,2025-10-22,10,22,infrastructure,Vendor-021,Regular departmental expenditure,False,none
+TXN-00144,Education,DEPT-002,11.82,2025-09-21,9,21,infrastructure,Vendor-001,Regular departmental expenditure,False,none
+TXN-00318,Agriculture & Farmers,DEPT-004,17.22,2025-10-12,10,12,capital,Vendor-040,Regular departmental expenditure,False,none
+TXN-00367,Agriculture & Farmers,DEPT-004,108.31,2025-10-15,10,15,grants,Vendor-021,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00894,Public Works - Mumbai,DEPT-010,9.77,2025-04-22,4,22,subsidies,Vendor-033,Regular departmental expenditure,False,none
+TXN-00467,Urban Development,DEPT-006,7.54,2025-06-10,6,10,revenue,Vendor-043,Regular departmental expenditure,False,none
+TXN-01060,Primary Education - Pune,DEPT-012,2.64,2025-04-26,4,26,revenue,Vendor-023,Regular departmental expenditure,False,none
+TXN-00827,Public Works - Pune,DEPT-009,36.93,2026-03-30,3,30,capital,Vendor-032,Urgent year-end fund utilization,True,march_dumping
+TXN-00726,Women & Child Development,DEPT-008,90.64,2025-06-04,6,4,capital,Vendor-017,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00979,Public Works - Nagpur,DEPT-011,4.56,2025-04-17,4,17,subsidies,Vendor-021,Regular departmental expenditure,False,none
+TXN-00325,Agriculture & Farmers,DEPT-004,10.77,2025-06-26,6,26,grants,Vendor-046,Regular departmental expenditure,False,none
+TXN-00192,Road Transport & Highways,DEPT-003,13.54,2025-10-15,10,15,revenue,Vendor-046,Regular departmental expenditure,False,none
+TXN-00852,Public Works - Mumbai,DEPT-010,8.1,2025-09-19,9,19,capital,Vendor-007,Regular departmental expenditure,False,none
+TXN-00886,Public Works - Mumbai,DEPT-010,16.91,2025-11-25,11,25,salaries,Vendor-032,Regular departmental expenditure,False,none
+TXN-00587,Water Resources,DEPT-007,6.91,2025-12-21,12,21,infrastructure,Vendor-030,Regular departmental expenditure,False,none
+TXN-00594,Water Resources,DEPT-007,20.09,2025-11-02,11,2,subsidies,Vendor-012,Regular departmental expenditure,False,none
+TXN-00099,Education,DEPT-002,27.4,2025-07-21,7,21,capital,Vendor-039,Regular departmental expenditure,False,none
+TXN-00698,Women & Child Development,DEPT-008,6.63,2025-05-19,5,19,capital,Vendor-032,Regular departmental expenditure,False,none
+TXN-00707,Women & Child Development,DEPT-008,11.92,2025-10-15,10,15,revenue,Vendor-040,Regular departmental expenditure,False,none
+TXN-00582,Water Resources,DEPT-007,11.54,2025-09-03,9,3,infrastructure,Vendor-040,Regular departmental expenditure,False,none
+TXN-00375,Rural Development,DEPT-005,10.94,2025-08-23,8,23,grants,Vendor-016,Regular departmental expenditure,False,none
+TXN-00106,Education,DEPT-002,18.86,2025-07-06,7,6,subsidies,Vendor-031,Regular departmental expenditure,False,none
+TXN-00732,Women & Child Development,DEPT-008,99.58,2025-11-14,11,14,infrastructure,Vendor-033,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00871,Public Works - Mumbai,DEPT-010,3.7,2025-07-05,7,5,revenue,Vendor-022,Regular departmental expenditure,False,none
+TXN-00634,Water Resources,DEPT-007,58.2,2026-03-31,3,31,subsidies,Vendor-031,Urgent year-end fund utilization,True,march_dumping
+TXN-00013,Health & Family Welfare,DEPT-001,22.31,2025-11-14,11,14,subsidies,Vendor-040,Regular departmental expenditure,False,none
+TXN-00665,Women & Child Development,DEPT-008,10.43,2025-07-24,7,24,salaries,Vendor-043,Regular departmental expenditure,False,none
+TXN-00130,Education,DEPT-002,10.16,2025-05-28,5,28,revenue,Vendor-034,Regular departmental expenditure,False,none
+TXN-00493,Urban Development,DEPT-006,5.59,2025-11-10,11,10,infrastructure,Vendor-031,Regular departmental expenditure,False,none
+TXN-00209,Road Transport & Highways,DEPT-003,17.62,2025-11-19,11,19,infrastructure,Vendor-032,Regular departmental expenditure,False,none
+TXN-00183,Education,DEPT-002,59.62,2026-03-31,3,31,salaries,Vendor-047,Urgent year-end fund utilization,True,march_dumping
+TXN-00748,Public Works - Pune,DEPT-009,2.61,2025-04-02,4,2,infrastructure,Vendor-005,Regular departmental expenditure,False,none
+TXN-01048,Primary Education - Pune,DEPT-012,2.84,2025-08-22,8,22,subsidies,Vendor-038,Regular departmental expenditure,False,none
+TXN-00434,Rural Development,DEPT-005,8.25,2025-08-01,8,1,salaries,Vendor-021,Regular departmental expenditure,False,none
+TXN-00799,Public Works - Pune,DEPT-009,10.33,2025-04-18,4,18,revenue,Vendor-013,Regular departmental expenditure,False,none
+TXN-00089,Health & Family Welfare,DEPT-001,157.54,2026-03-29,3,29,salaries,Vendor-011,Urgent year-end fund utilization,True,march_dumping
+TXN-00735,Women & Child Development,DEPT-008,9.74,2025-09-08,9,8,infrastructure,Vendor-013,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-01015,Primary Education - Pune,DEPT-012,6.19,2025-07-18,7,18,infrastructure,Vendor-003,Regular departmental expenditure,False,none
+TXN-00197,Road Transport & Highways,DEPT-003,10.67,2025-08-26,8,26,infrastructure,Vendor-036,Regular departmental expenditure,False,none
+TXN-00179,Education,DEPT-002,177.45,2025-11-07,11,7,infrastructure,Vendor-040,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00791,Public Works - Pune,DEPT-009,14.4,2025-08-23,8,23,salaries,Vendor-032,Regular departmental expenditure,False,none
+TXN-00572,Water Resources,DEPT-007,7.44,2025-11-08,11,8,salaries,Vendor-045,Regular departmental expenditure,False,none
+TXN-00199,Road Transport & Highways,DEPT-003,17.99,2025-11-15,11,15,salaries,Vendor-047,Regular departmental expenditure,False,none
+TXN-00308,Agriculture & Farmers,DEPT-004,30.0,2025-09-21,9,21,salaries,Vendor-002,Regular departmental expenditure,False,none
+TXN-00073,Health & Family Welfare,DEPT-001,7.27,2025-04-24,4,24,grants,Vendor-028,Regular departmental expenditure,False,none
+TXN-00549,Urban Development,DEPT-006,50.0,2025-08-03,8,3,grants,Vendor-041,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00653,Women & Child Development,DEPT-008,7.49,2025-10-28,10,28,capital,Vendor-035,Regular departmental expenditure,False,none
+TXN-00376,Rural Development,DEPT-005,24.0,2025-08-28,8,28,capital,Vendor-036,Regular departmental expenditure,False,none
+TXN-00485,Urban Development,DEPT-006,10.48,2025-05-03,5,3,salaries,Vendor-043,Regular departmental expenditure,False,none
+TXN-00267,Road Transport & Highways,DEPT-003,200.0,2025-08-05,8,5,subsidies,Vendor-043,Capital expenditure - project payment,True,round_amount_fraud
+TXN-00990,Public Works - Nagpur,DEPT-011,3.43,2025-12-20,12,20,capital,Vendor-032,Regular departmental expenditure,False,none
+TXN-00521,Urban Development,DEPT-006,4.11,2025-05-11,5,11,infrastructure,Vendor-033,Regular departmental expenditure,False,none
+TXN-00768,Public Works - Pune,DEPT-009,11.97,2025-07-13,7,13,capital,Vendor-023,Regular departmental expenditure,False,none
+TXN-01054,Primary Education - Pune,DEPT-012,3.25,2025-10-18,10,18,capital,Vendor-035,Regular departmental expenditure,False,none
+TXN-00067,Health & Family Welfare,DEPT-001,15.15,2025-06-23,6,23,subsidies,Vendor-034,Regular departmental expenditure,False,none
+TXN-01032,Primary Education - Pune,DEPT-012,8.22,2025-08-13,8,13,infrastructure,Vendor-043,Regular departmental expenditure,False,none
+TXN-00617,Water Resources,DEPT-007,24.0,2025-12-19,12,19,revenue,Vendor-017,Regular departmental expenditure,False,none
+TXN-00938,Public Works - Nagpur,DEPT-011,5.52,2025-08-15,8,15,capital,Vendor-022,Regular departmental expenditure,False,none
+TXN-00772,Public Works - Pune,DEPT-009,6.76,2025-06-04,6,4,grants,Vendor-013,Regular departmental expenditure,False,none
+TXN-00525,Urban Development,DEPT-006,5.3,2025-05-04,5,4,subsidies,Vendor-038,Regular departmental expenditure,False,none
+TXN-00623,Water Resources,DEPT-007,15.57,2025-09-22,9,22,grants,Vendor-003,Regular departmental expenditure,False,none
+TXN-00079,Health & Family Welfare,DEPT-001,37.68,2025-12-14,12,14,subsidies,Vendor-005,Regular departmental expenditure,False,none
+TXN-00788,Public Works - Pune,DEPT-009,8.13,2025-04-17,4,17,salaries,Vendor-009,Regular departmental expenditure,False,none
+TXN-00247,Road Transport & Highways,DEPT-003,15.0,2025-04-17,4,17,revenue,Vendor-049,Regular departmental expenditure,False,none
+TXN-00143,Education,DEPT-002,12.0,2025-06-21,6,21,salaries,Vendor-018,Regular departmental expenditure,False,none
+TXN-00272,Road Transport & Highways,DEPT-003,178.2,2025-07-26,7,26,salaries,Vendor-049,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00154,Education,DEPT-002,7.87,2025-12-17,12,17,salaries,Vendor-020,Regular departmental expenditure,False,none
+TXN-00621,Water Resources,DEPT-007,17.91,2025-11-19,11,19,infrastructure,Vendor-003,Regular departmental expenditure,False,none
+TXN-00191,Road Transport & Highways,DEPT-003,10.31,2025-11-06,11,6,infrastructure,Vendor-008,Regular departmental expenditure,False,none
+TXN-00516,Urban Development,DEPT-006,8.98,2025-06-05,6,5,grants,Vendor-011,Regular departmental expenditure,False,none
+TXN-00015,Health & Family Welfare,DEPT-001,48.0,2025-12-28,12,28,subsidies,Vendor-045,Regular departmental expenditure,False,none
+TXN-00479,Urban Development,DEPT-006,5.98,2025-09-24,9,24,salaries,Vendor-012,Regular departmental expenditure,False,none
+TXN-00381,Rural Development,DEPT-005,6.12,2025-10-12,10,12,revenue,Vendor-039,Regular departmental expenditure,False,none
+TXN-00600,Water Resources,DEPT-007,9.82,2025-06-23,6,23,infrastructure,Vendor-004,Regular departmental expenditure,False,none
+TXN-00956,Public Works - Nagpur,DEPT-011,7.07,2025-09-18,9,18,revenue,Vendor-005,Regular departmental expenditure,False,none
+TXN-00274,Road Transport & Highways,DEPT-003,49.68,2025-12-09,12,9,infrastructure,Vendor-004,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-00756,Public Works - Pune,DEPT-009,4.0,2025-08-02,8,2,infrastructure,Vendor-003,Regular departmental expenditure,False,none
+TXN-00542,Urban Development,DEPT-006,49.77,2025-09-14,9,14,salaries,Vendor-036,Procurement payment - vendor invoice,True,threshold_structuring
+TXN-01034,Primary Education - Pune,DEPT-012,3.55,2025-12-20,12,20,grants,Vendor-048,Regular departmental expenditure,False,none
+TXN-01002,Public Works - Nagpur,DEPT-011,25.07,2026-03-26,3,26,grants,Vendor-043,Urgent year-end fund utilization,True,march_dumping
+TXN-00287,Agriculture & Farmers,DEPT-004,9.53,2025-10-18,10,18,subsidies,Vendor-002,Regular departmental expenditure,False,none
+TXN-00551,Urban Development,DEPT-006,74.74,2025-09-09,9,9,salaries,Vendor-016,Bulk procurement - emergency purchase,True,spending_spike
+TXN-00048,Health & Family Welfare,DEPT-001,11.74,2025-11-20,11,20,grants,Vendor-049,Regular departmental expenditure,False,none
+TXN-00873,Public Works - Mumbai,DEPT-010,2.87,2025-08-06,8,6,revenue,Vendor-040,Regular departmental expenditure,False,none
+TXN-00021,Health & Family Welfare,DEPT-001,32.16,2025-09-27,9,27,grants,Vendor-001,Regular departmental expenditure,False,none
+TXN-00045,Health & Family Welfare,DEPT-001,22.41,2025-04-02,4,2,capital,Vendor-048,Regular departmental expenditure,False,none
+TXN-01082,Primary Education - Pune,DEPT-012,5.81,2025-09-15,9,15,salaries,Vendor-043,Regular departmental expenditure,False,none
+TXN-00872,Public Works - Mumbai,DEPT-010,3.92,2025-07-18,7,18,infrastructure,Vendor-024,Regular departmental expenditure,False,none
+TXN-00930,Public Works - Nagpur,DEPT-011,5.58,2025-07-17,7,17,grants,Vendor-005,Regular departmental expenditure,False,none
+TXN-00481,Urban Development,DEPT-006,5.09,2025-10-17,10,17,capital,Vendor-018,Regular departmental expenditure,False,none
+TXN-01066,Primary Education - Pune,DEPT-012,4.14,2025-05-12,5,12,infrastructure,Vendor-037,Regular departmental expenditure,False,none
+TXN-00841,Public Works - Mumbai,DEPT-010,13.77,2025-08-03,8,3,infrastructure,Vendor-038,Regular departmental expenditure,False,none
+TXN-00528,Urban Development,DEPT-006,11.9,2025-12-20,12,20,infrastructure,Vendor-050,Regular departmental expenditure,False,none
+TXN-01049,Primary Education - Pune,DEPT-012,1.28,2025-10-22,10,22,capital,Vendor-018,Regular departmental expenditure,False,none
+TXN-00723,Women & Child Development,DEPT-008,7.83,2025-05-09,5,9,capital,Vendor-011,Regular departmental expenditure,False,none
+TXN-00221,Road Transport & Highways,DEPT-003,15.25,2025-10-16,10,16,revenue,Vendor-007,Regular departmental expenditure,False,none
+TXN-00345,Agriculture & Farmers,DEPT-004,8.63,2025-12-11,12,11,salaries,Vendor-047,Regular departmental expenditure,False,none
+TXN-00491,Urban Development,DEPT-006,20.65,2025-09-09,9,9,infrastructure,Vendor-046,Regular departmental expenditure,False,none
+TXN-00508,Urban Development,DEPT-006,16.0,2025-12-02,12,2,revenue,Vendor-034,Regular departmental expenditure,False,none
+TXN-00429,Rural Development,DEPT-005,4.64,2025-07-04,7,4,subsidies,Vendor-038,Regular departmental expenditure,False,none
+TXN-00153,Education,DEPT-002,17.08,2025-04-07,4,7,infrastructure,Vendor-026,Regular departmental expenditure,False,none
+TXN-00001,Health & Family Welfare,DEPT-001,25.64,2025-11-21,11,21,revenue,Vendor-019,Regular departmental expenditure,False,none
+TXN-00702,Women & Child Development,DEPT-008,12.41,2025-07-21,7,21,grants,Vendor-018,Regular departmental expenditure,False,none
+TXN-01059,Primary Education - Pune,DEPT-012,3.91,2025-07-18,7,18,revenue,Vendor-007,Regular departmental expenditure,False,none
+TXN-00344,Agriculture & Farmers,DEPT-004,14.19,2025-11-11,11,11,subsidies,Vendor-001,Regular departmental expenditure,False,none
+TXN-00893,Public Works - Mumbai,DEPT-010,15.83,2025-05-17,5,17,subsidies,Vendor-013,Regular departmental expenditure,False,none
+TXN-00146,Education,DEPT-002,19.39,2025-12-26,12,26,capital,Vendor-047,Regular departmental expenditure,False,none
+TXN-00771,Public Works - Pune,DEPT-009,4.49,2025-10-10,10,10,revenue,Vendor-038,Regular departmental expenditure,False,none
+TXN-00834,Public Works - Mumbai,DEPT-010,2.81,2025-08-03,8,3,salaries,Vendor-046,Regular departmental expenditure,False,none
+TXN-00902,Public Works - Mumbai,DEPT-010,4.27,2025-08-23,8,23,subsidies,Vendor-030,Regular departmental expenditure,False,none
+TXN-00550,Urban Development,DEPT-006,49.33,2025-07-28,7,28,revenue,Vendor-008,Bulk procurement - emergency purchase,True,spending_spike
+TXN-01021,Primary Education - Pune,DEPT-012,8.62,2025-04-21,4,21,grants,Vendor-017,Regular departmental expenditure,False,none
+TXN-00249,Road Transport & Highways,DEPT-003,33.29,2025-09-08,9,8,capital,Vendor-018,Regular departmental expenditure,False,none
+TXN-00134,Education,DEPT-002,29.74,2025-09-28,9,28,revenue,Vendor-038,Regular departmental expenditure,False,none
+TXN-00297,Agriculture & Farmers,DEPT-004,9.47,2025-05-04,5,4,capital,Vendor-035,Regular departmental expenditure,False,none
+TXN-00058,Health & Family Welfare,DEPT-001,17.71,2025-08-24,8,24,salaries,Vendor-049,Regular departmental expenditure,False,none
+TXN-00937,Public Works - Nagpur,DEPT-011,5.08,2025-12-10,12,10,infrastructure,Vendor-042,Regular departmental expenditure,False,none
+TXN-00028,Health & Family Welfare,DEPT-001,31.31,2025-07-11,7,11,revenue,Vendor-028,Regular departmental expenditure,False,none
+TXN-00629,Water Resources,DEPT-007,8.95,2025-05-14,5,14,infrastructure,Vendor-004,Regular departmental expenditure,False,none

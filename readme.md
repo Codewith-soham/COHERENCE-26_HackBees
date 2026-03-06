@@ -1,138 +1,114 @@
-# BudgetSetu - Smart Public Budget Intelligence for India
+## BudgetGuard AI
 
-BudgetSetu is an AI-powered Government Budget Monitoring and Financial Intelligence System designed for Indian government officers. It monitors public budget allocation, spending patterns, and financial utilization across states, districts, and departments.
+BudgetGuard AI is a FastAPI-based service for public finance monitoring. It focuses on government budget oversight by detecting unusual spending, predicting end-of-year fund lapse risk, recommending reallocation opportunities, and evaluating new budget entries in real time.
 
-This repository currently contains the **Frontend** application, built as a modern Single Page Application (SPA).
+### What this project does
 
----
+- Detects suspicious transactions using a hybrid ML + rules approach
+- Predicts under-utilization and potential year-end lapses for departments
+- Suggests fund reallocation between low-demand and high-demand departments
+- Analyzes newly submitted field entries and generates alerts when needed
+- Exposes backend-friendly endpoints for app integration
 
-## 🛠 Tech Stack
+### Core features
 
-*   **Frontend Framework:** React 18 (Bootstrapped with Vite)
-*   **Routing:** React Router DOM v6
-*   **Styling:** Pure Vanilla CSS (CSS Modules/Global vars) - *No Tailwind or external UI libraries*. Design uses a dedicated government color palette.
-*   **Icons:** Lucide-React
-*   **Data Visualization:** Recharts
+#### 1. Anomaly detection
 
----
+The anomaly pipeline combines:
 
-## 📁 Project Structure
+- a trained `IsolationForest` model
+- statistical checks on transaction amounts
+- domain rules such as March-end spending spikes, round amounts, and near-threshold transactions
 
-The frontend application is located entirely within the `/frontend` directory.
+Main endpoints:
 
-```text
-frontend/
-├── src/
-│   ├── App.jsx                 # Main entry point and Route definitions
-│   ├── index.css               # Global CSS variables and design system tokens
-│   ├── layouts/                # Wrapper layouts
-│   │   ├── AuthLayout.jsx      # Centered layout for Login/Signup
-│   │   └── DashboardLayout.jsx # Authenticated layout with Sidebar & Header
-│   ├── components/
-│   │   ├── navigation/         # Sidebar.jsx, Header.jsx
-│   │   └── ui/                 # Reusable generic components (Button, Card, Input, Select, Badge)
-│   └── pages/                  # All 12 application views
-│       ├── Landing.jsx
-│       ├── Login.jsx, SignUp.jsx
-│       ├── Dashboard.jsx
-│       ├── BudgetMonitoring.jsx
-│       ├── AnomalyDetection.jsx
-│       ├── LapsePrediction.jsx
-│       ├── Reallocation.jsx
-│       ├── BudgetPrediction.jsx
-│       ├── RealTimeEntry.jsx
-│       ├── Reports.jsx
-│       └── Settings.jsx
-```
+- `POST /ai/anomaly-check`
+- `POST /ai/detect-anomalies`
 
----
+#### 2. Lapse prediction
 
-## 🔗 Backend API Requirements & Contracts
+The lapse predictor estimates final utilization using:
 
-To make the frontend fully functional, the backend **must** expose specific REST API endpoints. The frontend currently uses mocked static data arrays in the `.jsx` files. Below is the required API contract based on what the UI expects.
+- weighted moving averages
+- spending trend detection
+- optional ML classification for second-opinion risk labeling
 
-### 1. Authentication
-*   **POST** `/api/auth/login`
-    *   *Request:* `{ identifier, password }`
-    *   *Response:* JWT Token + User Data (Name, Officer ID, Department, Role).
-*   **POST** `/api/auth/register`
-    *   *Request:* `{ fullName, officerId, department, email, password }`
-    *   *Expected behavior:* Creates a new officer account awaiting admin approval.
+Main endpoints:
 
-### 2. Main Dashboard & Budget Summaries (Page 4, 5)
-*   **GET** `/api/budget/summary`
-    *   *Query Params:* `state`, `district`, `department`, `fy` (Financial Year)
-    *   *Response Strategy:* Needs to return aggregate numbers: `totalAllocated`, `totalSpent`, `remainingPool`, `averageUtilization`.
-*   **GET** `/api/budget/trends`
-    *   *Response:* Monthly data points for line charts. Array of `{ month: 'Apr', spent: 4000 }`.
-*   **GET** `/api/budget/department-comparison`
-    *   *Response:* Data for bar charts. Array of `{ name: 'Health', allocated: 12000, spent: 8000 }`.
-*   **GET** `/api/budget/recent-activity` 
-    *   *Response:* Array of transactions containing `{ id, state, district, dept, allocated, spent, remaining, fy }`.
+- `POST /ai/predict-utilization`
+- `POST /ai/predict-lapse`
 
-### 3. AI & Analytical Features (Page 6, 7, 8, 9)
-The backend needs a dedicated AI/Analytics engine (e.g., Python microservice or integrated logic) to feed these endpoints.
-*   **GET** `/api/ai/anomalies`
-    *   *Purpose:* Page 6 (AI Anomaly Detection)
-    *   *Expected Response Model:* Array of `{ id, state, district, dept, riskScore (0-100), reason (string explaining the anomaly), amount (flagged amount) }`.
-*   **GET** `/api/ai/lapse-predictions`
-    *   *Purpose:* Page 7 (Fund Lapse Prediction)
-    *   *Expected Response Model:* Array of `{ id, state, district, dept, allocated, spent, utilization (percentage), fy, riskLevel ('High', 'Medium', 'Low') }`.
-*   **GET** `/api/ai/reallocations`
-    *   *Purpose:* Page 8 (Fund Reallocation)
-    *   *Expected Response Model:* Array of `{ id, source (dept name), sourceUtil (%), dest (dept name), destUtil (%), amount (number), reason (string) }`.
-*   **GET** `/api/ai/forecasts`
-    *   *Purpose:* Page 9 (Budget Prediction)
-    *   *Expected Response Model:* Time-series data combining actual historical data with future AI predictions. Array of `{ year, actual (number or null), forecast (number) }`.
+#### 3. Reallocation suggestions
 
-### 4. Administrative & Form Entries (Page 10, 11, 12)
-*   **POST** `/api/budget/transaction`
-    *   *Purpose:* Page 10 (Real-Time Budget Entry)
-    *   *Request Payload:* `{ state, district, department, fy, type ('allocation' or 'spending'), allocated (amount), spent (amount), remarks }`
-*   **POST** `/api/budget/bulk-upload`
-    *   *Purpose:* Page 10 (CSV/Excel bulk data ingestion)
-    *   *Request:* `multipart/form-data` containing the file.
-*   **POST** `/api/reports/generate`
-    *   *Purpose:* Page 11 (Reports)
-    *   *Request:* Filters `{ state, department, fy, reportType }`
-    *   *Response:* A downloadable URL or a direct binary stream of the PDF/Excel/CSV file.
-*   **GET / PUT** `/api/user/profile`
-    *   *Purpose:* Page 12 (Settings)
-    *   *Operations:* Fetch current officer profile data and update details (Name, Phone, Password).
+The reallocation service identifies donor and receiver departments based on utilization, demand, and priority scores.
 
----
+Main endpoint:
 
-## 🎨 Design Rules & UI Constraints
+- `POST /ai/suggest-reallocation`
 
-If you are modifying the frontend, you must adhere strictly to these rules set out in the initial requirements:
-1.  **No Tailwind CSS:** All styles are mapped using standard CSS methodologies located inside specific `.css` files.
-2.  **Color Variables:** Enforced globally in `frontend/src/index.css`:
-    *   `--primary`: Deep Government Blue (`#1A3D7C`)
-    *   `--accent`: Indian Saffron tone (`#FF9933`)
-    *   `--bg-secondary`: Light Grey (`#F5F6F8`)
-    *   Indicators: Green (Success), Orange (Warning), Red (Alert).
-3.  **Responsiveness:** Use CSS media queries to ensure the sidebar collapses gracefully on screens below `768px`.
+#### 4. Real-time entry analysis
 
----
+New officer-submitted entries are checked immediately for:
 
-## 🚀 How to Run the Frontend Locally
+- anomaly risk
+- effect on lapse risk
+- whether an alert should be raised
+- dashboard updates after the transaction is applied
 
-1.  Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
-2.  Open your terminal and navigate to the `frontend` folder:
-    ```bash
-    cd frontend
-    ```
-3.  Install all required dependencies:
-    ```bash
-    npm install
-    ```
-4.  Start the Vite development server:
-    ```bash
-    npm run dev
-    ```
-5.  Open your browser and navigate to `http://localhost:5173/` (or the port specified in your terminal).
+Main endpoint:
 
-To create a production build:
-```bash
-npm run build
-```
+- `POST /ai/analyze-new-entry`
+
+### Project structure
+
+- `ai/main.py` - FastAPI entry point and router registration
+- `ai/models/anomaly_model.py` - anomaly detection engine
+- `ai/models/prediction_model.py` - lapse prediction engine
+- `ai/routers/` - API endpoints
+- `ai/train_anomaly_model.py` - anomaly model training script
+- `ai/train_lapse_model.py` - lapse classifier training script
+- `ai/data/` - sample training and testing datasets
+- `ai/trained_models/` - generated model artifacts
+
+### API summary
+
+- `GET /ai/health` - health check
+- `POST /ai/anomaly-check` - single-entry anomaly scoring for backend integration
+- `POST /ai/predict-utilization` - single-department utilization forecast
+- `POST /ai/detect-anomalies` - batch transaction anomaly detection
+- `POST /ai/predict-lapse` - batch lapse prediction
+- `POST /ai/suggest-reallocation` - reallocation recommendation engine
+- `POST /ai/analyze-new-entry` - real-time transaction impact analysis
+
+### Local setup
+
+1. Create and activate a Python virtual environment.
+2. Install the required packages:
+	 - `fastapi`
+	 - `uvicorn`
+	 - `numpy`
+	 - `pandas`
+	 - `scikit-learn`
+	 - `pydantic`
+3. Move into the AI service folder.
+4. Start the API server.
+
+Suggested run flow:
+
+- Train models if required:
+	- `python train_anomaly_model.py`
+	- `python train_lapse_model.py`
+- Start the service:
+	- `python main.py`
+
+The API runs on port `8000` by default.
+
+### Current implementation notes
+
+- Routers are registered only in `ai/main.py`
+- Backend bridge endpoints are designed to match frontend/backend integration needs
+- Real-time analysis now returns anomaly checks, lapse updates, alert metadata, dashboard updates, and a human-readable message
+
+### Goal
+
+This project is intended to support smarter government budget monitoring by making unusual spending patterns, utilization risks, and reallocation opportunities visible earlier.
