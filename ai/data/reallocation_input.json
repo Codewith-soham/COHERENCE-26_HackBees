@@ -1,0 +1,110 @@
+[
+  {
+    "department_id": "DEPT-001",
+    "department_name": "Health & Family Welfare",
+    "allocated": 400,
+    "spent": 277.47,
+    "utilization_rate": 69.37,
+    "priority_score": 9,
+    "demand_indicator": 0.54
+  },
+  {
+    "department_id": "DEPT-002",
+    "department_name": "Education",
+    "allocated": 300,
+    "spent": 205.01,
+    "utilization_rate": 68.34,
+    "priority_score": 9,
+    "demand_indicator": 0.43
+  },
+  {
+    "department_id": "DEPT-003",
+    "department_name": "Road Transport & Highways",
+    "allocated": 350,
+    "spent": 227.41,
+    "utilization_rate": 64.97,
+    "priority_score": 8,
+    "demand_indicator": 0.47
+  },
+  {
+    "department_id": "DEPT-004",
+    "department_name": "Agriculture & Farmers",
+    "allocated": 250,
+    "spent": 111.51,
+    "utilization_rate": 44.6,
+    "priority_score": 8,
+    "demand_indicator": 0.26
+  },
+  {
+    "department_id": "DEPT-005",
+    "department_name": "Rural Development",
+    "allocated": 200,
+    "spent": 95.26,
+    "utilization_rate": 47.63,
+    "priority_score": 7,
+    "demand_indicator": 0.25
+  },
+  {
+    "department_id": "DEPT-006",
+    "department_name": "Urban Development",
+    "allocated": 180,
+    "spent": 39.16,
+    "utilization_rate": 21.76,
+    "priority_score": 5,
+    "demand_indicator": 0.13
+  },
+  {
+    "department_id": "DEPT-007",
+    "department_name": "Water Resources",
+    "allocated": 200,
+    "spent": 46.42,
+    "utilization_rate": 23.21,
+    "priority_score": 6,
+    "demand_indicator": 0.19
+  },
+  {
+    "department_id": "DEPT-008",
+    "department_name": "Women & Child Development",
+    "allocated": 150,
+    "spent": 34.67,
+    "utilization_rate": 23.11,
+    "priority_score": 7,
+    "demand_indicator": 0.09
+  },
+  {
+    "department_id": "DEPT-009",
+    "department_name": "Public Works - Pune",
+    "allocated": 120,
+    "spent": 49.73,
+    "utilization_rate": 41.44,
+    "priority_score": 6,
+    "demand_indicator": 0.29
+  },
+  {
+    "department_id": "DEPT-010",
+    "department_name": "Public Works - Mumbai",
+    "allocated": 150,
+    "spent": 71.65,
+    "utilization_rate": 47.77,
+    "priority_score": 6,
+    "demand_indicator": 0.3
+  },
+  {
+    "department_id": "DEPT-011",
+    "department_name": "Public Works - Nagpur",
+    "allocated": 100,
+    "spent": 41.64,
+    "utilization_rate": 41.64,
+    "priority_score": 5,
+    "demand_indicator": 0.44
+  },
+  {
+    "department_id": "DEPT-012",
+    "department_name": "Primary Education - Pune",
+    "allocated": 80,
+    "spent": 28.99,
+    "utilization_rate": 36.24,
+    "priority_score": 7,
+    "demand_indicator": 0.24
+  }
+]
