@@ -17,6 +17,9 @@ export default function RealTimeEntry() {
         remarks: ''
     });
 
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState(null); // { type: 'success' | 'error', text: '' }
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
@@ -24,6 +27,61 @@ export default function RealTimeEntry() {
 
     const handleRadioChange = (type) => {
         setFormData(prev => ({ ...prev, type }));
+    };
+
+    const handleReset = () => {
+        setFormData({
+            state: '',
+            district: '',
+            department: '',
+            fy: '2023-24',
+            type: 'allocation',
+            allocated: '',
+            spent: '',
+            remarks: ''
+        });
+        setMessage(null);
+    };
+
+    const handleSubmit = async () => {
+        // Basic validation
+        if (!formData.state || !formData.district || !formData.department || !formData.allocated) {
+            setMessage({ type: 'error', text: 'Please fill in all required fields.' });
+            return;
+        }
+
+        setLoading(true);
+        setMessage(null);
+
+        try {
+            const response = await fetch('http://localhost:5000/api/budget/analyze', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    state: formData.state,
+                    department: formData.department,
+                    district: formData.district,
+                    month: new Date().toLocaleString('default', { month: 'long' }),
+                    financial_year: formData.fy,
+                    allocated_amount: Number(formData.allocated),
+                    spent_amount: Number(formData.spent) || 0,
+                })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Submission failed');
+            }
+
+            setMessage({ type: 'success', text: 'Budget submitted successfully! Anomaly check complete.' });
+            handleReset();
+
+        } catch (error) {
+            setMessage({ type: 'error', text: error.message || 'Submission failed. Please try again.' });
+        } finally {
+            setLoading(false);
+        }
     };
 
     // Preview calculations
@@ -38,6 +96,20 @@ export default function RealTimeEntry() {
                 <p className="text-muted">Manually input or update budget allocations and expenditure records.</p>
             </div>
 
+            {/* Success / Error Message */}
+            {message && (
+                <div style={{
+                    padding: '12px 16px',
+                    borderRadius: '8px',
+                    marginBottom: '16px',
+                    backgroundColor: message.type === 'success' ? '#e6f4ea' : '#fdecea',
+                    color: message.type === 'success' ? '#2e7d32' : '#c62828',
+                    border: `1px solid ${message.type === 'success' ? '#a5d6a7' : '#ef9a9a'}`
+                }}>
+                    {message.text}
+                </div>
+            )}
+
             <div className="grid grid-cols-3 gap-6">
                 {/* Form Column */}
                 <div className="col-span-2">
@@ -47,26 +119,37 @@ export default function RealTimeEntry() {
                             <div className="grid grid-cols-2 gap-4">
                                 <Select label="State" name="state" value={formData.state} onChange={handleChange} options={[
                                     { value: '', label: 'Select State' },
-                                    { value: 'mh', label: 'Maharashtra' },
-                                    { value: 'dl', label: 'Delhi' }
+                                    { value: 'Maharashtra', label: 'Maharashtra' },
+                                    { value: 'Delhi', label: 'Delhi' },
+                                    { value: 'Karnataka', label: 'Karnataka' },
+                                    { value: 'Tamil Nadu', label: 'Tamil Nadu' },
+                                    { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
                                 ]} />
                                 <Select label="District" name="district" value={formData.district} onChange={handleChange} options={[
                                     { value: '', label: 'Select District' },
-                                    { value: 'pune', label: 'Pune' },
-                                    { value: 'nd', label: 'New Delhi' }
+                                    { value: 'Mumbai', label: 'Mumbai' },
+                                    { value: 'Pune', label: 'Pune' },
+                                    { value: 'New Delhi', label: 'New Delhi' },
+                                    { value: 'Bangalore', label: 'Bangalore' },
+                                    { value: 'Chennai', label: 'Chennai' },
                                 ]} />
                             </div>
 
                             <div className="grid grid-cols-2 gap-4">
                                 <Select label="Department" name="department" value={formData.department} onChange={handleChange} options={[
                                     { value: '', label: 'Select Department' },
-                                    { value: 'health', label: 'Health' },
-                                    { value: 'edu', label: 'Education' }
+                                    { value: 'Health', label: 'Health' },
+                                    { value: 'Education', label: 'Education' },
+                                    { value: 'Infrastructure', label: 'Infrastructure' },
+                                    { value: 'Agriculture', label: 'Agriculture' },
+                                    { value: 'Water Resources', label: 'Water Resources' },
+                                    { value: 'Finance', label: 'Finance' },
                                 ]} />
                                 <Select label="Financial Year" name="fy" value={formData.fy} onChange={handleChange} options={[
                                     { value: '2022-23', label: '2022-23' },
                                     { value: '2023-24', label: '2023-24' },
-                                    { value: '2024-25', label: '2024-25' }
+                                    { value: '2024-25', label: '2024-25' },
+                                    { value: '2025-26', label: '2025-26' },
                                 ]} />
                             </div>
 
@@ -102,8 +185,12 @@ export default function RealTimeEntry() {
                             </div>
 
                             <div className="flex justify-end gap-4 mt-2">
-                                <Button type="button" variant="outline">Reset Form</Button>
-                                <Button type="button" variant="primary" className="gap-2"><Send size={16} /> Submit Transaction</Button>
+                                <Button type="button" variant="outline" onClick={handleReset}>
+                                    Reset Form
+                                </Button>
+                                <Button type="button" variant="primary" className="gap-2" onClick={handleSubmit} disabled={loading}>
+                                    <Send size={16} /> {loading ? 'Submitting...' : 'Submit Transaction'}
+                                </Button>
                             </div>
 
                         </form>
@@ -154,3 +241,4 @@ export default function RealTimeEntry() {
         </div>
     );
 }
+

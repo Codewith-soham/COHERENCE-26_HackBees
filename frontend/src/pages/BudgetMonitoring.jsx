@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Input from '../components/ui/Input';
@@ -6,17 +6,48 @@ import Select from '../components/ui/Select';
 import Button from '../components/ui/Button';
 import { Filter, Download } from 'lucide-react';
 
-const mockBudgets = [
-    { id: 1, state: 'Maharashtra', district: 'Pune', dept: 'Health', allocated: 500, spent: 350, get remaining() { return this.allocated - this.spent }, fy: '2023-24' },
-    { id: 2, state: 'Karnataka', district: 'Bengaluru', dept: 'Education', allocated: 300, spent: 280, get remaining() { return this.allocated - this.spent }, fy: '2023-24' },
-    { id: 3, state: 'Gujarat', district: 'Ahmedabad', dept: 'Infrastructure', allocated: 1200, spent: 1100, get remaining() { return this.allocated - this.spent }, fy: '2023-24' },
-    { id: 4, state: 'Kerala', district: 'Kochi', dept: 'Tourism', allocated: 150, spent: 140, get remaining() { return this.allocated - this.spent }, fy: '2023-24' },
-    { id: 5, state: 'Uttar Pradesh', district: 'Lucknow', dept: 'Health', allocated: 800, spent: 400, get remaining() { return this.allocated - this.spent }, fy: '2023-24' },
-    { id: 6, state: 'Madhya Pradesh', district: 'Bhopal', dept: 'Agriculture', allocated: 600, spent: 100, get remaining() { return this.allocated - this.spent }, fy: '2023-24' },
-];
-
 export default function BudgetMonitoring() {
-    const [filters, setFilters] = useState({ state: '', dept: '' });
+    const [budgets, setBudgets] = useState([]);
+    const [filtered, setFiltered] = useState([]);
+    const [filters, setFilters] = useState({ state: '', dept: '', district: '' });
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetchBudgets();
+    }, []);
+
+    const fetchBudgets = async () => {
+        setLoading(true);
+        try {
+            const res = await fetch('http://localhost:5000/api/budget/all');
+            const json = await res.json();
+            const data = json.data || [];
+            setBudgets(data);
+            setFiltered(data);
+        } catch (err) {
+            console.error('Budget fetch error:', err);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleFilterChange = (e) => {
+        const { name, value } = e.target;
+        setFilters(prev => ({ ...prev, [name]: value }));
+    };
+
+    const applyFilters = () => {
+        let result = [...budgets];
+        if (filters.state) result = result.filter(b => b.state?.toLowerCase().includes(filters.state.toLowerCase()));
+        if (filters.dept) result = result.filter(b => b.department?.toLowerCase().includes(filters.dept.toLowerCase()));
+        if (filters.district) result = result.filter(b => b.district?.toLowerCase().includes(filters.district.toLowerCase()));
+        setFiltered(result);
+    };
+
+    const totalAllocated = filtered.reduce((s, b) => s + b.allocated_amount, 0);
+    const totalSpent = filtered.reduce((s, b) => s + b.spent_amount, 0);
+    const remaining = totalAllocated - totalSpent;
+    const avgUtil = totalAllocated > 0 ? ((totalSpent / totalAllocated) * 100).toFixed(1) : 0;
 
     const getStatus = (spent, allocated) => {
         const ratio = spent / allocated;
@@ -25,6 +56,10 @@ export default function BudgetMonitoring() {
         return { label: 'Normal', variant: 'success' };
     };
 
+    const fmt = (val) => `₹${(val / 10000000).toFixed(1)} Cr`;
+
+    if (loading) return <div className="page-container"><p className="text-muted">Loading budgets...</p></div>;
+
     return (
         <div className="page-container animate-fade-in">
             <div className="flex justify-between items-end mb-6">
@@ -32,38 +67,44 @@ export default function BudgetMonitoring() {
                     <h2 className="text-primary">Budget Monitoring</h2>
                     <p className="text-muted">Detailed view of budget allocations and expenditure.</p>
                 </div>
-                <Button variant="outline" className="gap-2">
-                    <Download size={16} /> Export CSV
-                </Button>
+                <Button variant="outline" className="gap-2"><Download size={16} /> Export CSV</Button>
             </div>
 
             {/* Filter Panel */}
             <Card className="mb-6">
                 <div className="flex items-end gap-4">
                     <div className="flex-1">
-                        <Select
-                            label="State"
-                            options={[
-                                { value: '', label: 'All States' },
-                                { value: 'mh', label: 'Maharashtra' },
-                                { value: 'ka', label: 'Karnataka' },
-                            ]}
-                        />
+                        <Select label="State" name="state" onChange={handleFilterChange} options={[
+                            { value: '', label: 'All States' },
+                            { value: 'Maharashtra', label: 'Maharashtra' },
+                            { value: 'Delhi', label: 'Delhi' },
+                            { value: 'Karnataka', label: 'Karnataka' },
+                            { value: 'Tamil Nadu', label: 'Tamil Nadu' },
+                            { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
+                            { value: 'Gujarat', label: 'Gujarat' },
+                            { value: 'Rajasthan', label: 'Rajasthan' },
+                            { value: 'West Bengal', label: 'West Bengal' },
+                        ]} />
                     </div>
                     <div className="flex-1">
-                        <Select
-                            label="Department"
-                            options={[
-                                { value: '', label: 'All Departments' },
-                                { value: 'health', label: 'Health' },
-                                { value: 'edu', label: 'Education' },
-                            ]}
-                        />
+                        <Select label="Department" name="dept" onChange={handleFilterChange} options={[
+                            { value: '', label: 'All Departments' },
+                            { value: 'Health', label: 'Health' },
+                            { value: 'Education', label: 'Education' },
+                            { value: 'Infrastructure', label: 'Infrastructure' },
+                            { value: 'Agriculture', label: 'Agriculture' },
+                            { value: 'Water Resources', label: 'Water Resources' },
+                            { value: 'Finance', label: 'Finance' },
+                            { value: 'Transport', label: 'Transport' },
+                            { value: 'Housing', label: 'Housing' },
+                            { value: 'Energy', label: 'Energy' },
+                            { value: 'Defence', label: 'Defence' },
+                        ]} />
                     </div>
                     <div className="flex-1">
-                        <Input label="Search District" placeholder="Enter district name..." />
+                        <Input label="Search District" name="district" placeholder="Enter district name..." onChange={handleFilterChange} />
                     </div>
-                    <Button variant="primary" className="gap-2">
+                    <Button variant="primary" className="gap-2" onClick={applyFilters}>
                         <Filter size={16} /> Apply Filters
                     </Button>
                 </div>
@@ -71,10 +112,10 @@ export default function BudgetMonitoring() {
 
             {/* Metrics Row */}
             <div className="grid grid-cols-4 gap-6 mb-6">
-                <Card className="p-4"><p className="text-sm text-muted">Total Allocated</p><h3 className="text-xl">₹3,550 Cr</h3></Card>
-                <Card className="p-4"><p className="text-sm text-muted">Total Spent</p><h3 className="text-xl">₹2,370 Cr</h3></Card>
-                <Card className="p-4"><p className="text-sm text-muted">Remaining Pool</p><h3 className="text-xl">₹1,180 Cr</h3></Card>
-                <Card className="p-4"><p className="text-sm text-muted">Avg Utilization</p><h3 className="text-xl text-success">66.7%</h3></Card>
+                <Card className="p-4"><p className="text-sm text-muted">Total Allocated</p><h3 className="text-xl">{fmt(totalAllocated)}</h3></Card>
+                <Card className="p-4"><p className="text-sm text-muted">Total Spent</p><h3 className="text-xl">{fmt(totalSpent)}</h3></Card>
+                <Card className="p-4"><p className="text-sm text-muted">Remaining Pool</p><h3 className="text-xl">{fmt(remaining)}</h3></Card>
+                <Card className="p-4"><p className="text-sm text-muted">Avg Utilization</p><h3 className="text-xl text-success">{avgUtil}%</h3></Card>
             </div>
 
             {/* Main Data Table */}
@@ -95,17 +136,20 @@ export default function BudgetMonitoring() {
                             </tr>
                         </thead>
                         <tbody>
-                            {mockBudgets.map((row) => {
-                                const utilInt = Math.round((row.spent / row.allocated) * 100);
-                                const status = getStatus(row.spent, row.allocated);
+                            {filtered.length === 0 && (
+                                <tr><td colSpan="9" className="text-center text-muted py-6">No budget records found.</td></tr>
+                            )}
+                            {filtered.map((row, i) => {
+                                const utilInt = Math.round((row.spent_amount / row.allocated_amount) * 100);
+                                const status = getStatus(row.spent_amount, row.allocated_amount);
                                 return (
-                                    <tr key={row.id}>
-                                        <td>{row.state}</td>
+                                    <tr key={i}>
+                                        <td>{row.state || 'N/A'}</td>
                                         <td>{row.district}</td>
-                                        <td>{row.dept}</td>
-                                        <td>₹{row.allocated} Cr</td>
-                                        <td>₹{row.spent} Cr</td>
-                                        <td className="font-medium">₹{row.remaining} Cr</td>
+                                        <td>{row.department}</td>
+                                        <td>{fmt(row.allocated_amount)}</td>
+                                        <td>{fmt(row.spent_amount)}</td>
+                                        <td className="font-medium">{fmt(row.allocated_amount - row.spent_amount)}</td>
                                         <td>
                                             <div className="flex items-center gap-2">
                                                 <div style={{ flex: 1, backgroundColor: 'var(--bg-secondary)', height: '6px', borderRadius: '3px' }}>
@@ -115,7 +159,7 @@ export default function BudgetMonitoring() {
                                             </div>
                                         </td>
                                         <td><Badge variant={status.variant}>{status.label}</Badge></td>
-                                        <td>{row.fy}</td>
+                                        <td>{row.financial_year}</td>
                                     </tr>
                                 );
                             })}
@@ -126,3 +170,4 @@ export default function BudgetMonitoring() {
         </div>
     );
 }
+
