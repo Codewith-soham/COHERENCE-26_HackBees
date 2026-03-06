@@ -39,8 +39,34 @@
 }
 
 /* Charts */
+.charts-row {
+    align-items: stretch;
+}
+
+.chart-card {
+    height: 100%;
+}
+
+.chart-card .card-body {
+    padding: 1rem 1.25rem 1.25rem;
+}
+
 .chart-container {
-    margin-top: 1rem;
+    margin-top: 0;
+    height: 300px;
+    width: 100%;
+    overflow: visible;
+}
+
+.utilization-card .chart-container {
+    padding-left: 0.5rem;
+}
+
+.utilization-card .card-header,
+.comparison-card .card-header {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
 }
 
 /* Tables */
@@ -100,5 +126,17 @@
 
     .grid-cols-2 {
         grid-template-columns: 1fr;
+    }
+
+    .chart-card .card-body {
+        padding: 1rem;
+    }
+
+    .chart-container {
+        height: 260px;
+    }
+
+    .utilization-card .chart-container {
+        padding-left: 0.25rem;
     }
 }

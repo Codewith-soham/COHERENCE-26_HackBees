@@ -25,8 +25,8 @@ export default function Landing() {
                     <h1>BUDGETSETU</h1>
                 </div>
                 <div className="landing-nav">
-                    <Link to="/login" className="nav-link">Login</Link>
-                    <Link to="/signup" className="nav-link">Sign Up</Link>
+                    <Link to="/login" className="landing-nav-link">Login</Link>
+                    <Link to="/signup" className="landing-nav-link">Sign Up</Link>
                 </div>
             </header>
 

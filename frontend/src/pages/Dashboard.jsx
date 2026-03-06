@@ -72,14 +72,21 @@ export default function Dashboard() {
             </div>
 
             {/* Charts Row */}
-            <div className="grid grid-cols-2 gap-6 mb-6">
-                <Card title="Budget Utilization Trend (FY 23-24)">
-                    <div className="chart-container" style={{ height: 300 }}>
+            <div className="grid grid-cols-2 gap-6 mb-6 charts-row">
+                <Card title="Budget Utilization Trend (FY 23-24)" className="chart-card utilization-card">
+                    <div className="chart-container">
                         <ResponsiveContainer width="100%" height="100%">
-                            <LineChart data={utilizationData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                            <LineChart data={utilizationData} margin={{ top: 8, right: 12, bottom: 8, left: 24 }}>
                                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
                                 <XAxis dataKey="month" axisLine={false} tickLine={false} />
-                                <YAxis axisLine={false} tickLine={false} tickFormatter={(val) => `₹${val}Cr`} />
+                                <YAxis
+                                    axisLine={false}
+                                    tickLine={false}
+                                    width={92}
+                                    tickMargin={8}
+                                    tick={{ fill: 'var(--text-dark)', fontSize: 12, fontWeight: 400 }}
+                                    tickFormatter={(val) => `₹${val} Cr`}
+                                />
                                 <Tooltip formatter={(value) => [`₹${value} Cr`, 'Spent']} />
                                 <Line type="monotone" dataKey="spent" stroke="var(--primary)" strokeWidth={3} dot={{ r: 4 }} activeDot={{ r: 6 }} />
                             </LineChart>
@@ -87,16 +94,16 @@ export default function Dashboard() {
                     </div>
                 </Card>
 
-                <Card title="Department Spending Comparison">
-                    <div className="chart-container" style={{ height: 300 }}>
+                <Card title="Department Spending Comparison" className="chart-card comparison-card">
+                    <div className="chart-container">
                         <ResponsiveContainer width="100%" height="100%">
-                            <BarChart data={deptData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                            <BarChart data={deptData} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
                                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
                                 <XAxis dataKey="name" axisLine={false} tickLine={false} />
                                 <YAxis axisLine={false} tickLine={false} />
                                 <Tooltip formatter={(value) => `₹${value} Cr`} />
                                 <Legend iconType="circle" />
-                                <Bar dataKey="allocated" name="Allocated" fill="var(--bg-secondary)" radius={[4, 4, 0, 0]} />
+                                <Bar dataKey="allocated" name="Allocated" fill="#4CAF50" radius={[4, 4, 0, 0]} />
                                 <Bar dataKey="spent" name="Spent" fill="var(--accent)" radius={[4, 4, 0, 0]} />
                             </BarChart>
                         </ResponsiveContainer>

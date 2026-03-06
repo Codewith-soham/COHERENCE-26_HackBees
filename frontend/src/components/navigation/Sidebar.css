@@ -39,14 +39,21 @@
     padding: 1rem 0;
 }
 
-.nav-link {
+.sidebar .nav-link {
     display: flex;
     align-items: center;
     gap: 1rem;
     padding: 0.875rem 1.5rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.92);
     transition: all 0.2s ease;
     white-space: nowrap;
+}
+
+.sidebar .nav-link svg,
+.sidebar .nav-link span {
+    color: inherit;
+    opacity: 1;
+    visibility: visible;
 }
 
 .sidebar.closed .nav-link {
@@ -54,8 +61,8 @@
     padding: 0.875rem;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
     color: var(--bg-main);
     background-color: var(--primary-hover);
     border-left: 4px solid var(--accent);
