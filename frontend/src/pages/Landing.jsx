@@ -1,18 +1,32 @@
 import { Link } from 'react-router-dom';
+import { Landmark } from 'lucide-react';
 import Button from '../components/ui/Button';
 import './Landing.css';
 
 export default function Landing() {
     return (
         <div className="landing-page">
-            {/* Background with animated tricolor gradient and Ashoka Chakra watermark */}
-            <div className="landing-background">
-                <div className="chakra-watermark"></div>
+            {/* Moving Background Gradients */}
+            <div className="landing-gradients">
+                <div className="gradient-saffron"></div>
+                <div className="gradient-green"></div>
             </div>
 
-            {/* Top Header */}
-            <header className="landing-header container">
+            {/* State Emblem Watermark */}
+            <div className="landing-watermark"></div>
+
+            {/* Financial Grid Visual Pattern */}
+            <div className="landing-visual-grid">
+                <div className="line-h line-1"></div>
+                <div className="line-h line-2"></div>
+                <div className="line-v line-3"></div>
+                <div className="line-v line-4"></div>
+            </div>
+
+            {/* Top Navigation */}
+            <header className="landing-header container animation-fade-in-down">
                 <div className="landing-brand">
+                    <Landmark size={28} className="brand-emblem" strokeWidth={1.5} />
                     <h1>BudgetSetu</h1>
                 </div>
                 <div className="landing-nav">
@@ -25,46 +39,34 @@ export default function Landing() {
                 </div>
             </header>
 
-            {/* Main Content */}
+            {/* Main Hero Content */}
             <main className="landing-main">
                 <div className="hero-content container">
-                    <h1 className="hero-title animate-fade-in-up">BudgetSetu</h1>
-                    <p className="hero-tagline animate-fade-in-up delay-1">
+                    <h1 className="hero-title animation-fade-in-up">BudgetSetu</h1>
+
+                    <h2 className="hero-tagline animation-fade-in-up delay-1">
                         "Smart Public Budget Intelligence for India"
-                    </p>
-                    <p className="hero-subtitle animate-fade-in-up delay-2">
-                        AI-powered platform for monitoring government budget allocation,<br />
-                        spending patterns, and financial risks across India.
+                    </h2>
+
+                    <p className="hero-description animation-fade-in-up delay-2">
+                        AI-powered platform for monitoring government budget allocation,
+                        spending patterns, and financial insights across states,
+                        districts, and departments.
                     </p>
 
-                    <div className="hero-actions animate-fade-in-up delay-3">
+                    <div className="hero-actions animation-fade-in-up delay-3">
                         <Link to="/login">
-                            <Button size="lg" variant="primary" className="hero-btn-primary">Login</Button>
+                            <Button size="lg" className="hero-btn-primary">Login</Button>
                         </Link>
                         <Link to="/signup">
-                            <Button size="lg" variant="outline" className="hero-btn-secondary">Create Account</Button>
+                            <Button size="lg" className="hero-btn-secondary">Create Account</Button>
                         </Link>
-                    </div>
-
-                    <div className="hero-visual animate-fade-in delay-4">
-                        {/* Subtle abstract data grid/network to convey finance and data */}
-                        <div className="abstract-grid">
-                            <div className="grid-line horizontal"></div>
-                            <div className="grid-line horizontal"></div>
-                            <div className="grid-line horizontal"></div>
-                            <div className="grid-line vertical"></div>
-                            <div className="grid-line vertical"></div>
-                            <div className="grid-line vertical"></div>
-                            <div className="data-node"></div>
-                            <div className="data-node"></div>
-                            <div className="data-node"></div>
-                        </div>
                     </div>
                 </div>
             </main>
 
-            {/* Footer with tricolor divider */}
-            <footer className="landing-footer">
+            {/* Footer */}
+            <footer className="landing-footer animation-fade-in delay-4">
                 <div className="tricolor-divider">
                     <div className="color-saffron"></div>
                     <div className="color-white"></div>
@@ -76,8 +78,8 @@ export default function Landing() {
                     </div>
                     <div className="footer-links">
                         <Link to="#">About</Link>
-                        <Link to="#">Privacy Policy</Link>
                         <Link to="#">Contact</Link>
+                        <Link to="#">Privacy Policy</Link>
                     </div>
                 </div>
             </footer>

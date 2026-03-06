@@ -1,72 +1,152 @@
-/* General Layout */
+/* ----------------------------------
+   GLOBAL LAYOUT & VARIABLES
+----------------------------------- */
 .landing-page {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
-    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #FFFFFF;
     color: #1A3D7C;
-    /* Primary deep blue */
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow: hidden;
+    z-index: 0;
 }
 
-/* Background Gradients */
-/* Top: Soft Saffron, Middle: White/Light, Bottom: Soft Green */
-.landing-background {
+/* ----------------------------------
+   BACKGROUND GRADIENTS (INDIAN FLAG)
+----------------------------------- */
+.landing-gradients {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    pointer-events: none;
+}
+
+.gradient-saffron {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: radial-gradient(ellipse at top center, rgba(255, 153, 51, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    animation: wave-motion 10s ease-in-out infinite alternate;
+}
+
+.gradient-green {
+    position: absolute;
+    bottom: -20%;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: radial-gradient(ellipse at bottom center, rgba(19, 136, 8, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    animation: wave-motion 12s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes wave-motion {
+    0% {
+        transform: translateY(-3%) scaleY(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(3%) scaleY(1.1);
+        opacity: 1;
+    }
+}
+
+/* ----------------------------------
+   EMBLEM WATERMARK
+----------------------------------- */
+.landing-watermark {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    /* Abstract pillar/lion representation SVG */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><g stroke="%23B89E58" stroke-width="1.5" fill="none" opacity="0.15"><circle cx="100" cy="100" r="90"/><circle cx="100" cy="100" r="80"/><path d="M 70 170 L 130 170 M 80 160 L 120 160 M 85 150 L 115 150 M 90 40 L 90 150 M 110 40 L 110 150" stroke-width="2"/><circle cx="100" cy="165" r="5"/><path d="M 75 40 Q 100 10 125 40" stroke-width="3"/><path d="M 85 50 Q 100 30 115 50" stroke-width="2"/></g></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0;
+    animation: slow-reveal 3s ease forwards 1s;
+}
+
+@keyframes slow-reveal {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ----------------------------------
+   ABSTRACT FINANCIAL GRID
+----------------------------------- */
+.landing-visual-grid {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -2;
-    background: linear-gradient(180deg,
-            rgba(255, 153, 51, 0.08) 0%,
-            rgba(255, 255, 255, 1) 40%,
-            rgba(255, 255, 255, 1) 60%,
-            rgba(19, 136, 8, 0.08) 100%);
-    animation: bg-shift 15s ease-in-out infinite alternate;
+    pointer-events: none;
 }
 
-@keyframes bg-shift {
+.landing-visual-grid div {
+    position: absolute;
+    background-color: #1A3D7C;
+    opacity: 0.03;
+}
+
+.line-h {
+    height: 1px;
+    width: 100%;
+}
+
+.line-v {
+    width: 1px;
+    height: 100%;
+}
+
+.line-1 {
+    top: 30%;
+    animation: float 15s linear infinite alternate;
+}
+
+.line-2 {
+    top: 70%;
+    animation: float 20s linear infinite alternate-reverse;
+}
+
+.line-3 {
+    left: 25%;
+    animation: float 18s linear infinite alternate;
+}
+
+.line-4 {
+    left: 75%;
+    animation: float 22s linear infinite alternate-reverse;
+}
+
+@keyframes float {
     0% {
-        transform: translateY(-5%);
-        opacity: 0.8;
+        transform: translate(0, -10px);
     }
 
     100% {
-        transform: translateY(5%);
-        opacity: 1;
+        transform: translate(0, 10px);
     }
 }
 
-/* Subtle Ashoka Chakra Watermark */
-.chakra-watermark {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 800px;
-    height: 800px;
-    transform: translate(-50%, -50%);
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="%231A3D7C" stroke-width="0.5" opacity="0.05"/><circle cx="50" cy="50" r="35" fill="none" stroke="%231A3D7C" stroke-width="0.3" opacity="0.05"/><line x1="50" y1="5" x2="50" y2="95" stroke="%231A3D7C" stroke-width="0.3" opacity="0.05"/><line x1="5" y1="50" x2="95" y2="50" stroke="%231A3D7C" stroke-width="0.3" opacity="0.05"/></svg>');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    z-index: -1;
-    pointer-events: none;
-    animation: slow-spin 120s linear infinite;
-}
-
-@keyframes slow-spin {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-/* Header */
+/* ----------------------------------
+   TOP NAVIGATION
+----------------------------------- */
 .landing-header {
     height: 90px;
     display: flex;
@@ -76,30 +156,42 @@
     z-index: 10;
 }
 
+.landing-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #1A3D7C;
+}
+
+.brand-emblem {
+    color: #B89E58;
+    /* Subtle gold for the emblem */
+}
+
 .landing-brand h1 {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.5px;
-    color: #1A3D7C;
     margin: 0;
     text-transform: uppercase;
 }
 
 .landing-nav {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .nav-btn {
     font-weight: 600;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     font-size: 0.8rem;
     border-radius: 4px;
-    /* Professional, less rounded */
 }
 
-/* Main Content */
+/* ----------------------------------
+   HERO SECTION
+----------------------------------- */
 .landing-main {
     flex: 1;
     display: flex;
@@ -116,36 +208,39 @@
 }
 
 .hero-title {
-    font-size: 4.5rem;
+    font-size: 5rem;
     font-weight: 800;
     letter-spacing: 1px;
     color: #1A3D7C;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
+    line-height: 1;
 }
 
 .hero-tagline {
     font-size: 1.5rem;
-    font-weight: 500;
-    color: #FF9933;
-    /* Saffron accent */
+    font-weight: 400;
+    color: #4b5563;
     margin-bottom: 2rem;
     letter-spacing: 0.5px;
+    font-style: italic;
 }
 
-.hero-subtitle {
+.hero-description {
     font-size: 1.125rem;
     color: #4b5563;
-    /* Muted text */
-    margin-bottom: 3rem;
-    line-height: 1.6;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto 3.5rem auto;
 }
 
+/* ----------------------------------
+   CALL TO ACTION BUTTONS
+----------------------------------- */
 .hero-actions {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
-    margin-bottom: 4rem;
 }
 
 .hero-btn-primary,
@@ -153,174 +248,49 @@
     padding: 0.875rem 2.5rem;
     font-size: 1rem;
     font-weight: 600;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
     border-radius: 4px;
+    text-transform: none;
+    /* Keep authoritative but readable */
 }
 
 .hero-btn-primary {
     background-color: #1A3D7C;
+    color: #FFFFFF;
     border: 1px solid #1A3D7C;
-    color: white;
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(26, 61, 124, 0.15);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .hero-btn-primary:hover {
     background-color: #112a57;
+    box-shadow: 0 8px 16px rgba(26, 61, 124, 0.25);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(26, 61, 124, 0.2);
 }
 
 .hero-btn-secondary {
-    background-color: transparent;
-    border: 1px solid #1A3D7C;
+    background-color: #FFFFFF;
     color: #1A3D7C;
+    border: 1px solid #1A3D7C;
     transition: all 0.3s ease;
 }
 
 .hero-btn-secondary:hover {
     background-color: rgba(26, 61, 124, 0.05);
-    transform: translateY(-2px);
 }
 
-/* Visual Element - Minimal Finance Data Grid */
-.hero-visual {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    height: 150px;
-    margin: 0 auto;
-    opacity: 0.3;
-    /* Subtle */
-}
-
-.abstract-grid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.grid-line {
-    position: absolute;
-    background-color: #1A3D7C;
-}
-
-.grid-line.horizontal {
-    height: 1px;
-    width: 100%;
-}
-
-.grid-line.horizontal:nth-child(1) {
-    top: 20%;
-    animation: floatY 4s ease-in-out infinite alternate;
-}
-
-.grid-line.horizontal:nth-child(2) {
-    top: 50%;
-    opacity: 0.5;
-}
-
-.grid-line.horizontal:nth-child(3) {
-    top: 80%;
-    animation: floatY 5s ease-in-out infinite alternate-reverse;
-}
-
-.grid-line.vertical {
-    width: 1px;
-    height: 100%;
-}
-
-.grid-line.vertical:nth-child(4) {
-    left: 20%;
-    animation: floatX 6s ease-in-out infinite alternate;
-}
-
-.grid-line.vertical:nth-child(5) {
-    left: 50%;
-    opacity: 0.5;
-}
-
-.grid-line.vertical:nth-child(6) {
-    left: 80%;
-    animation: floatX 4s ease-in-out infinite alternate-reverse;
-}
-
-.data-node {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background-color: #FF9933;
-    border-radius: 50%;
-}
-
-.data-node:nth-child(7) {
-    top: 20%;
-    left: 50%;
-    animation: pulse 2s infinite;
-}
-
-.data-node:nth-child(8) {
-    top: 50%;
-    left: 80%;
-    animation: pulse 3s infinite;
-}
-
-.data-node:nth-child(9) {
-    top: 80%;
-    left: 20%;
-    animation: pulse 2.5s infinite;
-}
-
-@keyframes floatY {
-    from {
-        transform: translateY(-5px);
-    }
-
-    to {
-        transform: translateY(5px);
-    }
-}
-
-@keyframes floatX {
-    from {
-        transform: translateX(-5px);
-    }
-
-    to {
-        transform: translateX(5px);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.8;
-    }
-
-    50% {
-        transform: scale(1.5);
-        opacity: 0.3;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 0.8;
-    }
-}
-
-/* Footer */
+/* ----------------------------------
+   FOOTER
+----------------------------------- */
 .landing-footer {
     text-align: center;
     z-index: 10;
-    background-color: white;
-    /* Clean base for footer */
+    background-color: #FFFFFF;
 }
 
 .tricolor-divider {
     display: flex;
-    height: 3px;
+    height: 2px;
     width: 100%;
 }
 
@@ -333,24 +303,25 @@
 }
 
 .color-white {
-    background-color: #FFFFFF;
+    background-color: #F8F9FA;
 }
 
-/* White part of the divider */
 .color-green {
     background-color: #138808;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 1.5rem 2rem;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
 }
 
 .footer-copyright {
     font-size: 0.875rem;
-    color: #4b5563;
+    color: #6b7280;
     font-weight: 500;
 }
 
@@ -363,8 +334,7 @@
     font-size: 0.875rem;
     color: #1A3D7C;
     font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
     transition: opacity 0.2s;
 }
 
@@ -372,16 +342,24 @@
     opacity: 0.7;
 }
 
-/* Animations */
-.animate-fade-in-up {
+/* ----------------------------------
+   ANIMATIONS
+----------------------------------- */
+.animation-fade-in-up {
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-.animate-fade-in {
+.animation-fade-in-down {
     opacity: 0;
-    animation: fadeIn 1.5s ease forwards;
+    transform: translateY(-10px);
+    animation: fadeInDown 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animation-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
 }
 
 .delay-1 {
@@ -407,16 +385,23 @@
     }
 }
 
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
 }
 
-/* Responsive */
+/* Responsive constraints */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 
     .hero-tagline {
@@ -428,8 +413,12 @@
         gap: 1rem;
     }
 
-    .footer-content {
-        flex-direction: column;
+    .landing-watermark {
+        width: 400px;
+        height: 400px;
+    }
+
+    .footer-links {
         gap: 1rem;
     }
 }
