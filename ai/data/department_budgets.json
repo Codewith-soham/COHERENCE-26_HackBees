@@ -1,0 +1,254 @@
+[
+  {
+    "department_id": "DEPT-001",
+    "department_name": "Health & Family Welfare",
+    "level": "central",
+    "allocated_amount": 400,
+    "spent_amount": 277.47,
+    "current_month": 9,
+    "monthly_spending": [
+      27.24,
+      26.71,
+      29.07,
+      31.15,
+      30.58,
+      31.86,
+      35.84,
+      31.52,
+      33.5
+    ],
+    "utilization_rate": 69.37,
+    "spending_behavior": "good"
+  },
+  {
+    "department_id": "DEPT-002",
+    "department_name": "Education",
+    "level": "central",
+    "allocated_amount": 300,
+    "spent_amount": 205.01,
+    "current_month": 9,
+    "monthly_spending": [
+      20.38,
+      20.24,
+      21.11,
+      21.71,
+      23.56,
+      27.37,
+      22.58,
+      23.52,
+      24.54
+    ],
+    "utilization_rate": 68.34,
+    "spending_behavior": "good"
+  },
+  {
+    "department_id": "DEPT-003",
+    "department_name": "Road Transport & Highways",
+    "level": "central",
+    "allocated_amount": 350,
+    "spent_amount": 227.41,
+    "current_month": 9,
+    "monthly_spending": [
+      25.58,
+      25.81,
+      28.33,
+      21.47,
+      22.04,
+      26.29,
+      29.94,
+      25.16,
+      22.79
+    ],
+    "utilization_rate": 64.97,
+    "spending_behavior": "good"
+  },
+  {
+    "department_id": "DEPT-004",
+    "department_name": "Agriculture & Farmers",
+    "level": "central",
+    "allocated_amount": 250,
+    "spent_amount": 111.51,
+    "current_month": 9,
+    "monthly_spending": [
+      14.7,
+      14.04,
+      11.33,
+      11.54,
+      11.57,
+      13.77,
+      12.27,
+      14.55,
+      7.74
+    ],
+    "utilization_rate": 44.6,
+    "spending_behavior": "average"
+  },
+  {
+    "department_id": "DEPT-005",
+    "department_name": "Rural Development",
+    "level": "state",
+    "allocated_amount": 200,
+    "spent_amount": 95.26,
+    "current_month": 9,
+    "monthly_spending": [
+      9.44,
+      9.0,
+      10.42,
+      9.96,
+      12.13,
+      7.81,
+      10.91,
+      11.74,
+      13.85
+    ],
+    "utilization_rate": 47.63,
+    "spending_behavior": "average"
+  },
+  {
+    "department_id": "DEPT-006",
+    "department_name": "Urban Development",
+    "level": "state",
+    "allocated_amount": 180,
+    "spent_amount": 39.16,
+    "current_month": 9,
+    "monthly_spending": [
+      6.42,
+      6.43,
+      4.45,
+      3.52,
+      5.16,
+      4.05,
+      4.31,
+      2.04,
+      2.78
+    ],
+    "utilization_rate": 21.76,
+    "spending_behavior": "poor"
+  },
+  {
+    "department_id": "DEPT-007",
+    "department_name": "Water Resources",
+    "level": "state",
+    "allocated_amount": 200,
+    "spent_amount": 46.42,
+    "current_month": 9,
+    "monthly_spending": [
+      8.9,
+      7.21,
+      6.51,
+      5.71,
+      3.92,
+      5.52,
+      3.44,
+      3.68,
+      1.53
+    ],
+    "utilization_rate": 23.21,
+    "spending_behavior": "poor"
+  },
+  {
+    "department_id": "DEPT-008",
+    "department_name": "Women & Child Development",
+    "level": "state",
+    "allocated_amount": 150,
+    "spent_amount": 34.67,
+    "current_month": 9,
+    "monthly_spending": [
+      4.96,
+      5.98,
+      4.53,
+      5.09,
+      3.78,
+      2.34,
+      3.43,
+      2.14,
+      2.42
+    ],
+    "utilization_rate": 23.11,
+    "spending_behavior": "poor"
+  },
+  {
+    "department_id": "DEPT-009",
+    "department_name": "Public Works - Pune",
+    "level": "district",
+    "allocated_amount": 120,
+    "spent_amount": 49.73,
+    "current_month": 9,
+    "monthly_spending": [
+      2.76,
+      1.52,
+      7.53,
+      8.9,
+      8.59,
+      2.92,
+      7.75,
+      7.12,
+      2.64
+    ],
+    "utilization_rate": 41.44,
+    "spending_behavior": "mixed"
+  },
+  {
+    "department_id": "DEPT-010",
+    "department_name": "Public Works - Mumbai",
+    "level": "district",
+    "allocated_amount": 150,
+    "spent_amount": 71.65,
+    "current_month": 9,
+    "monthly_spending": [
+      9.34,
+      7.78,
+      9.05,
+      7.77,
+      8.05,
+      8.73,
+      8.48,
+      5.69,
+      6.76
+    ],
+    "utilization_rate": 47.77,
+    "spending_behavior": "average"
+  },
+  {
+    "department_id": "DEPT-011",
+    "department_name": "Public Works - Nagpur",
+    "level": "district",
+    "allocated_amount": 100,
+    "spent_amount": 41.64,
+    "current_month": 9,
+    "monthly_spending": [
+      5.13,
+      2.05,
+      1.91,
+      5.8,
+      1.89,
+      6.03,
+      6.44,
+      5.6,
+      6.79
+    ],
+    "utilization_rate": 41.64,
+    "spending_behavior": "mixed"
+  },
+  {
+    "department_id": "DEPT-012",
+    "department_name": "Primary Education - Pune",
+    "level": "district",
+    "allocated_amount": 80,
+    "spent_amount": 28.99,
+    "current_month": 9,
+    "monthly_spending": [
+      4.18,
+      4.13,
+      5.48,
+      2.4,
+      2.41,
+      4.44,
+      2.59,
+      1.33,
+      2.03
+    ],
+    "utilization_rate": 36.24,
+    "spending_behavior": "mixed"
+  }
+]
