@@ -1,7 +1,15 @@
+"""
+BudgetGuard AI Service — Main Entry Point
+==========================================
+This is the ONLY file that imports app and registers routers.
+No router file should import app or call app.include_router().
+"""
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
+# ============ Create App ============
 app = FastAPI(
     title="BudgetGuard AI Service",
     description="AI-powered budget analysis for government fund tracking",
@@ -15,18 +23,21 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Import all routers
-from routers import backend_bridge, anomaly, lapse_prediction, reallocation, realtime_analysis
+# ============ Import Routers ============
+from routers.backend_bridge import router as backend_bridge_router
+from routers.anomaly import router as anomaly_router
+from routers.lapse_prediction import router as lapse_prediction_router
+from routers.reallocation import router as reallocation_router
+from routers.realtime_analysis import router as realtime_analysis_router
 
-# PRIORITY: Backend bridge (what Soham's backend calls)
-app.include_router(backend_bridge.router, prefix="/ai", tags=["Backend Bridge (Soham's API)"])
+# ============ Register Routers (ONLY HERE) ============
+app.include_router(backend_bridge_router, prefix="/ai", tags=["Backend Bridge"])
+app.include_router(anomaly_router, prefix="/ai", tags=["Anomaly Detection"])
+app.include_router(lapse_prediction_router, prefix="/ai", tags=["Lapse Prediction"])
+app.include_router(reallocation_router, prefix="/ai", tags=["Reallocation"])
+app.include_router(realtime_analysis_router, prefix="/ai", tags=["Real-time Analysis"])
 
-# Advanced endpoints
-app.include_router(anomaly.router, prefix="/ai", tags=["Anomaly Detection (Advanced)"])
-app.include_router(lapse_prediction.router, prefix="/ai", tags=["Lapse Prediction (Advanced)"])
-app.include_router(reallocation.router, prefix="/ai", tags=["Reallocation"])
-app.include_router(realtime_analysis.router, prefix="/ai", tags=["Real-time Entry Analysis"])
-
+# ============ Health Check ============
 @app.get("/ai/health")
 async def health():
     return {
@@ -44,5 +55,6 @@ async def health():
         ]
     }
 
+# ============ Run ============
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

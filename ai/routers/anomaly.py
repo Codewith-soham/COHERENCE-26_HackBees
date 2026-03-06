@@ -1,4 +1,4 @@
-"""POST /ai/detect-anomalies — Batch anomaly detection (advanced)"""
+"""POST /ai/detect-anomalies — Batch anomaly detection"""
 
 from fastapi import APIRouter
 from pydantic import BaseModel
@@ -6,6 +6,7 @@ from typing import List, Optional
 from models.anomaly_model import AnomalyDetector
 
 router = APIRouter()
+
 detector = AnomalyDetector()
 
 

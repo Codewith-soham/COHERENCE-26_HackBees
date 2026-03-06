@@ -96,7 +96,8 @@ async def suggest_reallocation(req: ReallocationRequest):
     suggestions.sort(key=lambda x: x.impact_score, reverse=True)
 
     before_avg = float(np.mean([d.utilization_rate for d in departments]))
-    after_avg = before_avg + (total_moved / sum(d.allocated for d in departments) * 100) if total_moved > 0 else before_avg
+    total_alloc = sum(d.allocated for d in departments)
+    after_avg = before_avg + (total_moved / total_alloc * 100) if total_moved > 0 and total_alloc > 0 else before_avg
 
     return ReallocationResponse(
         total_suggestions=len(suggestions),

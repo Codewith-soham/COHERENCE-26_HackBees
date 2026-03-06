@@ -1,32 +1,23 @@
 """
-BACKEND BRIDGE
-===============
-These endpoints match EXACTLY what Soham's aiService.js calls.
-
-His backend calls:
-  POST /ai/anomaly-check         → We handle here
-  POST /ai/predict-utilization   → We handle here
-
-We translate his format → our AI → translate back to his format.
+Backend Bridge — Matches Soham's aiService.js endpoints exactly.
+POST /ai/anomaly-check
+POST /ai/predict-utilization
 """
 
 from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import Optional
 import numpy as np
-from datetime import datetime
 from models.anomaly_model import AnomalyDetector
 from models.prediction_model import LapsePredictor
 
 router = APIRouter()
+
 detector = AnomalyDetector()
 predictor = LapsePredictor()
 
 
-# ================================================================
-# ENDPOINT 1: POST /ai/anomaly-check
-# This is what his aiService.js actually calls
-# ================================================================
+# ============ ANOMALY CHECK ============
 
 class AnomalyCheckRequest(BaseModel):
     department: str
@@ -47,7 +38,6 @@ class AnomalyCheckResponse(BaseModel):
 @router.post("/anomaly-check", response_model=AnomalyCheckResponse)
 async def anomaly_check(req: AnomalyCheckRequest):
 
-    # Convert his month name to number
     month_map = {
         "january": 1, "february": 2, "march": 3, "april": 4,
         "may": 5, "june": 6, "july": 7, "august": 8,
@@ -57,14 +47,12 @@ async def anomaly_check(req: AnomalyCheckRequest):
     year = 2025 if month_num >= 4 else 2026
     date_str = f"{year}-{month_num:02d}-15"
 
-    # Convert amounts — his might be in actual rupees, ours are in Crores
     amount_in_cr = req.spent_amount
     allocated_cr = req.allocated_amount
     if req.spent_amount > 100000:
         amount_in_cr = req.spent_amount / 10000000
         allocated_cr = req.allocated_amount / 10000000
 
-    # Create transaction from his budget data
     main_txn = {
         "id": f"BDG-{req.department[:3].upper()}-{req.district[:3].upper() if req.district else 'ALL'}",
         "department": req.department,
@@ -75,7 +63,6 @@ async def anomaly_check(req: AnomalyCheckRequest):
         "vendor": "Government",
     }
 
-    # Create reference transactions so ML has context
     avg_monthly = allocated_cr / 12
     reference_txns = []
     for i in range(6):
@@ -91,29 +78,21 @@ async def anomaly_check(req: AnomalyCheckRequest):
             "vendor": "Government",
         })
 
-    # Run anomaly detection
     all_txns = reference_txns + [main_txn]
     results = detector.detect(all_txns)
 
-    # Find the result for our main transaction
     our_result = None
     for r in results:
         if r['transaction_id'] == main_txn['id']:
             our_result = r
             break
-
     if our_result is None:
         our_result = results[0]
 
-    # Convert to HIS format
-    # Our score: 0.0-1.0 → His score: 0-100
     his_score = round(our_result['anomaly_score'] * 100, 1)
-
-    # Our severity: lowercase → His: UPPERCASE
     severity_map = {"critical": "HIGH", "high": "HIGH", "medium": "MEDIUM", "low": "LOW"}
     his_severity = severity_map.get(our_result['severity'], "LOW")
 
-    # Explanation
     explanation = "; ".join(our_result['reasons'][:3])
     if not our_result['is_anomaly']:
         explanation = "No significant anomalies detected in this budget entry."
@@ -126,10 +105,7 @@ async def anomaly_check(req: AnomalyCheckRequest):
     )
 
 
-# ================================================================
-# ENDPOINT 2: POST /ai/predict-utilization
-# This is what his aiService.js actually calls
-# ================================================================
+# ============ PREDICT UTILIZATION ============
 
 class PredictUtilizationRequest(BaseModel):
     department: str
@@ -149,7 +125,6 @@ class PredictUtilizationResponse(BaseModel):
 @router.post("/predict-utilization", response_model=PredictUtilizationResponse)
 async def predict_utilization(req: PredictUtilizationRequest):
 
-    # Figure out FY month
     month_map = {
         "january": 10, "february": 11, "march": 12,
         "april": 1, "may": 2, "june": 3, "july": 4,
@@ -158,11 +133,9 @@ async def predict_utilization(req: PredictUtilizationRequest):
     }
     current_fy_month = month_map.get(req.month.lower().strip(), 6) if req.month else 6
 
-    # Use his amounts directly (keep in same unit he sends)
     allocated = req.allocated_amount
     spent = req.current_spent
 
-    # Generate synthetic monthly spending
     months_done = max(1, current_fy_month)
     if spent > 0:
         avg_monthly = spent / months_done
@@ -179,7 +152,6 @@ async def predict_utilization(req: PredictUtilizationRequest):
     else:
         monthly_spending = [0] * months_done
 
-    # Build OUR format
     dept_data = {
         "department_id": f"DEPT-{req.department[:3].upper()}",
         "department_name": req.department,
@@ -189,10 +161,8 @@ async def predict_utilization(req: PredictUtilizationRequest):
         "monthly_spending": monthly_spending,
     }
 
-    # Run prediction
     result = predictor.predict_single(dept_data)
 
-    # Convert to HIS format
     severity_map = {"critical": "HIGH", "high": "HIGH", "medium": "MEDIUM", "low": "LOW"}
     his_risk = severity_map.get(result['risk_level'], "LOW")
 

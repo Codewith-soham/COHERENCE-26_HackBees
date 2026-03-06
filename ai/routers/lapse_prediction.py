@@ -1,4 +1,4 @@
-"""POST /ai/predict-lapse — Batch lapse prediction (advanced)"""
+"""POST /ai/predict-lapse — Batch lapse prediction"""
 
 from fastapi import APIRouter
 from pydantic import BaseModel
@@ -7,6 +7,7 @@ import numpy as np
 from models.prediction_model import LapsePredictor
 
 router = APIRouter()
+
 predictor = LapsePredictor()
 
 
