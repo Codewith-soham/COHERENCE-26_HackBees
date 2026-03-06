@@ -1,19 +1,27 @@
 import dotenv from 'dotenv';
 import { app } from './src/app.js';
 import connectDB from './src/config/dbConnection.js';
+import { checkAIHealth } from './src/services/aiService.js';
 
-dotenv.config({             //setup dotenv to load environment variables from .env file
+dotenv.config({
     path: "./.env"
 });
 
-const port = process.env.PORT || 5000;   //get the port from environment variable or use default 8000
+const port = process.env.PORT || 5000;
 
 connectDB()
     .then(() => {
-        app.listen(port, () => {
+        app.listen(port, async () => {
             console.log(`Server is running on port ${port}`);
-        })
+
+            // Check Python AI service after server starts
+            const aiOnline = await checkAIHealth();
+            console.log(aiOnline
+                ? '✅ Python AI service is online on port 8000'
+                : '⚠️  Python AI service is OFFLINE — fallback mode active'
+            );
+        });
     })
     .catch((err) => {
         console.error("Failed to connect to the database", err);
-    })
+    });

@@ -12,7 +12,7 @@
  * ============================================================
  */
 
-import Anomaly from "../models/anomaly.js";
+import anomaly from "../models/anomaly.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
@@ -31,7 +31,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
  */
 const getAllAnomalies = asyncHandler(async (req, res) => {
     // populate('budget_id') replaces the ObjectId with the actual Budget document
-    const anomalies = await Anomaly.find()
+    const anomalies = await anomaly.find()
         .populate("budget_id")
         .sort({ createdAt: -1 });
 
