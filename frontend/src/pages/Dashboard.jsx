@@ -28,7 +28,6 @@ export default function Dashboard() {
             const json = await res.json();
             const budgets = json.data || [];
 
-            // Summary calculations
             const totalAllocated = budgets.reduce((sum, b) => sum + b.allocated_amount, 0);
             const totalSpent = budgets.reduce((sum, b) => sum + b.spent_amount, 0);
             const remaining = totalAllocated - totalSpent;
@@ -44,7 +43,7 @@ export default function Dashboard() {
             });
             const trendsData = monthOrder
                 .filter(m => monthMap[m])
-                .map(m => ({ month: m.slice(0, 3), spent: Math.round(monthMap[m] / 10000000) }));
+                .map(m => ({ month: m.slice(0, 3), spent: Math.round(monthMap[m]) }));
             setTrends(trendsData);
 
             // Department comparison
@@ -56,8 +55,8 @@ export default function Dashboard() {
             });
             const deptArr = Object.entries(deptMap).map(([name, vals]) => ({
                 name,
-                allocated: Math.round(vals.allocated / 10000000),
-                spent: Math.round(vals.spent / 10000000),
+                allocated: Math.round(vals.allocated),
+                spent: Math.round(vals.spent),
             }));
             setDeptData(deptArr);
 
@@ -67,9 +66,9 @@ export default function Dashboard() {
                 state: b.state || 'N/A',
                 district: b.district,
                 dept: b.department,
-                allocated: `₹${(b.allocated_amount / 10000000).toFixed(0)} Cr`,
-                spent: `₹${(b.spent_amount / 10000000).toFixed(0)} Cr`,
-                remaining: `₹${((b.allocated_amount - b.spent_amount) / 10000000).toFixed(0)} Cr`,
+                allocated: `₹${b.allocated_amount} Cr`,
+                spent: `₹${b.spent_amount} Cr`,
+                remaining: `₹${(b.allocated_amount - b.spent_amount).toFixed(1)} Cr`,
                 remainingRaw: b.allocated_amount - b.spent_amount,
                 allocated_amount: b.allocated_amount,
                 fy: b.financial_year,
@@ -84,9 +83,9 @@ export default function Dashboard() {
     };
 
     const summaryCards = [
-        { title: 'Total Budget Allocated', value: `₹${(summary.totalAllocated / 10000000).toFixed(0)} Cr`, icon: IndianRupee, color: 'primary' },
-        { title: 'Total Budget Spent', value: `₹${(summary.totalSpent / 10000000).toFixed(0)} Cr`, icon: TrendingUp, color: 'alert' },
-        { title: 'Remaining Funds', value: `₹${(summary.remaining / 10000000).toFixed(0)} Cr`, icon: Wallet, color: 'success' },
+        { title: 'Total Budget Allocated', value: `₹${summary.totalAllocated.toFixed(1)} Cr`, icon: IndianRupee, color: 'primary' },
+        { title: 'Total Budget Spent', value: `₹${summary.totalSpent.toFixed(1)} Cr`, icon: TrendingUp, color: 'alert' },
+        { title: 'Remaining Funds', value: `₹${summary.remaining.toFixed(1)} Cr`, icon: Wallet, color: 'success' },
         { title: 'Departments Monitored', value: summary.departments, icon: Building2, color: 'warning' },
     ];
 
@@ -99,7 +98,6 @@ export default function Dashboard() {
                 <p className="text-muted">Overview of national budget allocation and spending patterns.</p>
             </div>
 
-            {/* Summary Cards */}
             <div className="grid grid-cols-4 gap-6 mb-6 dashboard-summary">
                 {summaryCards.map((card, idx) => {
                     const Icon = card.icon;
@@ -119,7 +117,6 @@ export default function Dashboard() {
                 })}
             </div>
 
-            {/* Charts Row */}
             <div className="grid grid-cols-2 gap-6 mb-6">
                 <Card title="Budget Utilization Trend">
                     <div className="chart-container" style={{ height: 300 }}>
@@ -141,10 +138,10 @@ export default function Dashboard() {
                             <BarChart data={deptData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
                                 <XAxis dataKey="name" axisLine={false} tickLine={false} />
-                                <YAxis axisLine={false} tickLine={false} />
+                                <YAxis axisLine={false} tickLine={false} tickFormatter={(val) => `₹${val}Cr`} />
                                 <Tooltip formatter={(value) => `₹${value} Cr`} />
                                 <Legend iconType="circle" />
-                                <Bar dataKey="allocated" name="Allocated" fill="var(--bg-secondary)" radius={[4, 4, 0, 0]} />
+                                <Bar dataKey="allocated" name="Allocated" fill="var(--primary)" radius={[4, 4, 0, 0]} />
                                 <Bar dataKey="spent" name="Spent" fill="var(--accent)" radius={[4, 4, 0, 0]} />
                             </BarChart>
                         </ResponsiveContainer>
@@ -152,7 +149,6 @@ export default function Dashboard() {
                 </Card>
             </div>
 
-            {/* Activity Table */}
             <Card title="Recent Budget Activity">
                 <div className="table-responsive">
                     <table className="data-table">
@@ -161,14 +157,17 @@ export default function Dashboard() {
                                 <th>State</th>
                                 <th>District</th>
                                 <th>Department</th>
-                                <th>Allocated Budget</th>
-                                <th>Amount Spent</th>
+                                <th>Allocated</th>
+                                <th>Spent</th>
                                 <th>Remaining</th>
                                 <th>FY</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
+                            {recentActivity.length === 0 && (
+                                <tr><td colSpan="8" className="text-center text-muted py-6">No budget data yet.</td></tr>
+                            )}
                             {recentActivity.map((row) => {
                                 const isLow = row.remainingRaw / row.allocated_amount < 0.10;
                                 return (

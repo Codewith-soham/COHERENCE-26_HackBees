@@ -2,14 +2,13 @@ import { useState, useEffect } from 'react';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import { TrendingDown } from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function LapsePrediction() {
     const [predictions, setPredictions] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        fetchPredictions();
-    }, []);
+    useEffect(() => { fetchPredictions(); }, []);
 
     const fetchPredictions = async () => {
         setLoading(true);
@@ -23,13 +22,14 @@ export default function LapsePrediction() {
                 state: p.state || 'N/A',
                 district: p.district,
                 dept: p.department,
-                allocated: Math.round(p.allocated_amount / 10000000),
-                spent: Math.round(p.projected_spending / 10000000),
+                allocated: Number(p.allocated_amount),
+                spent: Number(p.projected_spending),
+                unused: Number(p.predicted_unused),
                 utilization: p.allocated_amount > 0
                     ? Math.round((p.projected_spending / p.allocated_amount) * 100)
                     : 0,
                 fy: p.financial_year,
-                riskLevel: p.risk_level.charAt(0) + p.risk_level.slice(1).toLowerCase(), // HIGH → High
+                riskLevel: p.risk_level.charAt(0) + p.risk_level.slice(1).toLowerCase(),
                 reallocation_suggestion: p.reallocation_suggestion,
             }));
 
@@ -42,22 +42,25 @@ export default function LapsePrediction() {
     };
 
     const getRiskColor = (risk) => {
-        switch (risk) {
-            case 'High': return 'var(--alert)';
-            case 'Medium': return 'var(--warning)';
-            case 'Low': return 'var(--success)';
-            default: return 'var(--text-muted)';
-        }
+        if (risk === 'High') return 'var(--alert)';
+        if (risk === 'Medium') return 'var(--warning)';
+        return 'var(--success)';
     };
 
     const getRiskBadge = (risk) => {
-        switch (risk) {
-            case 'High': return 'alert';
-            case 'Medium': return 'warning';
-            case 'Low': return 'success';
-            default: return 'default';
-        }
+        if (risk === 'High') return 'alert';
+        if (risk === 'Medium') return 'warning';
+        return 'success';
     };
+
+    const highRisk = predictions.filter(p => p.riskLevel === 'High').length;
+    const totalUnused = predictions.reduce((s, p) => s + p.unused, 0);
+
+    const chartData = predictions.map(p => ({
+        name: p.dept,
+        unused: p.unused,
+        risk: p.riskLevel,
+    }));
 
     if (loading) return <div className="page-container"><p className="text-muted">Loading predictions...</p></div>;
 
@@ -66,6 +69,22 @@ export default function LapsePrediction() {
             <div className="page-header mb-6">
                 <h2 className="text-primary">Fund Lapse Prediction</h2>
                 <p className="text-muted">Identify departments at risk of returning unused budget allocations before the fiscal year ends.</p>
+            </div>
+
+            {/* Summary Stats */}
+            <div className="grid grid-cols-3 gap-6 mb-6">
+                <Card className="p-4">
+                    <p className="text-sm text-muted">Total Predictions</p>
+                    <h3 className="text-2xl font-bold">{predictions.length}</h3>
+                </Card>
+                <Card className="p-4">
+                    <p className="text-sm text-muted">HIGH Risk Departments</p>
+                    <h3 className="text-2xl font-bold text-alert">{highRisk}</h3>
+                </Card>
+                <Card className="p-4">
+                    <p className="text-sm text-muted">Total Predicted Unused</p>
+                    <h3 className="text-2xl font-bold text-warning">₹{totalUnused.toFixed(1)} Cr</h3>
+                </Card>
             </div>
 
             {predictions.length === 0 && (
@@ -90,7 +109,7 @@ export default function LapsePrediction() {
                             </div>
                             <div style={{ backgroundColor: 'var(--bg-secondary)', height: '8px', borderRadius: '4px' }}>
                                 <div style={{
-                                    width: `${pred.utilization}%`,
+                                    width: `${Math.min(pred.utilization, 100)}%`,
                                     backgroundColor: getRiskColor(pred.riskLevel),
                                     height: '100%',
                                     borderRadius: '4px'
@@ -105,7 +124,7 @@ export default function LapsePrediction() {
                             </div>
                             <div>
                                 <p className="text-xs text-muted mb-1">Unspent Expected</p>
-                                <p className="font-semibold text-alert">₹{pred.allocated - pred.spent} Cr</p>
+                                <p className="font-semibold text-alert">₹{pred.unused} Cr</p>
                             </div>
                         </div>
 
@@ -118,14 +137,22 @@ export default function LapsePrediction() {
                 ))}
             </div>
 
-            <Card title="Lapse Risk Analytics">
-                <div className="bg-secondary rounded-md flex items-center justify-center text-muted" style={{ height: '300px' }}>
-                    <div className="text-center">
-                        <TrendingDown size={48} className="mx-auto mb-4 opacity-50" />
-                        <p>Predictive model visualization will render here once ML model is connected.</p>
+            {/* Chart */}
+            {chartData.length > 0 && (
+                <Card title="Predicted Unused Funds by Department">
+                    <div style={{ height: 300 }}>
+                        <ResponsiveContainer width="100%" height="100%">
+                            <BarChart data={chartData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
+                                <XAxis dataKey="name" axisLine={false} tickLine={false} />
+                                <YAxis axisLine={false} tickLine={false} tickFormatter={(v) => `₹${v}Cr`} />
+                                <Tooltip formatter={(value) => [`₹${value} Cr`, 'Unused']} />
+                                <Bar dataKey="unused" name="Predicted Unused" fill="var(--alert)" radius={[4, 4, 0, 0]} />
+                            </BarChart>
+                        </ResponsiveContainer>
                     </div>
-                </div>
-            </Card>
+                </Card>
+            )}
         </div>
     );
 }

@@ -12,9 +12,7 @@ export default function BudgetMonitoring() {
     const [filters, setFilters] = useState({ state: '', dept: '', district: '' });
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        fetchBudgets();
-    }, []);
+    useEffect(() => { fetchBudgets(); }, []);
 
     const fetchBudgets = async () => {
         setLoading(true);
@@ -44,19 +42,20 @@ export default function BudgetMonitoring() {
         setFiltered(result);
     };
 
-    const totalAllocated = filtered.reduce((s, b) => s + b.allocated_amount, 0);
-    const totalSpent = filtered.reduce((s, b) => s + b.spent_amount, 0);
+    const totalAllocated = filtered.reduce((sum, b) => sum + (Number(b.allocated_amount) || 0), 0);
+    const totalSpent = filtered.reduce((sum, b) => sum + (Number(b.spent_amount) || 0), 0);
     const remaining = totalAllocated - totalSpent;
     const avgUtil = totalAllocated > 0 ? ((totalSpent / totalAllocated) * 100).toFixed(1) : 0;
 
     const getStatus = (spent, allocated) => {
+        if (!allocated || allocated === 0) return { label: 'No Data', variant: 'default' };
         const ratio = spent / allocated;
         if (ratio > 0.9) return { label: 'Overspending Risk', variant: 'alert' };
         if (ratio < 0.3) return { label: 'Low Utilization', variant: 'warning' };
         return { label: 'Normal', variant: 'success' };
     };
 
-    const fmt = (val) => `₹${(val / 10000000).toFixed(1)} Cr`;
+    const fmt = (val) => `₹${Number(val || 0).toFixed(1)} Cr`;
 
     if (loading) return <div className="page-container"><p className="text-muted">Loading budgets...</p></div>;
 
@@ -70,7 +69,6 @@ export default function BudgetMonitoring() {
                 <Button variant="outline" className="gap-2"><Download size={16} /> Export CSV</Button>
             </div>
 
-            {/* Filter Panel */}
             <Card className="mb-6">
                 <div className="flex items-end gap-4">
                     <div className="flex-1">
@@ -110,7 +108,6 @@ export default function BudgetMonitoring() {
                 </div>
             </Card>
 
-            {/* Metrics Row */}
             <div className="grid grid-cols-4 gap-6 mb-6">
                 <Card className="p-4"><p className="text-sm text-muted">Total Allocated</p><h3 className="text-xl">{fmt(totalAllocated)}</h3></Card>
                 <Card className="p-4"><p className="text-sm text-muted">Total Spent</p><h3 className="text-xl">{fmt(totalSpent)}</h3></Card>
@@ -118,7 +115,6 @@ export default function BudgetMonitoring() {
                 <Card className="p-4"><p className="text-sm text-muted">Avg Utilization</p><h3 className="text-xl text-success">{avgUtil}%</h3></Card>
             </div>
 
-            {/* Main Data Table */}
             <Card>
                 <div className="table-responsive">
                     <table className="data-table">
@@ -140,20 +136,23 @@ export default function BudgetMonitoring() {
                                 <tr><td colSpan="9" className="text-center text-muted py-6">No budget records found.</td></tr>
                             )}
                             {filtered.map((row, i) => {
-                                const utilInt = Math.round((row.spent_amount / row.allocated_amount) * 100);
-                                const status = getStatus(row.spent_amount, row.allocated_amount);
+                                const alloc = Number(row.allocated_amount) || 0;
+                                const spent = Number(row.spent_amount) || 0;
+                                const utilInt = alloc > 0 ? Math.round((spent / alloc) * 100) : 0;
+                                const status = getStatus(spent, alloc);
+                                const barColor = utilInt > 90 ? 'var(--alert)' : utilInt < 30 ? 'var(--warning)' : 'var(--primary)';
                                 return (
                                     <tr key={i}>
                                         <td>{row.state || 'N/A'}</td>
                                         <td>{row.district}</td>
                                         <td>{row.department}</td>
-                                        <td>{fmt(row.allocated_amount)}</td>
-                                        <td>{fmt(row.spent_amount)}</td>
-                                        <td className="font-medium">{fmt(row.allocated_amount - row.spent_amount)}</td>
+                                        <td>{fmt(alloc)}</td>
+                                        <td>{fmt(spent)}</td>
+                                        <td className="font-medium">{fmt(alloc - spent)}</td>
                                         <td>
                                             <div className="flex items-center gap-2">
                                                 <div style={{ flex: 1, backgroundColor: 'var(--bg-secondary)', height: '6px', borderRadius: '3px' }}>
-                                                    <div style={{ width: `${utilInt}%`, backgroundColor: 'var(--primary)', height: '100%', borderRadius: '3px' }}></div>
+                                                    <div style={{ width: `${Math.min(utilInt, 100)}%`, backgroundColor: barColor, height: '100%', borderRadius: '3px' }}></div>
                                                 </div>
                                                 <span className="text-xs">{utilInt}%</span>
                                             </div>
@@ -170,4 +169,3 @@ export default function BudgetMonitoring() {
         </div>
     );
 }
-
