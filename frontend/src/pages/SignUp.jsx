@@ -1,178 +1,285 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
 import { UserPlus, Eye, EyeOff, Loader2, AlertTriangle, CheckCircle } from "lucide-react";
+import { useAuth } from "../context/AuthContext";
+import "./AuthPages.css";
 
 const DEPARTMENTS = [
-  "All", "Health", "Education", "Infrastructure", "Agriculture",
-  "Water Resources", "Finance", "Transport", "Housing", "Energy", "Defence",
+  "Health",
+  "Education",
+  "Infrastructure",
+  "Agriculture",
+  "Water Resources",
+  "Finance",
+  "Transport",
+  "Housing",
+  "Energy",
+  "Defence",
 ];
 
 const STATES = [
-  "All", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar",
-  "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh",
-  "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra",
-  "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab",
-  "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
-  "Uttar Pradesh", "Uttarakhand", "West Bengal",
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "West Bengal",
 ];
 
-const EMPTY = {
-  fullName: "", officerId: "", email: "",
-  password: "", confirmPassword: "",
-  department: "", state: "",
+const INITIAL_FORM = {
+  fullName: "",
+  officerId: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+  department: "",
+  state: "",
 };
 
 export default function SignUp() {
-  const { register, isAuthenticated, loading } = useAuth();
+  const { register, loading } = useAuth();
   const navigate = useNavigate();
 
-  const [form,     setForm]     = useState(EMPTY);
-  const [showPwd,  setShowPwd]  = useState(false);
-  const [errors,   setErrors]   = useState({});
+  const [form, setForm] = useState(INITIAL_FORM);
+  const [showPassword, setShowPassword] = useState(false);
+  const [errors, setErrors] = useState({});
   const [apiError, setApiError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
-  useEffect(() => {
-    if (isAuthenticated) navigate("/dashboard", { replace: true });
-  }, [isAuthenticated]);
+  const setField = (field, value) => {
+    setForm((prev) => ({ ...prev, [field]: value }));
+    setErrors((prev) => ({ ...prev, [field]: "" }));
+  };
 
   const validate = () => {
-    const e = {};
-    if (!form.fullName.trim())  e.fullName  = "Required";
-    if (!form.officerId.trim()) e.officerId = "Required";
-    if (!form.email.trim())     e.email     = "Required";
-    else if (!/^\S+@\S+\.\S+$/.test(form.email)) e.email = "Invalid email";
-    if (!form.password)         e.password  = "Required";
-    else if (form.password.length < 6) e.password = "Min 6 characters";
-    if (form.password !== form.confirmPassword) e.confirmPassword = "Passwords do not match";
-    if (!form.department)       e.department = "Required";
-    if (!form.state)            e.state      = "Required";
-    setErrors(e);
-    return Object.keys(e).length === 0;
-  };
+    const validationErrors = {};
 
-  const handleSubmit = async () => {
-    if (!validate()) return;
-    setApiError("");
-    const result = await register({
-      fullName:   form.fullName,
-      officerId:  form.officerId,
-      email:      form.email,
-      password:   form.password,
-      department: form.department,
-      state:      form.state,
-    });
-    if (result.success) {
-      navigate("/login", { replace: true });
-}   else {
-      setApiError(result.message || "Registration failed.");
+    if (!form.fullName.trim()) validationErrors.fullName = "Full Name is required";
+    if (!form.officerId.trim()) validationErrors.officerId = "Officer ID is required";
+
+    if (!form.email.trim()) {
+      validationErrors.email = "Email is required";
+    } else if (!/^\S+@\S+\.\S+$/.test(form.email)) {
+      validationErrors.email = "Please enter a valid email";
     }
+
+    if (!form.password) {
+      validationErrors.password = "Password is required";
+    } else if (form.password.length < 6) {
+      validationErrors.password = "Password must be at least 6 characters";
+    }
+
+    if (!form.confirmPassword) {
+      validationErrors.confirmPassword = "Confirm Password is required";
+    } else if (form.password !== form.confirmPassword) {
+      validationErrors.confirmPassword = "Passwords do not match";
+    }
+
+    if (!form.department) validationErrors.department = "Department is required";
+    if (!form.state) validationErrors.state = "State is required";
+
+    setErrors(validationErrors);
+    return Object.keys(validationErrors).length === 0;
   };
 
-  const set = (field, value) => {
-    setForm(f => ({ ...f, [field]: value }));
-    if (errors[field]) setErrors(e => ({ ...e, [field]: undefined }));
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!validate()) return;
+
+    setApiError("");
+    setSuccessMessage("");
+
+    const result = await register({
+      fullName: form.fullName.trim(),
+      officerId: form.officerId.trim(),
+      email: form.email.trim(),
+      password: form.password,
+      department: form.department,
+      state: form.state,
+    });
+
+    if (!result.success) {
+      setApiError(result.message || "Registration failed. Please try again.");
+      return;
+    }
+
+    setSuccessMessage("Registration successful! Please login.");
+    setForm(INITIAL_FORM);
+
+    setTimeout(() => {
+      navigate("/login", { replace: true });
+    }, 2000);
   };
+
+  const passwordsMatch = form.confirmPassword && form.password === form.confirmPassword;
 
   return (
-    <div className="min-h-screen bg-gray-950 flex items-center justify-center p-4">
-      <div className="w-full max-w-lg">
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-indigo-600 mb-4">
-            <UserPlus size={26} className="text-white" />
+    <div className="auth-page">
+      <div className="auth-card auth-card-signup animate-fade-in">
+        <div className="auth-header">
+          <div className="auth-logo">
+            <UserPlus size={28} />
           </div>
-          <h1 className="text-2xl font-bold text-white tracking-tight">BudgetSetu</h1>
-          <p className="text-gray-400 text-sm mt-1">Register as a Government Officer</p>
+          <h1 className="auth-title">BudgetSetu</h1>
+          <p className="auth-subtitle">Register as a Government Officer</p>
         </div>
 
-        <div className="rounded-2xl border border-gray-800 bg-gray-900/60 p-8 space-y-5">
-          <h2 className="text-lg font-semibold text-white">Create Account</h2>
+        <h3 className="auth-form-heading">Create Account</h3>
 
-          {apiError && (
-            <div className="flex items-start gap-2 rounded-xl bg-red-900/30 border border-red-700/50 p-3 text-sm text-red-300">
-              <AlertTriangle size={16} className="mt-0.5 shrink-0" />
-              {apiError}
-            </div>
-          )}
+        {apiError && (
+          <div className="auth-error-banner">
+            <AlertTriangle size={16} />
+            <span>{apiError}</span>
+          </div>
+        )}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {successMessage && <div className="auth-success-banner">{successMessage}</div>}
+
+        <form onSubmit={handleSubmit}>
+          <div className="auth-grid-2">
             <Field label="Full Name" error={errors.fullName}>
-              <input type="text" placeholder="Rajesh Kumar"
-                value={form.fullName} onChange={e => set("fullName", e.target.value)}
-                className={inputCls(errors.fullName)} />
+              <input
+                type="text"
+                className="auth-input"
+                placeholder="Rajesh Kumar"
+                value={form.fullName}
+                onChange={(event) => setField("fullName", event.target.value)}
+              />
             </Field>
             <Field label="Officer ID" error={errors.officerId}>
-              <input type="text" placeholder="OFC001"
-                value={form.officerId} onChange={e => set("officerId", e.target.value)}
-                className={inputCls(errors.officerId)} />
+              <input
+                type="text"
+                className="auth-input"
+                placeholder="OFC001"
+                value={form.officerId}
+                onChange={(event) => setField("officerId", event.target.value)}
+              />
             </Field>
           </div>
 
           <Field label="Email" error={errors.email}>
-            <input type="email" placeholder="officer@gov.in"
-              value={form.email} onChange={e => set("email", e.target.value)}
-              className={inputCls(errors.email)} />
+            <input
+              type="email"
+              className="auth-input"
+              placeholder="officer@gov.in"
+              value={form.email}
+              onChange={(event) => setField("email", event.target.value)}
+            />
           </Field>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="auth-grid-2">
             <Field label="Password" error={errors.password}>
-              <div className="relative">
-                <input type={showPwd ? "text" : "password"} placeholder="••••••••"
-                  value={form.password} onChange={e => set("password", e.target.value)}
-                  className={`${inputCls(errors.password)} pr-10`} />
-                <button type="button" onClick={() => setShowPwd(v => !v)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-200">
-                  {showPwd ? <EyeOff size={15} /> : <Eye size={15} />}
+              <div className="auth-input-wrap">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  className="auth-input with-right-icon"
+                  placeholder="••••••••"
+                  value={form.password}
+                  onChange={(event) => setField("password", event.target.value)}
+                />
+                <button
+                  type="button"
+                  className="auth-input-icon-btn"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
             </Field>
+
             <Field label="Confirm Password" error={errors.confirmPassword}>
-              <div className="relative">
-                <input type={showPwd ? "text" : "password"} placeholder="••••••••"
-                  value={form.confirmPassword} onChange={e => set("confirmPassword", e.target.value)}
-                  className={`${inputCls(errors.confirmPassword)} pr-10`} />
-                {form.confirmPassword && form.password === form.confirmPassword && (
-                  <CheckCircle size={15} className="absolute right-3 top-1/2 -translate-y-1/2 text-green-400" />
+              <div className="auth-input-wrap">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  className="auth-input with-right-icon"
+                  placeholder="••••••••"
+                  value={form.confirmPassword}
+                  onChange={(event) => setField("confirmPassword", event.target.value)}
+                />
+                {passwordsMatch && (
+                  <CheckCircle size={16} className="auth-input-status-icon auth-match-icon" />
                 )}
               </div>
             </Field>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="auth-grid-2">
             <Field label="Department" error={errors.department}>
-              <select value={form.department} onChange={e => set("department", e.target.value)}
-                className={selectCls(errors.department)}>
+              <select
+                className="auth-select"
+                value={form.department}
+                onChange={(event) => setField("department", event.target.value)}
+              >
                 <option value="">Select department</option>
-                {DEPARTMENTS.map(d => <option key={d}>{d}</option>)}
+                {DEPARTMENTS.map((department) => (
+                  <option key={department} value={department}>
+                    {department}
+                  </option>
+                ))}
               </select>
             </Field>
+
             <Field label="State" error={errors.state}>
-              <select value={form.state} onChange={e => set("state", e.target.value)}
-                className={selectCls(errors.state)}>
+              <select
+                className="auth-select"
+                value={form.state}
+                onChange={(event) => setField("state", event.target.value)}
+              >
                 <option value="">Select state</option>
-                {STATES.map(s => <option key={s}>{s}</option>)}
+                {STATES.map((state) => (
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
+                ))}
               </select>
             </Field>
           </div>
 
-          <button onClick={handleSubmit} disabled={loading}
-            className="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500
-                       disabled:opacity-50 disabled:cursor-not-allowed
-                       font-semibold text-sm text-white transition-colors
-                       flex items-center justify-center gap-2">
-            {loading
-              ? <><Loader2 size={16} className="animate-spin" /> Registering...</>
-              : <><UserPlus size={16} /> Create Account</>
-            }
+          <button type="submit" className="auth-submit-btn" disabled={loading}>
+            {loading ? (
+              <>
+                <Loader2 size={16} className="auth-spin" />
+                <span>Registering...</span>
+              </>
+            ) : (
+              <>
+                <UserPlus size={16} />
+                <span>Create Account</span>
+              </>
+            )}
           </button>
+        </form>
 
-          <p className="text-center text-sm text-gray-400">
-            Already have an account?{" "}
-            <Link to="/login" className="text-indigo-400 hover:text-indigo-300 font-medium">
-              Login here
-            </Link>
-          </p>
-        </div>
+        <p className="auth-footer">
+          Already have an account?{" "}
+          <Link className="auth-footer-link" to="/login">
+            Login here
+          </Link>
+        </p>
       </div>
     </div>
   );
@@ -180,14 +287,10 @@ export default function SignUp() {
 
 function Field({ label, error, children }) {
   return (
-    <div className="space-y-1.5">
-      <label className="text-xs font-medium text-gray-300 uppercase tracking-wide">{label}</label>
+    <div className="auth-field">
+      <label className="auth-label">{label}</label>
       {children}
-      {error && <p className="text-xs text-red-400">{error}</p>}
+      {error ? <p className="auth-field-error">{error}</p> : null}
     </div>
   );
 }
-
-const base      = "w-full rounded-lg bg-gray-800 border text-sm text-gray-100 px-3 py-2.5 outline-none transition-colors focus:ring-2 focus:ring-indigo-500/20";
-const inputCls  = e => `${base} ${e ? "border-red-500" : "border-gray-700 hover:border-gray-500 focus:border-indigo-500"}`;
-const selectCls = e => `${base} ${e ? "border-red-500" : "border-gray-700 hover:border-gray-500 focus:border-indigo-500"}`;
