@@ -1,0 +1,2256 @@
+{
+  "budgets": [
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "month": "April",
+      "financial_year": "2025-26",
+      "allocated_amount": 33.33,
+      "spent_amount": 27.24,
+      "utilization_percentage": 81.72
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "month": "May",
+      "financial_year": "2025-26",
+      "allocated_amount": 33.33,
+      "spent_amount": 26.71,
+      "utilization_percentage": 80.13
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "month": "June",
+      "financial_year": "2025-26",
+      "allocated_amount": 33.33,
+      "spent_amount": 29.07,
+      "utilization_percentage": 87.21
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "month": "July",
+      "financial_year": "2025-26",
+      "allocated_amount": 33.33,
+      "spent_amount": 31.15,
+      "utilization_percentage": 93.45
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "month": "August",
+      "financial_year": "2025-26",
+      "allocated_amount": 33.33,
+      "spent_amount": 30.58,
+      "utilization_percentage": 91.74
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "month": "September",
+      "financial_year": "2025-26",
+      "allocated_amount": 33.33,
+      "spent_amount": 31.86,
+      "utilization_percentage": 95.58
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "month": "October",
+      "financial_year": "2025-26",
+      "allocated_amount": 33.33,
+      "spent_amount": 35.84,
+      "utilization_percentage": 107.52
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "month": "November",
+      "financial_year": "2025-26",
+      "allocated_amount": 33.33,
+      "spent_amount": 31.52,
+      "utilization_percentage": 94.56
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "month": "December",
+      "financial_year": "2025-26",
+      "allocated_amount": 33.33,
+      "spent_amount": 33.5,
+      "utilization_percentage": 100.5
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "month": "April",
+      "financial_year": "2025-26",
+      "allocated_amount": 25.0,
+      "spent_amount": 20.38,
+      "utilization_percentage": 81.52
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "month": "May",
+      "financial_year": "2025-26",
+      "allocated_amount": 25.0,
+      "spent_amount": 20.24,
+      "utilization_percentage": 80.96
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "month": "June",
+      "financial_year": "2025-26",
+      "allocated_amount": 25.0,
+      "spent_amount": 21.11,
+      "utilization_percentage": 84.44
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "month": "July",
+      "financial_year": "2025-26",
+      "allocated_amount": 25.0,
+      "spent_amount": 21.71,
+      "utilization_percentage": 86.84
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "month": "August",
+      "financial_year": "2025-26",
+      "allocated_amount": 25.0,
+      "spent_amount": 23.56,
+      "utilization_percentage": 94.24
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "month": "September",
+      "financial_year": "2025-26",
+      "allocated_amount": 25.0,
+      "spent_amount": 27.37,
+      "utilization_percentage": 109.48
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "month": "October",
+      "financial_year": "2025-26",
+      "allocated_amount": 25.0,
+      "spent_amount": 22.58,
+      "utilization_percentage": 90.32
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "month": "November",
+      "financial_year": "2025-26",
+      "allocated_amount": 25.0,
+      "spent_amount": 23.52,
+      "utilization_percentage": 94.08
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "month": "December",
+      "financial_year": "2025-26",
+      "allocated_amount": 25.0,
+      "spent_amount": 24.54,
+      "utilization_percentage": 98.16
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "month": "April",
+      "financial_year": "2025-26",
+      "allocated_amount": 29.17,
+      "spent_amount": 25.58,
+      "utilization_percentage": 87.7
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "month": "May",
+      "financial_year": "2025-26",
+      "allocated_amount": 29.17,
+      "spent_amount": 25.81,
+      "utilization_percentage": 88.49
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "month": "June",
+      "financial_year": "2025-26",
+      "allocated_amount": 29.17,
+      "spent_amount": 28.33,
+      "utilization_percentage": 97.13
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "month": "July",
+      "financial_year": "2025-26",
+      "allocated_amount": 29.17,
+      "spent_amount": 21.47,
+      "utilization_percentage": 73.61
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "month": "August",
+      "financial_year": "2025-26",
+      "allocated_amount": 29.17,
+      "spent_amount": 22.04,
+      "utilization_percentage": 75.57
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "month": "September",
+      "financial_year": "2025-26",
+      "allocated_amount": 29.17,
+      "spent_amount": 26.29,
+      "utilization_percentage": 90.14
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "month": "October",
+      "financial_year": "2025-26",
+      "allocated_amount": 29.17,
+      "spent_amount": 29.94,
+      "utilization_percentage": 102.65
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "month": "November",
+      "financial_year": "2025-26",
+      "allocated_amount": 29.17,
+      "spent_amount": 25.16,
+      "utilization_percentage": 86.26
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "month": "December",
+      "financial_year": "2025-26",
+      "allocated_amount": 29.17,
+      "spent_amount": 22.79,
+      "utilization_percentage": 78.14
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "month": "April",
+      "financial_year": "2025-26",
+      "allocated_amount": 20.83,
+      "spent_amount": 14.7,
+      "utilization_percentage": 70.56
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "month": "May",
+      "financial_year": "2025-26",
+      "allocated_amount": 20.83,
+      "spent_amount": 14.04,
+      "utilization_percentage": 67.39
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "month": "June",
+      "financial_year": "2025-26",
+      "allocated_amount": 20.83,
+      "spent_amount": 11.33,
+      "utilization_percentage": 54.38
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "month": "July",
+      "financial_year": "2025-26",
+      "allocated_amount": 20.83,
+      "spent_amount": 11.54,
+      "utilization_percentage": 55.39
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "month": "August",
+      "financial_year": "2025-26",
+      "allocated_amount": 20.83,
+      "spent_amount": 11.57,
+      "utilization_percentage": 55.54
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "month": "September",
+      "financial_year": "2025-26",
+      "allocated_amount": 20.83,
+      "spent_amount": 13.77,
+      "utilization_percentage": 66.1
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "month": "October",
+      "financial_year": "2025-26",
+      "allocated_amount": 20.83,
+      "spent_amount": 12.27,
+      "utilization_percentage": 58.9
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "month": "November",
+      "financial_year": "2025-26",
+      "allocated_amount": 20.83,
+      "spent_amount": 14.55,
+      "utilization_percentage": 69.84
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "month": "December",
+      "financial_year": "2025-26",
+      "allocated_amount": 20.83,
+      "spent_amount": 7.74,
+      "utilization_percentage": 37.15
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "month": "April",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 9.44,
+      "utilization_percentage": 56.64
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "month": "May",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 9.0,
+      "utilization_percentage": 54.0
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "month": "June",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 10.42,
+      "utilization_percentage": 62.52
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "month": "July",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 9.96,
+      "utilization_percentage": 59.76
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "month": "August",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 12.13,
+      "utilization_percentage": 72.78
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "month": "September",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 7.81,
+      "utilization_percentage": 46.86
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "month": "October",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 10.91,
+      "utilization_percentage": 65.46
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "month": "November",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 11.74,
+      "utilization_percentage": 70.44
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "month": "December",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 13.85,
+      "utilization_percentage": 83.1
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "month": "April",
+      "financial_year": "2025-26",
+      "allocated_amount": 15.0,
+      "spent_amount": 6.42,
+      "utilization_percentage": 42.8
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "month": "May",
+      "financial_year": "2025-26",
+      "allocated_amount": 15.0,
+      "spent_amount": 6.43,
+      "utilization_percentage": 42.87
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "month": "June",
+      "financial_year": "2025-26",
+      "allocated_amount": 15.0,
+      "spent_amount": 4.45,
+      "utilization_percentage": 29.67
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "month": "July",
+      "financial_year": "2025-26",
+      "allocated_amount": 15.0,
+      "spent_amount": 3.52,
+      "utilization_percentage": 23.47
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "month": "August",
+      "financial_year": "2025-26",
+      "allocated_amount": 15.0,
+      "spent_amount": 5.16,
+      "utilization_percentage": 34.4
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "month": "September",
+      "financial_year": "2025-26",
+      "allocated_amount": 15.0,
+      "spent_amount": 4.05,
+      "utilization_percentage": 27.0
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "month": "October",
+      "financial_year": "2025-26",
+      "allocated_amount": 15.0,
+      "spent_amount": 4.31,
+      "utilization_percentage": 28.73
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "month": "November",
+      "financial_year": "2025-26",
+      "allocated_amount": 15.0,
+      "spent_amount": 2.04,
+      "utilization_percentage": 13.6
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "month": "December",
+      "financial_year": "2025-26",
+      "allocated_amount": 15.0,
+      "spent_amount": 2.78,
+      "utilization_percentage": 18.53
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "month": "April",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 8.9,
+      "utilization_percentage": 53.4
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "month": "May",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 7.21,
+      "utilization_percentage": 43.26
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "month": "June",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 6.51,
+      "utilization_percentage": 39.06
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "month": "July",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 5.71,
+      "utilization_percentage": 34.26
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "month": "August",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 3.92,
+      "utilization_percentage": 23.52
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "month": "September",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 5.52,
+      "utilization_percentage": 33.12
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "month": "October",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 3.44,
+      "utilization_percentage": 20.64
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "month": "November",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 3.68,
+      "utilization_percentage": 22.08
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "month": "December",
+      "financial_year": "2025-26",
+      "allocated_amount": 16.67,
+      "spent_amount": 1.53,
+      "utilization_percentage": 9.18
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "month": "April",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 4.96,
+      "utilization_percentage": 39.68
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "month": "May",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 5.98,
+      "utilization_percentage": 47.84
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "month": "June",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 4.53,
+      "utilization_percentage": 36.24
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "month": "July",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 5.09,
+      "utilization_percentage": 40.72
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "month": "August",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 3.78,
+      "utilization_percentage": 30.24
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "month": "September",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 2.34,
+      "utilization_percentage": 18.72
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "month": "October",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 3.43,
+      "utilization_percentage": 27.44
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "month": "November",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 2.14,
+      "utilization_percentage": 17.12
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "month": "December",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 2.42,
+      "utilization_percentage": 19.36
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "month": "April",
+      "financial_year": "2025-26",
+      "allocated_amount": 10.0,
+      "spent_amount": 2.76,
+      "utilization_percentage": 27.6
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "month": "May",
+      "financial_year": "2025-26",
+      "allocated_amount": 10.0,
+      "spent_amount": 1.52,
+      "utilization_percentage": 15.2
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "month": "June",
+      "financial_year": "2025-26",
+      "allocated_amount": 10.0,
+      "spent_amount": 7.53,
+      "utilization_percentage": 75.3
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "month": "July",
+      "financial_year": "2025-26",
+      "allocated_amount": 10.0,
+      "spent_amount": 8.9,
+      "utilization_percentage": 89.0
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "month": "August",
+      "financial_year": "2025-26",
+      "allocated_amount": 10.0,
+      "spent_amount": 8.59,
+      "utilization_percentage": 85.9
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "month": "September",
+      "financial_year": "2025-26",
+      "allocated_amount": 10.0,
+      "spent_amount": 2.92,
+      "utilization_percentage": 29.2
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "month": "October",
+      "financial_year": "2025-26",
+      "allocated_amount": 10.0,
+      "spent_amount": 7.75,
+      "utilization_percentage": 77.5
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "month": "November",
+      "financial_year": "2025-26",
+      "allocated_amount": 10.0,
+      "spent_amount": 7.12,
+      "utilization_percentage": 71.2
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "month": "December",
+      "financial_year": "2025-26",
+      "allocated_amount": 10.0,
+      "spent_amount": 2.64,
+      "utilization_percentage": 26.4
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "month": "April",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 9.34,
+      "utilization_percentage": 74.72
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "month": "May",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 7.78,
+      "utilization_percentage": 62.24
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "month": "June",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 9.05,
+      "utilization_percentage": 72.4
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "month": "July",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 7.77,
+      "utilization_percentage": 62.16
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "month": "August",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 8.05,
+      "utilization_percentage": 64.4
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "month": "September",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 8.73,
+      "utilization_percentage": 69.84
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "month": "October",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 8.48,
+      "utilization_percentage": 67.84
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "month": "November",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 5.69,
+      "utilization_percentage": 45.52
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "month": "December",
+      "financial_year": "2025-26",
+      "allocated_amount": 12.5,
+      "spent_amount": 6.76,
+      "utilization_percentage": 54.08
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "month": "April",
+      "financial_year": "2025-26",
+      "allocated_amount": 8.33,
+      "spent_amount": 5.13,
+      "utilization_percentage": 61.56
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "month": "May",
+      "financial_year": "2025-26",
+      "allocated_amount": 8.33,
+      "spent_amount": 2.05,
+      "utilization_percentage": 24.6
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "month": "June",
+      "financial_year": "2025-26",
+      "allocated_amount": 8.33,
+      "spent_amount": 1.91,
+      "utilization_percentage": 22.92
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "month": "July",
+      "financial_year": "2025-26",
+      "allocated_amount": 8.33,
+      "spent_amount": 5.8,
+      "utilization_percentage": 69.6
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "month": "August",
+      "financial_year": "2025-26",
+      "allocated_amount": 8.33,
+      "spent_amount": 1.89,
+      "utilization_percentage": 22.68
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "month": "September",
+      "financial_year": "2025-26",
+      "allocated_amount": 8.33,
+      "spent_amount": 6.03,
+      "utilization_percentage": 72.36
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "month": "October",
+      "financial_year": "2025-26",
+      "allocated_amount": 8.33,
+      "spent_amount": 6.44,
+      "utilization_percentage": 77.28
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "month": "November",
+      "financial_year": "2025-26",
+      "allocated_amount": 8.33,
+      "spent_amount": 5.6,
+      "utilization_percentage": 67.2
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "month": "December",
+      "financial_year": "2025-26",
+      "allocated_amount": 8.33,
+      "spent_amount": 6.79,
+      "utilization_percentage": 81.48
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "month": "April",
+      "financial_year": "2025-26",
+      "allocated_amount": 6.67,
+      "spent_amount": 4.18,
+      "utilization_percentage": 62.7
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "month": "May",
+      "financial_year": "2025-26",
+      "allocated_amount": 6.67,
+      "spent_amount": 4.13,
+      "utilization_percentage": 61.95
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "month": "June",
+      "financial_year": "2025-26",
+      "allocated_amount": 6.67,
+      "spent_amount": 5.48,
+      "utilization_percentage": 82.2
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "month": "July",
+      "financial_year": "2025-26",
+      "allocated_amount": 6.67,
+      "spent_amount": 2.4,
+      "utilization_percentage": 36.0
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "month": "August",
+      "financial_year": "2025-26",
+      "allocated_amount": 6.67,
+      "spent_amount": 2.41,
+      "utilization_percentage": 36.15
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "month": "September",
+      "financial_year": "2025-26",
+      "allocated_amount": 6.67,
+      "spent_amount": 4.44,
+      "utilization_percentage": 66.6
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "month": "October",
+      "financial_year": "2025-26",
+      "allocated_amount": 6.67,
+      "spent_amount": 2.59,
+      "utilization_percentage": 38.85
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "month": "November",
+      "financial_year": "2025-26",
+      "allocated_amount": 6.67,
+      "spent_amount": 1.33,
+      "utilization_percentage": 19.95
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "month": "December",
+      "financial_year": "2025-26",
+      "allocated_amount": 6.67,
+      "spent_amount": 2.03,
+      "utilization_percentage": 30.45
+    }
+  ],
+  "anomalies": [
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 75.7,
+      "explanation": "Detected: march dumping. Amount Rs.49.67Cr on 2026-03-31.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 59.8,
+      "explanation": "Detected: march dumping. Amount Rs.30.89Cr on 2026-03-29.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 72.1,
+      "explanation": "Detected: threshold structuring. Amount Rs.49.54Cr on 2025-06-09.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 45.1,
+      "explanation": "Detected: threshold structuring. Amount Rs.49.55Cr on 2025-12-23.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 78.6,
+      "explanation": "Detected: round amount fraud. Amount Rs.250.0Cr on 2025-06-14.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 52.3,
+      "explanation": "Detected: vendor concentration. Amount Rs.4.52Cr on 2025-10-27.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "anomaly_detected": true,
+      "anomaly_score": 85.6,
+      "explanation": "Detected: spending spike. Amount Rs.72.2Cr on 2025-04-16.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 68.3,
+      "explanation": "Detected: vendor concentration. Amount Rs.26.51Cr on 2025-06-17.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 50.0,
+      "explanation": "Detected: march dumping. Amount Rs.59.1Cr on 2026-03-31.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 47.8,
+      "explanation": "Detected: threshold structuring. Amount Rs.49.73Cr on 2025-07-25.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 52.1,
+      "explanation": "Detected: spending spike. Amount Rs.34.18Cr on 2025-06-23.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 66.8,
+      "explanation": "Detected: march dumping. Amount Rs.39.03Cr on 2026-03-26.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 62.4,
+      "explanation": "Detected: vendor concentration. Amount Rs.8.88Cr on 2025-11-02.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 93.3,
+      "explanation": "Detected: threshold structuring. Amount Rs.99.79Cr on 2025-08-22.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "anomaly_detected": true,
+      "anomaly_score": 48.6,
+      "explanation": "Detected: vendor concentration. Amount Rs.6.31Cr on 2025-09-10.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "anomaly_detected": true,
+      "anomaly_score": 92.5,
+      "explanation": "Detected: march dumping. Amount Rs.36.09Cr on 2026-03-28.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 71.3,
+      "explanation": "Detected: round amount fraud. Amount Rs.50.0Cr on 2025-12-17.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 87.9,
+      "explanation": "Detected: threshold structuring. Amount Rs.9.63Cr on 2025-12-21.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 78.7,
+      "explanation": "Detected: march dumping. Amount Rs.72.86Cr on 2026-03-30.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 69.5,
+      "explanation": "Detected: round amount fraud. Amount Rs.100.0Cr on 2025-12-18.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 90.7,
+      "explanation": "Detected: spending spike. Amount Rs.137.58Cr on 2025-08-16.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 56.9,
+      "explanation": "Detected: march dumping. Amount Rs.49.33Cr on 2026-03-30.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 85.2,
+      "explanation": "Detected: spending spike. Amount Rs.66.3Cr on 2025-11-25.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 81.2,
+      "explanation": "Detected: spending spike. Amount Rs.100.06Cr on 2025-09-28.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 46.6,
+      "explanation": "Detected: spending spike. Amount Rs.142.81Cr on 2025-10-09.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 58.7,
+      "explanation": "Detected: march dumping. Amount Rs.49.86Cr on 2026-03-27.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 87.6,
+      "explanation": "Detected: round amount fraud. Amount Rs.250.0Cr on 2025-11-21.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 89.5,
+      "explanation": "Detected: march dumping. Amount Rs.68.0Cr on 2026-03-30.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 88.2,
+      "explanation": "Detected: spending spike. Amount Rs.231.14Cr on 2025-05-19.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 59.7,
+      "explanation": "Detected: round amount fraud. Amount Rs.150.0Cr on 2025-04-19.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 89.6,
+      "explanation": "Detected: threshold structuring. Amount Rs.9.89Cr on 2025-06-03.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 67.3,
+      "explanation": "Detected: march dumping. Amount Rs.25.24Cr on 2026-03-28.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 91.4,
+      "explanation": "Detected: vendor concentration. Amount Rs.12.08Cr on 2025-05-11.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 59.9,
+      "explanation": "Detected: threshold structuring. Amount Rs.9.77Cr on 2025-06-11.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 55.5,
+      "explanation": "Detected: spending spike. Amount Rs.170.8Cr on 2025-12-16.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "anomaly_detected": true,
+      "anomaly_score": 90.6,
+      "explanation": "Detected: vendor concentration. Amount Rs.8.35Cr on 2025-05-03.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "anomaly_detected": true,
+      "anomaly_score": 48.1,
+      "explanation": "Detected: vendor concentration. Amount Rs.4.47Cr on 2025-06-10.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 45.1,
+      "explanation": "Detected: spending spike. Amount Rs.273.44Cr on 2025-07-24.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 80.9,
+      "explanation": "Detected: threshold structuring. Amount Rs.49.59Cr on 2025-10-07.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 83.5,
+      "explanation": "Detected: threshold structuring. Amount Rs.49.83Cr on 2025-08-07.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "anomaly_detected": true,
+      "anomaly_score": 49.8,
+      "explanation": "Detected: spending spike. Amount Rs.63.52Cr on 2025-06-26.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 56.5,
+      "explanation": "Detected: round amount fraud. Amount Rs.250.0Cr on 2025-04-05.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 93.1,
+      "explanation": "Detected: spending spike. Amount Rs.70.68Cr on 2025-06-11.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 47.5,
+      "explanation": "Detected: march dumping. Amount Rs.45.48Cr on 2026-03-28.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 78.0,
+      "explanation": "Detected: march dumping. Amount Rs.60.77Cr on 2026-03-30.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 92.9,
+      "explanation": "Detected: march dumping. Amount Rs.76.71Cr on 2026-03-27.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 48.0,
+      "explanation": "Detected: spending spike. Amount Rs.71.93Cr on 2025-08-19.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 54.3,
+      "explanation": "Detected: threshold structuring. Amount Rs.49.69Cr on 2025-12-07.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 82.9,
+      "explanation": "Detected: threshold structuring. Amount Rs.9.55Cr on 2025-12-02.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 78.8,
+      "explanation": "Detected: spending spike. Amount Rs.207.88Cr on 2025-07-16.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "anomaly_detected": true,
+      "anomaly_score": 70.9,
+      "explanation": "Detected: threshold structuring. Amount Rs.9.95Cr on 2025-11-01.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 82.4,
+      "explanation": "Detected: vendor concentration. Amount Rs.5.47Cr on 2025-10-03.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 92.2,
+      "explanation": "Detected: round amount fraud. Amount Rs.50.0Cr on 2025-08-16.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 52.1,
+      "explanation": "Detected: spending spike. Amount Rs.45.84Cr on 2025-09-03.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 91.8,
+      "explanation": "Detected: round amount fraud. Amount Rs.250.0Cr on 2025-09-21.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 46.0,
+      "explanation": "Detected: round amount fraud. Amount Rs.150.0Cr on 2025-09-22.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 93.7,
+      "explanation": "Detected: spending spike. Amount Rs.62.29Cr on 2025-04-23.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "anomaly_detected": true,
+      "anomaly_score": 68.3,
+      "explanation": "Detected: round amount fraud. Amount Rs.250.0Cr on 2025-07-07.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 62.7,
+      "explanation": "Detected: threshold structuring. Amount Rs.99.8Cr on 2025-05-17.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 75.5,
+      "explanation": "Detected: spending spike. Amount Rs.246.81Cr on 2025-12-15.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 91.9,
+      "explanation": "Detected: march dumping. Amount Rs.30.26Cr on 2026-03-30.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "anomaly_detected": true,
+      "anomaly_score": 61.5,
+      "explanation": "Detected: march dumping. Amount Rs.70.0Cr on 2026-03-28.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 53.4,
+      "explanation": "Detected: round amount fraud. Amount Rs.150.0Cr on 2025-08-05.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 93.3,
+      "explanation": "Detected: vendor concentration. Amount Rs.15.12Cr on 2025-12-24.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 48.3,
+      "explanation": "Detected: round amount fraud. Amount Rs.50.0Cr on 2025-11-08.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 48.6,
+      "explanation": "Detected: spending spike. Amount Rs.209.94Cr on 2025-10-02.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 53.6,
+      "explanation": "Detected: round amount fraud. Amount Rs.100.0Cr on 2025-04-07.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 61.3,
+      "explanation": "Detected: vendor concentration. Amount Rs.20.72Cr on 2025-05-14.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 48.8,
+      "explanation": "Detected: march dumping. Amount Rs.39.37Cr on 2026-03-26.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "anomaly_detected": true,
+      "anomaly_score": 87.2,
+      "explanation": "Detected: march dumping. Amount Rs.57.56Cr on 2026-03-27.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 93.5,
+      "explanation": "Detected: round amount fraud. Amount Rs.50.0Cr on 2025-08-05.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 56.0,
+      "explanation": "Detected: threshold structuring. Amount Rs.9.93Cr on 2025-09-07.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 56.6,
+      "explanation": "Detected: round amount fraud. Amount Rs.250.0Cr on 2025-11-11.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 84.4,
+      "explanation": "Detected: vendor concentration. Amount Rs.10.5Cr on 2025-04-12.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "anomaly_detected": true,
+      "anomaly_score": 82.6,
+      "explanation": "Detected: vendor concentration. Amount Rs.10.65Cr on 2025-07-22.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 50.2,
+      "explanation": "Detected: round amount fraud. Amount Rs.50.0Cr on 2025-08-25.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 88.9,
+      "explanation": "Detected: vendor concentration. Amount Rs.4.43Cr on 2025-07-05.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 57.7,
+      "explanation": "Detected: threshold structuring. Amount Rs.9.84Cr on 2025-10-15.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 85.2,
+      "explanation": "Detected: threshold structuring. Amount Rs.99.72Cr on 2025-05-18.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 71.7,
+      "explanation": "Detected: threshold structuring. Amount Rs.9.87Cr on 2025-05-12.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 63.5,
+      "explanation": "Detected: round amount fraud. Amount Rs.250.0Cr on 2025-10-28.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 83.9,
+      "explanation": "Detected: vendor concentration. Amount Rs.10.29Cr on 2025-12-01.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 55.5,
+      "explanation": "Detected: march dumping. Amount Rs.79.98Cr on 2026-03-28.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 84.7,
+      "explanation": "Detected: round amount fraud. Amount Rs.250.0Cr on 2025-10-08.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 51.3,
+      "explanation": "Detected: round amount fraud. Amount Rs.100.0Cr on 2025-11-19.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 78.1,
+      "explanation": "Detected: round amount fraud. Amount Rs.100.0Cr on 2025-08-07.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 79.6,
+      "explanation": "Detected: march dumping. Amount Rs.71.01Cr on 2026-03-30.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 89.9,
+      "explanation": "Detected: round amount fraud. Amount Rs.50.0Cr on 2025-12-25.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 48.9,
+      "explanation": "Detected: threshold structuring. Amount Rs.9.89Cr on 2025-09-06.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "anomaly_detected": true,
+      "anomaly_score": 81.1,
+      "explanation": "Detected: threshold structuring. Amount Rs.9.67Cr on 2025-11-06.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 88.7,
+      "explanation": "Detected: threshold structuring. Amount Rs.99.51Cr on 2025-07-17.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 86.6,
+      "explanation": "Detected: spending spike. Amount Rs.104.4Cr on 2025-08-13.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 79.5,
+      "explanation": "Detected: march dumping. Amount Rs.96.53Cr on 2026-03-26.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 50.2,
+      "explanation": "Detected: vendor concentration. Amount Rs.14.96Cr on 2025-12-11.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 70.8,
+      "explanation": "Detected: threshold structuring. Amount Rs.99.93Cr on 2025-09-03.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 71.2,
+      "explanation": "Detected: march dumping. Amount Rs.55.34Cr on 2026-03-29.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "anomaly_detected": true,
+      "anomaly_score": 93.4,
+      "explanation": "Detected: threshold structuring. Amount Rs.49.84Cr on 2025-12-14.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "anomaly_detected": true,
+      "anomaly_score": 73.7,
+      "explanation": "Detected: vendor concentration. Amount Rs.6.12Cr on 2025-07-18.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 74.9,
+      "explanation": "Detected: march dumping. Amount Rs.87.87Cr on 2026-03-30.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "anomaly_detected": true,
+      "anomaly_score": 56.1,
+      "explanation": "Detected: march dumping. Amount Rs.39.2Cr on 2026-03-29.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 87.3,
+      "explanation": "Detected: round amount fraud. Amount Rs.100.0Cr on 2025-11-15.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "anomaly_detected": true,
+      "anomaly_score": 91.9,
+      "explanation": "Detected: spending spike. Amount Rs.55.08Cr on 2025-11-17.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 52.3,
+      "explanation": "Detected: march dumping. Amount Rs.88.8Cr on 2026-03-30.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "anomaly_detected": true,
+      "anomaly_score": 94.1,
+      "explanation": "Detected: march dumping. Amount Rs.44.47Cr on 2026-03-31.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 94.1,
+      "explanation": "Detected: march dumping. Amount Rs.95.39Cr on 2026-03-31.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 72.9,
+      "explanation": "Detected: round amount fraud. Amount Rs.200.0Cr on 2025-06-28.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 68.5,
+      "explanation": "Detected: vendor concentration. Amount Rs.21.58Cr on 2025-09-05.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "anomaly_detected": true,
+      "anomaly_score": 52.6,
+      "explanation": "Detected: round amount fraud. Amount Rs.200.0Cr on 2025-12-15.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 74.6,
+      "explanation": "Detected: spending spike. Amount Rs.255.02Cr on 2025-11-06.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "anomaly_detected": true,
+      "anomaly_score": 49.7,
+      "explanation": "Detected: round amount fraud. Amount Rs.200.0Cr on 2025-12-10.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 46.5,
+      "explanation": "Detected: round amount fraud. Amount Rs.250.0Cr on 2025-12-01.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 58.7,
+      "explanation": "Detected: threshold structuring. Amount Rs.9.52Cr on 2025-05-19.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 71.6,
+      "explanation": "Detected: spending spike. Amount Rs.60.9Cr on 2025-07-04.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 75.4,
+      "explanation": "Detected: threshold structuring. Amount Rs.99.8Cr on 2025-12-20.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "anomaly_detected": true,
+      "anomaly_score": 90.0,
+      "explanation": "Detected: round amount fraud. Amount Rs.100.0Cr on 2025-12-10.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 63.8,
+      "explanation": "Detected: spending spike. Amount Rs.155.02Cr on 2025-10-27.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 64.5,
+      "explanation": "Detected: vendor concentration. Amount Rs.4.86Cr on 2025-10-15.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "anomaly_detected": true,
+      "anomaly_score": 56.1,
+      "explanation": "Detected: spending spike. Amount Rs.58.62Cr on 2025-07-26.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "anomaly_detected": true,
+      "anomaly_score": 94.1,
+      "explanation": "Detected: threshold structuring. Amount Rs.99.85Cr on 2025-06-26.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 57.4,
+      "explanation": "Detected: vendor concentration. Amount Rs.7.63Cr on 2025-04-09.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 84.7,
+      "explanation": "Detected: vendor concentration. Amount Rs.13.27Cr on 2025-12-27.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 83.7,
+      "explanation": "Detected: threshold structuring. Amount Rs.99.76Cr on 2025-10-03.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 52.1,
+      "explanation": "Detected: threshold structuring. Amount Rs.49.74Cr on 2025-05-17.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "anomaly_detected": true,
+      "anomaly_score": 58.7,
+      "explanation": "Detected: threshold structuring. Amount Rs.9.5Cr on 2025-12-02.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 80.5,
+      "explanation": "Detected: march dumping. Amount Rs.58.25Cr on 2026-03-25.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 78.9,
+      "explanation": "Detected: spending spike. Amount Rs.70.34Cr on 2025-07-14.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 52.0,
+      "explanation": "Detected: march dumping. Amount Rs.68.0Cr on 2026-03-26.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 75.4,
+      "explanation": "Detected: spending spike. Amount Rs.108.31Cr on 2025-10-15.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "anomaly_detected": true,
+      "anomaly_score": 65.2,
+      "explanation": "Detected: march dumping. Amount Rs.36.93Cr on 2026-03-30.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 60.4,
+      "explanation": "Detected: spending spike. Amount Rs.90.64Cr on 2025-06-04.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 66.6,
+      "explanation": "Detected: threshold structuring. Amount Rs.99.58Cr on 2025-11-14.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 74.0,
+      "explanation": "Detected: march dumping. Amount Rs.58.2Cr on 2026-03-31.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 68.6,
+      "explanation": "Detected: march dumping. Amount Rs.59.62Cr on 2026-03-31.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 57.4,
+      "explanation": "Detected: march dumping. Amount Rs.157.54Cr on 2026-03-29.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 63.1,
+      "explanation": "Detected: threshold structuring. Amount Rs.9.74Cr on 2025-09-08.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 89.9,
+      "explanation": "Detected: spending spike. Amount Rs.177.45Cr on 2025-11-07.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 55.2,
+      "explanation": "Detected: round amount fraud. Amount Rs.50.0Cr on 2025-08-03.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 54.4,
+      "explanation": "Detected: round amount fraud. Amount Rs.200.0Cr on 2025-08-05.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 62.6,
+      "explanation": "Detected: spending spike. Amount Rs.178.2Cr on 2025-07-26.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 46.4,
+      "explanation": "Detected: threshold structuring. Amount Rs.49.68Cr on 2025-12-09.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 84.9,
+      "explanation": "Detected: threshold structuring. Amount Rs.49.77Cr on 2025-09-14.",
+      "severity": "HIGH"
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "anomaly_detected": true,
+      "anomaly_score": 49.1,
+      "explanation": "Detected: march dumping. Amount Rs.25.07Cr on 2026-03-26.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 56.9,
+      "explanation": "Detected: spending spike. Amount Rs.74.74Cr on 2025-09-09.",
+      "severity": "MEDIUM"
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "anomaly_detected": true,
+      "anomaly_score": 88.4,
+      "explanation": "Detected: spending spike. Amount Rs.49.33Cr on 2025-07-28.",
+      "severity": "HIGH"
+    }
+  ],
+  "predictions": [
+    {
+      "department": "Health & Family Welfare",
+      "district": "All",
+      "financial_year": "2025-26",
+      "allocated_amount": 400,
+      "projected_spending": 369.96,
+      "predicted_unused": 30.04,
+      "risk_level": "LOW",
+      "reallocation_suggestion": "On track. Projected utilization: 92.5%."
+    },
+    {
+      "department": "Education",
+      "district": "All",
+      "financial_year": "2025-26",
+      "allocated_amount": 300,
+      "projected_spending": 273.35,
+      "predicted_unused": 26.65,
+      "risk_level": "LOW",
+      "reallocation_suggestion": "On track. Projected utilization: 91.1%."
+    },
+    {
+      "department": "Road Transport & Highways",
+      "district": "All",
+      "financial_year": "2025-26",
+      "allocated_amount": 350,
+      "projected_spending": 303.21,
+      "predicted_unused": 46.79,
+      "risk_level": "LOW",
+      "reallocation_suggestion": "On track. Projected utilization: 86.6%."
+    },
+    {
+      "department": "Agriculture & Farmers",
+      "district": "All",
+      "financial_year": "2025-26",
+      "allocated_amount": 250,
+      "projected_spending": 148.68,
+      "predicted_unused": 101.32,
+      "risk_level": "MEDIUM",
+      "reallocation_suggestion": "Monitor spending. Projected utilization: 59.5%."
+    },
+    {
+      "department": "Rural Development",
+      "district": "All",
+      "financial_year": "2025-26",
+      "allocated_amount": 200,
+      "projected_spending": 127.01,
+      "predicted_unused": 72.99,
+      "risk_level": "MEDIUM",
+      "reallocation_suggestion": "Monitor spending. Projected utilization: 63.5%."
+    },
+    {
+      "department": "Urban Development",
+      "district": "All",
+      "financial_year": "2025-26",
+      "allocated_amount": 180,
+      "projected_spending": 52.21,
+      "predicted_unused": 127.79,
+      "risk_level": "HIGH",
+      "reallocation_suggestion": "Reallocate surplus funds. Projected utilization: 29.0%."
+    },
+    {
+      "department": "Water Resources",
+      "district": "All",
+      "financial_year": "2025-26",
+      "allocated_amount": 200,
+      "projected_spending": 61.89,
+      "predicted_unused": 138.11,
+      "risk_level": "HIGH",
+      "reallocation_suggestion": "Reallocate surplus funds. Projected utilization: 30.9%."
+    },
+    {
+      "department": "Women & Child Development",
+      "district": "All",
+      "financial_year": "2025-26",
+      "allocated_amount": 150,
+      "projected_spending": 46.23,
+      "predicted_unused": 103.77,
+      "risk_level": "HIGH",
+      "reallocation_suggestion": "Reallocate surplus funds. Projected utilization: 30.8%."
+    },
+    {
+      "department": "Public Works - Pune",
+      "district": "Pune",
+      "financial_year": "2025-26",
+      "allocated_amount": 120,
+      "projected_spending": 66.31,
+      "predicted_unused": 53.69,
+      "risk_level": "MEDIUM",
+      "reallocation_suggestion": "Monitor spending. Projected utilization: 55.3%."
+    },
+    {
+      "department": "Public Works - Mumbai",
+      "district": "Mumbai",
+      "financial_year": "2025-26",
+      "allocated_amount": 150,
+      "projected_spending": 95.53,
+      "predicted_unused": 54.47,
+      "risk_level": "MEDIUM",
+      "reallocation_suggestion": "Monitor spending. Projected utilization: 63.7%."
+    },
+    {
+      "department": "Public Works - Nagpur",
+      "district": "Nagpur",
+      "financial_year": "2025-26",
+      "allocated_amount": 100,
+      "projected_spending": 55.52,
+      "predicted_unused": 44.48,
+      "risk_level": "MEDIUM",
+      "reallocation_suggestion": "Monitor spending. Projected utilization: 55.5%."
+    },
+    {
+      "department": "Primary Education - Pune",
+      "district": "Pune",
+      "financial_year": "2025-26",
+      "allocated_amount": 80,
+      "projected_spending": 38.65,
+      "predicted_unused": 41.35,
+      "risk_level": "HIGH",
+      "reallocation_suggestion": "Reallocate surplus funds. Projected utilization: 48.3%."
+    }
+  ],
+  "_info": {
+    "generated_at": "2026-03-06T23:31:28.929713",
+    "instructions": "Import each array into corresponding MongoDB collection."
+  }
+}

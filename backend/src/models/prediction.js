@@ -5,6 +5,10 @@ const predictionSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Department is required']
   },
+  state: {
+    type: String,
+    default: ""
+  },
   district: {
     type: String,
     required: [true, 'District is required']
@@ -27,7 +31,7 @@ const predictionSchema = new mongoose.Schema({
   },
   risk_level: {
     type: String,
-    enum: ['LOW', 'MEDIUM', 'HIGH'],
+    enum: ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
     required: [true, 'Risk level is required']
   },
   reallocation_suggestion: {

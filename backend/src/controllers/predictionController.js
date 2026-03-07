@@ -12,8 +12,8 @@ const runPrediction = asyncHandler(async (req, res) => {
         district,
         financial_year,
         allocated_amount,
-        spent_amount,      // ← accept spent_amount
-        current_spent,     // ← also accept current_spent (legacy)
+        spent_amount,
+        current_spent,
     } = req.body;
 
     if (!department || !district || !financial_year || allocated_amount === undefined) {
@@ -23,39 +23,51 @@ const runPrediction = asyncHandler(async (req, res) => {
     const allocNum = parseFloat(allocated_amount);
     const spentNum = parseFloat(spent_amount ?? current_spent ?? 0);
 
-    // ── Self-contained lapse prediction (no AI dependency) ──
-    const currentMonth = new Date().getMonth() + 1; // 1–12
-    const utilization  = (spentNum / allocNum) * 100;
+    if (isNaN(allocNum) || allocNum <= 0) {
+        throw new ApiError(400, "allocated_amount must be a positive number");
+    }
+    if (isNaN(spentNum) || spentNum < 0) {
+        throw new ApiError(400, "spent_amount must be a non-negative number");
+    }
 
-    // Project spending to year-end based on current month
+    // ── Lapse prediction logic ────────────────────────────
+    const currentMonth    = new Date().getMonth() + 1; // 1–12
     const monthsElapsed   = Math.max(currentMonth, 1);
-    const projectedFinal  = (spentNum / monthsElapsed) * 12;
-    const projected       = Math.min(projectedFinal, allocNum); // cap at allocated
-    const predictedUnused = Math.max(0, allocNum - projected);
-    const lapsePct        = (predictedUnused / allocNum) * 100;
+    const monthlyAvg      = spentNum / monthsElapsed;
+    const remainingMonths = 12 - monthsElapsed;
 
+    // Project to year end
+    const projectedFinal  = spentNum + (monthlyAvg * remainingMonths);
+    const projected       = parseFloat(Math.min(projectedFinal, allocNum).toFixed(2));
+    const predictedUnused = parseFloat(Math.max(0, allocNum - projected).toFixed(2));
+    const lapsePct        = parseFloat(((predictedUnused / allocNum) * 100).toFixed(1));
+    const utilization     = parseFloat(((spentNum / allocNum) * 100).toFixed(1));
+
+    // ── Risk level ────────────────────────────────────────
     const risk_level =
         lapsePct >= 60 ? "CRITICAL" :
         lapsePct >= 40 ? "HIGH"     :
         lapsePct >= 20 ? "MEDIUM"   : "LOW";
 
+    // ── Reallocation suggestion ───────────────────────────
     const reallocation_suggestion =
         risk_level === "CRITICAL"
-            ? `${department} is projected to leave ₹${predictedUnused.toFixed(1)} Cr unused (${lapsePct.toFixed(1)}% lapse risk). Fast-track pending approvals or reallocate to high-demand departments immediately.`
+            ? `${department} is projected to leave ₹${predictedUnused} Cr unused (${lapsePct}% lapse risk). Fast-track pending approvals or reallocate to high-demand departments immediately.`
         : risk_level === "HIGH"
-            ? `${department} has high lapse risk with ₹${predictedUnused.toFixed(1)} Cr at stake. Review spending pace and escalate to department head.`
+            ? `${department} has high lapse risk with ₹${predictedUnused} Cr at stake. Review spending pace and escalate to department head.`
         : risk_level === "MEDIUM"
-            ? `${department} showing moderate lapse risk. Monitor monthly targets closely and accelerate Q4 spending.`
-            : `${department} spending is on track. Continue monitoring utilization.`;
+            ? `${department} showing moderate lapse risk of ₹${predictedUnused} Cr. Monitor monthly targets and accelerate Q4 spending.`
+            : `${department} spending is on track with ${utilization}% utilization. Continue monitoring.`;
 
+    // ── Save to DB ────────────────────────────────────────
     const prediction = new Prediction({
         department,
         state:                   state || "",
         district,
         financial_year,
         allocated_amount:        allocNum,
-        projected_spending:      parseFloat(projected.toFixed(2)),
-        predicted_unused:        parseFloat(predictedUnused.toFixed(2)),
+        projected_spending:      projected,
+        predicted_unused:        predictedUnused,
         risk_level,
         reallocation_suggestion,
     });
@@ -75,7 +87,7 @@ const getAllPredictions = asyncHandler(async (req, res) => {
 
 const getHighRisk = asyncHandler(async (req, res) => {
     const predictions = await Prediction.find({
-        risk_level: { $in: ["HIGH", "CRITICAL"] }   // ← was only "HIGH", now catches CRITICAL too
+        risk_level: { $in: ["HIGH", "CRITICAL"] }
     }).sort({ createdAt: -1 });
     return res
         .status(200)
@@ -100,7 +112,7 @@ const getReallocationSuggestions = asyncHandler(async (req, res) => {
         financial_year:         b.financial_year,
         allocated_amount:       b.allocated_amount,
         spent_amount:           b.spent_amount,
-        utilization_percentage: b.utilization_percentage
+        utilization_percentage: b.utilization_percentage,
     }));
 
     const result = await suggestReallocation(departments);

@@ -63,8 +63,8 @@ export default function SignUp() {
       state:      form.state,
     });
     if (result.success) {
-      navigate("/dashboard", { replace: true });
-    } else {
+      navigate("/login", { replace: true });
+}   else {
       setApiError(result.message || "Registration failed.");
     }
   };
