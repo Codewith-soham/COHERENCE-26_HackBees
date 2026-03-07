@@ -3,7 +3,7 @@ import { TrendingUp } from 'lucide-react';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import {
-    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
+    XAxis, YAxis, CartesianGrid, Tooltip,
     ResponsiveContainer, BarChart, Bar, Cell, Legend,
 } from 'recharts';
 
@@ -207,88 +207,129 @@ export default function BudgetPrediction() {
                 </Card>
             )}
 
-            {/* ── Area Chart ── */}
+            {/* ── Grouped Bar Chart — Budget Forecast ── */}
             {forecastData.length > 0 && (
                 <Card title="Budget Forecast by Financial Year" className="mb-6">
                     <div style={{ width: '100%', height: 400 }}>
                         <ResponsiveContainer width="100%" height="100%">
-                            <AreaChart
+                            <BarChart
                                 data={forecastData}
-                                margin={{ top: 10, right: 30, left: 20, bottom: 0 }}
+                                margin={{ top: 10, right: 30, left: 20, bottom: 10 }}
+                                barCategoryGap="30%"
+                                barGap={4}
                             >
-                                <defs>
-                                    <linearGradient id="colorAllocated" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%"  stopColor="#1A3D7C" stopOpacity={0.8} />
-                                        <stop offset="95%" stopColor="#1A3D7C" stopOpacity={0.1} />
-                                    </linearGradient>
-                                    <linearGradient id="colorProjected" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%"  stopColor="#FF9933" stopOpacity={0.8} />
-                                        <stop offset="95%" stopColor="#FF9933" stopOpacity={0.1} />
-                                    </linearGradient>
-                                    <linearGradient id="colorUnused" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%"  stopColor="#dc2626" stopOpacity={0.6} />
-                                        <stop offset="95%" stopColor="#dc2626" stopOpacity={0.1} />
-                                    </linearGradient>
-                                </defs>
+                                <CartesianGrid
+                                    strokeDasharray="3 3"
+                                    vertical={false}
+                                    stroke="#e5e7eb"
+                                />
                                 <XAxis
                                     dataKey="year"
                                     axisLine={false}
                                     tickLine={false}
-                                    tick={{ fontSize: 13, fill: '#6b7280' }}
+                                    tick={{ fontSize: 13, fill: '#111827', fontWeight: 600 }}
                                 />
                                 <YAxis
                                     axisLine={false}
                                     tickLine={false}
-                                    width={85}
-                                    tick={{ fontSize: 11, fill: '#6b7280' }}
+                                    width={90}
+                                    tick={{ fontSize: 11, fill: '#111827' }}
                                     tickFormatter={v => `Rs.${v}Cr`}
                                 />
-                                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
                                 <Tooltip
-                                    formatter={(value, name) => [`Rs.${value} Cr`, name]}
-                                    contentStyle={{ fontSize: 13, borderRadius: 8 }}
+                                    cursor={{ fill: 'rgba(0,0,0,0.04)' }}
+                                    content={({ active, payload, label }) => {
+                                        if (!active || !payload?.length) return null;
+                                        const colors = {
+                                            allocated: '#1A3D7C',
+                                            projected: '#FF9933',
+                                            unused:    '#dc2626',
+                                        };
+                                        const labels = {
+                                            allocated: 'Allocated',
+                                            projected: 'Projected Spending',
+                                            unused:    'Predicted Unused',
+                                        };
+                                        return (
+                                            <div style={{
+                                                background: '#fff',
+                                                border: '1px solid #e5e7eb',
+                                                borderRadius: 10,
+                                                padding: '12px 16px',
+                                                boxShadow: '0 6px 20px rgba(0,0,0,0.10)',
+                                                fontSize: 13,
+                                                minWidth: 200,
+                                            }}>
+                                                <p style={{
+                                                    fontWeight: 700, fontSize: 14,
+                                                    marginBottom: 10, color: '#111827',
+                                                    borderBottom: '1px solid #f3f4f6',
+                                                    paddingBottom: 6,
+                                                }}>
+                                                    FY {label}
+                                                </p>
+                                                {payload.map((p, i) => (
+                                                    <div key={i} style={{
+                                                        display: 'flex',
+                                                        justifyContent: 'space-between',
+                                                        alignItems: 'center',
+                                                        marginBottom: 6, gap: 24,
+                                                    }}>
+                                                        <span style={{
+                                                            display: 'flex', alignItems: 'center',
+                                                            gap: 6, color: '#6b7280',
+                                                        }}>
+                                                            <span style={{
+                                                                width: 10, height: 10,
+                                                                borderRadius: 2,
+                                                                backgroundColor: colors[p.dataKey],
+                                                                display: 'inline-block',
+                                                            }} />
+                                                            {labels[p.dataKey]}
+                                                        </span>
+                                                        <span style={{
+                                                            fontWeight: 700,
+                                                            color: colors[p.dataKey],
+                                                        }}>
+                                                            Rs.{p.value} Cr
+                                                        </span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        );
+                                    }}
                                 />
-                                <Legend wrapperStyle={{ fontSize: 13, paddingTop: 12 }} />
-                                {/* dot + activeDot ensures single data point is visible */}
-                                <Area
-                                    type="monotone"
+                                <Legend
+                                    wrapperStyle={{ fontSize: 13, paddingTop: 14 }}
+                                    iconType="circle"
+                                    formatter={(value) => ({
+                                        allocated: 'Allocated',
+                                        projected: 'Projected Spending',
+                                        unused:    'Predicted Unused',
+                                    }[value] || value)}
+                                />
+                                <Bar
                                     dataKey="allocated"
-                                    name="Allocated"
-                                    stroke="#1A3D7C"
-                                    strokeWidth={2}
-                                    fillOpacity={1}
-                                    fill="url(#colorAllocated)"
-                                    dot={{ r: 5, fill: '#1A3D7C', strokeWidth: 0 }}
-                                    activeDot={{ r: 7 }}
-                                    connectNulls
+                                    name="allocated"
+                                    fill="#1A3D7C"
+                                    radius={[6, 6, 0, 0]}
+                                    maxBarSize={60}
                                 />
-                                <Area
-                                    type="monotone"
+                                <Bar
                                     dataKey="projected"
-                                    name="Projected Spending"
-                                    stroke="#FF9933"
-                                    strokeWidth={2}
-                                    strokeDasharray="5 5"
-                                    fillOpacity={1}
-                                    fill="url(#colorProjected)"
-                                    dot={{ r: 5, fill: '#FF9933', strokeWidth: 0 }}
-                                    activeDot={{ r: 7 }}
-                                    connectNulls
+                                    name="projected"
+                                    fill="#FF9933"
+                                    radius={[6, 6, 0, 0]}
+                                    maxBarSize={60}
                                 />
-                                <Area
-                                    type="monotone"
+                                <Bar
                                     dataKey="unused"
-                                    name="Predicted Unused"
-                                    stroke="#dc2626"
-                                    strokeWidth={2}
-                                    strokeDasharray="3 3"
-                                    fillOpacity={1}
-                                    fill="url(#colorUnused)"
-                                    dot={{ r: 5, fill: '#dc2626', strokeWidth: 0 }}
-                                    activeDot={{ r: 7 }}
-                                    connectNulls
+                                    name="unused"
+                                    fill="#dc2626"
+                                    radius={[6, 6, 0, 0]}
+                                    maxBarSize={60}
                                 />
-                            </AreaChart>
+                            </BarChart>
                         </ResponsiveContainer>
                     </div>
                 </Card>

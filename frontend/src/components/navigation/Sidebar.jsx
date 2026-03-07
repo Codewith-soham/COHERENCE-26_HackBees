@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard,
@@ -8,15 +9,16 @@ import {
   LineChart,
   PlusCircle,
   FileText,
-  Settings,
   LogOut,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import UserProfilePanel from '../ui/UserProfilePanel';
 import './Sidebar.css';
 
 export default function Sidebar({ isOpen }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const [showProfile, setShowProfile] = useState(false);
 
   const menuItems = [
     { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
@@ -27,7 +29,6 @@ export default function Sidebar({ isOpen }) {
     { name: 'Budget Prediction', path: '/prediction', icon: LineChart },
     { name: 'Real-Time Entry', path: '/entry', icon: PlusCircle },
     { name: 'Reports', path: '/reports', icon: FileText },
-    { name: 'Settings', path: '/settings', icon: Settings },
   ];
 
   const handleLogout = () => {
@@ -61,7 +62,7 @@ export default function Sidebar({ isOpen }) {
       </nav>
 
       <div className="sidebar-user-panel">
-        <div className="sidebar-profile">
+        <div className="sidebar-profile" onClick={() => setShowProfile(true)} style={{ cursor: 'pointer' }}>
           <div className="sidebar-avatar">{user?.fullName?.charAt(0).toUpperCase() || '?'}</div>
           {isOpen && (
             <div className="sidebar-user-info">
@@ -83,6 +84,11 @@ export default function Sidebar({ isOpen }) {
           {isOpen && <span>Logout</span>}
         </button>
       </div>
+
+      <UserProfilePanel
+        isOpen={showProfile}
+        onClose={() => setShowProfile(false)}
+      />
     </aside>
   );
 }
