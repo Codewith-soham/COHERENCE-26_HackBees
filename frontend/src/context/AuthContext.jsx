@@ -2,111 +2,169 @@ import { createContext, useContext, useState, useEffect, useCallback } from "rea
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
 const TOKEN_KEY = "budgetsetu_token";
-const USER_KEY  = "budgetsetu_user";
+const USER_KEY = "budgetsetu_user";
 
 const AuthContext = createContext(null);
 
+const parseStoredUser = () => {
+  try {
+    const storedUser = localStorage.getItem(USER_KEY);
+    return storedUser ? JSON.parse(storedUser) : null;
+  } catch {
+    return null;
+  }
+};
+
+const getTokenExpiry = (jwtToken) => {
+  try {
+    const payload = JSON.parse(atob(jwtToken.split(".")[1]));
+    return payload?.exp ? payload.exp * 1000 : null;
+  } catch {
+    return null;
+  }
+};
+
 export function AuthProvider({ children }) {
-  const [user,    setUser]    = useState(() => {
-    try { return JSON.parse(localStorage.getItem(USER_KEY)); } catch { return null; }
-  });
-  const [token,   setToken]   = useState(() => localStorage.getItem(TOKEN_KEY));
+  const [user, setUser] = useState(() => parseStoredUser());
+  const [token, setToken] = useState(() => localStorage.getItem(TOKEN_KEY));
   const [loading, setLoading] = useState(false);
-  const [error,   setError]   = useState("");
+  const [error, setError] = useState("");
+
+  const logout = useCallback(() => {
+    setToken(null);
+    setUser(null);
+    setError("");
+    localStorage.removeItem(TOKEN_KEY);
+    localStorage.removeItem(USER_KEY);
+  }, []);
 
   useEffect(() => {
-    if (token) localStorage.setItem(TOKEN_KEY, token);
-    else       localStorage.removeItem(TOKEN_KEY);
-  }, [token]);
-
-  useEffect(() => {
-    if (user) localStorage.setItem(USER_KEY, JSON.stringify(user));
-    else      localStorage.removeItem(USER_KEY);
-  }, [user]);
-
-  useEffect(() => {
-    if (!token) return;
-    try {
-      const payload   = JSON.parse(atob(token.split(".")[1]));
-      const expiresIn = payload.exp * 1000 - Date.now();
-      if (expiresIn <= 0) { logout(); return; }
-      const timer = setTimeout(() => {
-        logout();
-        window.location.href = "/login?expired=1";
-      }, expiresIn);
-      return () => clearTimeout(timer);
-    } catch {
-      logout();
+    if (token) {
+      localStorage.setItem(TOKEN_KEY, token);
+    } else {
+      localStorage.removeItem(TOKEN_KEY);
     }
   }, [token]);
 
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem(USER_KEY, JSON.stringify(user));
+    } else {
+      localStorage.removeItem(USER_KEY);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (!token) return undefined;
+
+    const expiryTime = getTokenExpiry(token);
+    if (!expiryTime) {
+      logout();
+      window.location.href = "/login?expired=1";
+      return undefined;
+    }
+
+    const timeoutMs = expiryTime - Date.now();
+    if (timeoutMs <= 0) {
+      logout();
+      window.location.href = "/login?expired=1";
+      return undefined;
+    }
+
+    const timerId = setTimeout(() => {
+      logout();
+      window.location.href = "/login?expired=1";
+    }, timeoutMs);
+
+    return () => clearTimeout(timerId);
+  }, [token, logout]);
+
   const register = async ({ fullName, officerId, email, password, department, state }) => {
-    setLoading(true); setError("");
+    setLoading(true);
+    setError("");
+
     try {
-      const res  = await fetch(`${API_BASE}/api/auth/register`, {
+      const response = await fetch(`${API_BASE}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ fullName, officerId, email, password, department, state }),
       });
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.message || "Registration failed");
-      setToken(json.data.token);
-      setUser(json.data.user);
+
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result.message || "Registration failed");
+      }
+
       return { success: true };
     } catch (err) {
-      setError(err.message);
-      return { success: false, message: err.message };
+      const message = err.message || "Registration failed";
+      setError(message);
+      return { success: false, message };
     } finally {
       setLoading(false);
     }
   };
 
   const login = async ({ identifier, password }) => {
-    setLoading(true); setError("");
+    setLoading(true);
+    setError("");
+
     try {
-      const res  = await fetch(`${API_BASE}/api/auth/login`, {
+      const response = await fetch(`${API_BASE}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ identifier, password }),
       });
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.message || "Login failed");
-      setToken(json.data.token);
-      setUser(json.data.user);
+
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result.message || "Login failed");
+      }
+
+      setToken(result?.data?.token || null);
+      setUser(result?.data?.user || null);
       return { success: true };
     } catch (err) {
-      setError(err.message);
-      return { success: false, message: err.message };
+      const message = err.message || "Login failed";
+      setError(message);
+      return { success: false, message };
     } finally {
       setLoading(false);
     }
   };
 
-  const logout = useCallback(() => {
-    setToken(null);
-    setUser(null);
-    setError("");
-  }, []);
-
-  const authHeader = useCallback(() => ({
-    "Content-Type":  "application/json",
-    "Authorization": `Bearer ${token}`,
-  }), [token]);
+  const authHeader = useCallback(
+    () => ({
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    }),
+    [token]
+  );
 
   return (
-    <AuthContext.Provider value={{
-      user, token, loading, error,
-      isAuthenticated: !!token && !!user,
-      isAdmin: user?.role === "admin",
-      register, login, logout, authHeader,
-    }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        token,
+        loading,
+        error,
+        isAuthenticated: Boolean(token && user),
+        isAdmin: user?.role === "admin",
+        register,
+        login,
+        logout,
+        authHeader,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
 }
 
 export const useAuth = () => {
-  const ctx = useContext(AuthContext);
-  if (!ctx) throw new Error("useAuth must be used inside AuthProvider");
-  return ctx;
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used inside AuthProvider");
+  }
+  return context;
 };
