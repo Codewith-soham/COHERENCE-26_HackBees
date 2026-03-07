@@ -24,6 +24,7 @@ const getTokenExpiry = (jwtToken) => {
   }
 };
 
+
 const parseApiErrorMessage = (payload, fallback) => payload?.message || payload?.error || fallback;
 
 const safeJson = async (response) => {
@@ -33,6 +34,8 @@ const safeJson = async (response) => {
     return {};
   }
 };
+
+
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => parseStoredUser());
@@ -72,6 +75,17 @@ export function AuthProvider({ children }) {
       logout();
       window.location.href = "/login?expired=1";
       return undefined;
+
+    }
+
+    const timeoutMs = expiryTime - Date.now();
+    if (timeoutMs <= 0) {
+      logout();
+      window.location.href = "/login?expired=1";
+      return undefined;
+    }
+
+
     }
 
     const timeoutMs = expiryTime - Date.now();
@@ -100,9 +114,14 @@ export function AuthProvider({ children }) {
         body: JSON.stringify({ fullName, officerId, email, password, department, state }),
       });
 
+
       const result = await safeJson(response);
       if (!response.ok) {
         throw new Error(parseApiErrorMessage(result, "Registration failed"));
+
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result.message || "Registration failed");
       }
 
       return { success: true };
@@ -126,9 +145,15 @@ export function AuthProvider({ children }) {
         body: JSON.stringify({ identifier, password }),
       });
 
+
       const result = await safeJson(response);
       if (!response.ok) {
         throw new Error(parseApiErrorMessage(result, "Login failed"));
+
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result.message || "Login failed");
+
       }
 
       setToken(result?.data?.token || null);
