@@ -64,14 +64,15 @@ export default function BudgetPrediction() {
                     }))
             );
 
-            // Bar chart — only entries with unused > 0
+            // Bar chart — only entries with unused > 0, store dept name separately from district
             setDeptRiskData(
                 data
                     .filter(p => p.predicted_unused > 0)
                     .map(p => ({
-                        name:   `${p.department} (${p.district || p.state || ''})`,
-                        unused: p.predicted_unused,
-                        risk:   p.risk_level,
+                        name:     p.department || 'Unknown',
+                        district: p.district   || p.state || '',
+                        unused:   p.predicted_unused,
+                        risk:     p.risk_level,
                     }))
             );
 
@@ -113,6 +114,32 @@ export default function BudgetPrediction() {
         MEDIUM:   'warning',
         LOW:      'success',
     }[(risk || '').toUpperCase()] || 'default');
+
+    // Custom tooltip for bar chart — shows dept + district + risk
+    const BarTooltip = ({ active, payload, label }) => {
+        if (!active || !payload?.length) return null;
+        const entry = deptRiskData.find(d => d.name === label);
+        return (
+            <div style={{
+                background: '#fff', border: '1px solid #e5e7eb',
+                borderRadius: 8, padding: '10px 14px', fontSize: 13,
+                boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+            }}>
+                <p style={{ fontWeight: 600, marginBottom: 4 }}>{label}</p>
+                {entry?.district && (
+                    <p style={{ color: '#6b7280', marginBottom: 4, fontSize: 12 }}>
+                        {entry.district}
+                    </p>
+                )}
+                <p style={{ color: riskColor(entry?.risk), fontWeight: 600 }}>
+                    Rs.{payload[0].value} Cr unused
+                </p>
+                <p style={{ color: '#6b7280', fontSize: 11, marginTop: 2 }}>
+                    Risk Level: {entry?.risk || 'N/A'}
+                </p>
+            </div>
+        );
+    };
 
     if (loading) return (
         <div className="page-container">
@@ -180,76 +207,130 @@ export default function BudgetPrediction() {
                 </Card>
             )}
 
-            {/* Area Chart */}
+            {/* ── Area Chart ── */}
             {forecastData.length > 0 && (
                 <Card title="Budget Forecast by Financial Year" className="mb-6">
                     <div style={{ width: '100%', height: 400 }}>
                         <ResponsiveContainer width="100%" height="100%">
-                            <AreaChart data={forecastData}
-                                margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                            <AreaChart
+                                data={forecastData}
+                                margin={{ top: 10, right: 30, left: 20, bottom: 0 }}
+                            >
                                 <defs>
                                     <linearGradient id="colorAllocated" x1="0" y1="0" x2="0" y2="1">
                                         <stop offset="5%"  stopColor="#1A3D7C" stopOpacity={0.8} />
-                                        <stop offset="95%" stopColor="#1A3D7C" stopOpacity={0} />
+                                        <stop offset="95%" stopColor="#1A3D7C" stopOpacity={0.1} />
                                     </linearGradient>
                                     <linearGradient id="colorProjected" x1="0" y1="0" x2="0" y2="1">
                                         <stop offset="5%"  stopColor="#FF9933" stopOpacity={0.8} />
-                                        <stop offset="95%" stopColor="#FF9933" stopOpacity={0} />
+                                        <stop offset="95%" stopColor="#FF9933" stopOpacity={0.1} />
                                     </linearGradient>
                                     <linearGradient id="colorUnused" x1="0" y1="0" x2="0" y2="1">
                                         <stop offset="5%"  stopColor="#dc2626" stopOpacity={0.6} />
-                                        <stop offset="95%" stopColor="#dc2626" stopOpacity={0} />
+                                        <stop offset="95%" stopColor="#dc2626" stopOpacity={0.1} />
                                     </linearGradient>
                                 </defs>
-                                <XAxis dataKey="year" axisLine={false} tickLine={false} />
-                                <YAxis axisLine={false} tickLine={false}
-                                    tickFormatter={v => `₹${v}Cr`} />
-                                <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                                <Tooltip formatter={(value, name) => [`₹${value} Cr`, name]} />
-                                <Legend />
-                                <Area type="monotone" dataKey="allocated" name="Allocated"
-                                    stroke="#1A3D7C" fillOpacity={1} fill="url(#colorAllocated)" />
-                                <Area type="monotone" dataKey="projected" name="Projected Spending"
-                                    stroke="#FF9933" strokeDasharray="5 5"
-                                    fillOpacity={1} fill="url(#colorProjected)" />
-                                <Area type="monotone" dataKey="unused" name="Predicted Unused"
-                                    stroke="#dc2626" strokeDasharray="3 3"
-                                    fillOpacity={1} fill="url(#colorUnused)" />
+                                <XAxis
+                                    dataKey="year"
+                                    axisLine={false}
+                                    tickLine={false}
+                                    tick={{ fontSize: 13, fill: '#6b7280' }}
+                                />
+                                <YAxis
+                                    axisLine={false}
+                                    tickLine={false}
+                                    width={85}
+                                    tick={{ fontSize: 11, fill: '#6b7280' }}
+                                    tickFormatter={v => `Rs.${v}Cr`}
+                                />
+                                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
+                                <Tooltip
+                                    formatter={(value, name) => [`Rs.${value} Cr`, name]}
+                                    contentStyle={{ fontSize: 13, borderRadius: 8 }}
+                                />
+                                <Legend wrapperStyle={{ fontSize: 13, paddingTop: 12 }} />
+                                {/* dot + activeDot ensures single data point is visible */}
+                                <Area
+                                    type="monotone"
+                                    dataKey="allocated"
+                                    name="Allocated"
+                                    stroke="#1A3D7C"
+                                    strokeWidth={2}
+                                    fillOpacity={1}
+                                    fill="url(#colorAllocated)"
+                                    dot={{ r: 5, fill: '#1A3D7C', strokeWidth: 0 }}
+                                    activeDot={{ r: 7 }}
+                                    connectNulls
+                                />
+                                <Area
+                                    type="monotone"
+                                    dataKey="projected"
+                                    name="Projected Spending"
+                                    stroke="#FF9933"
+                                    strokeWidth={2}
+                                    strokeDasharray="5 5"
+                                    fillOpacity={1}
+                                    fill="url(#colorProjected)"
+                                    dot={{ r: 5, fill: '#FF9933', strokeWidth: 0 }}
+                                    activeDot={{ r: 7 }}
+                                    connectNulls
+                                />
+                                <Area
+                                    type="monotone"
+                                    dataKey="unused"
+                                    name="Predicted Unused"
+                                    stroke="#dc2626"
+                                    strokeWidth={2}
+                                    strokeDasharray="3 3"
+                                    fillOpacity={1}
+                                    fill="url(#colorUnused)"
+                                    dot={{ r: 5, fill: '#dc2626', strokeWidth: 0 }}
+                                    activeDot={{ r: 7 }}
+                                    connectNulls
+                                />
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
                 </Card>
             )}
 
-            {/* Bar Chart — only non-zero unused */}
+            {/* ── Bar Chart — only non-zero unused ── */}
             {deptRiskData.length > 0 && (
                 <Card title="Predicted Unused Funds by Department" className="mb-6">
-                    <div style={{ width: '100%', height: 360 }}>
+                    <div style={{ width: '100%', height: 420 }}>
                         <ResponsiveContainer width="100%" height="100%">
-                            <BarChart data={deptRiskData}
-                                margin={{ top: 5, right: 20, bottom: 80, left: 0 }}>
-                                <CartesianGrid strokeDasharray="3 3" vertical={false}
-                                    stroke="#e5e7eb" />
+                            <BarChart
+                                data={deptRiskData}
+                                margin={{ top: 10, right: 30, bottom: 20, left: 20 }}
+                                barCategoryGap="35%"
+                                maxBarSize={80}
+                            >
+                                <CartesianGrid
+                                    strokeDasharray="3 3"
+                                    vertical={false}
+                                    stroke="#e5e7eb"
+                                />
                                 <XAxis
                                     dataKey="name"
                                     axisLine={false}
                                     tickLine={false}
-                                    angle={-40}
-                                    textAnchor="end"
                                     interval={0}
-                                    height={80}
-                                    tick={{ fontSize: 11 }}
-                                    tickFormatter={(val) =>
-                                        val.length > 18 ? val.slice(0, 18) + '…' : val
-                                    }
+                                    height={40}
+                                    tick={{ fontSize: 13, fill: '#374151', fontWeight: 600 }}
                                 />
-                                <YAxis axisLine={false} tickLine={false}
-                                    tickFormatter={v => `₹${v}Cr`} />
-                                <Tooltip
-                                    formatter={value => [`₹${value} Cr`, 'Unused']}
-                                    labelFormatter={label => label}
+                                <YAxis
+                                    axisLine={false}
+                                    tickLine={false}
+                                    width={85}
+                                    tick={{ fontSize: 11, fill: '#6b7280' }}
+                                    tickFormatter={v => `Rs.${v}Cr`}
                                 />
-                                <Bar dataKey="unused" name="Predicted Unused" radius={[4, 4, 0, 0]}>
+                                <Tooltip content={<BarTooltip />} />
+                                <Bar
+                                    dataKey="unused"
+                                    name="Predicted Unused"
+                                    radius={[6, 6, 0, 0]}
+                                >
                                     {deptRiskData.map((entry, i) => (
                                         <Cell key={i} fill={riskColor(entry.risk || 'LOW')} />
                                     ))}
@@ -257,9 +338,17 @@ export default function BudgetPrediction() {
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
-                    <div className="flex items-center gap-4 mt-3 text-xs text-muted justify-end">
+
+                    {/* Risk legend */}
+                    <div style={{
+                        display: 'flex', gap: 16, justifyContent: 'flex-end',
+                        marginTop: 8, flexWrap: 'wrap',
+                    }}>
                         {['LOW', 'MEDIUM', 'HIGH', 'CRITICAL'].map(r => (
-                            <span key={r} className="flex items-center gap-1">
+                            <span key={r} style={{
+                                display: 'flex', alignItems: 'center',
+                                gap: 6, fontSize: 12, color: '#6b7280',
+                            }}>
                                 <span style={{
                                     width: 10, height: 10, borderRadius: 2,
                                     backgroundColor: riskColor(r), display: 'inline-block',

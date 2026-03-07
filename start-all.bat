@@ -5,19 +5,19 @@ echo ========================================
 echo.
 
 echo [1/3] Starting Python AI Service...
-start "BudgetGuard AI" cmd /k "cd /d D:\BudgetSetu\ai && D:\BudgetSetu\.venv\Scripts\activate.bat && python main.py"
+start "" /D "D:\BudgetSetu\ai" cmd /k "call D:\BudgetSetu\.venv\Scripts\activate.bat && python main.py"
 
 timeout /t 5 /nobreak >nul
 
 echo [2/3] Starting Node.js Backend...
-start "BudgetFlow Backend" cmd /k "cd /d D:\BudgetSetu\backend && npm run dev"
+start "" /D "D:\BudgetSetu\backend" cmd /k "npm run dev"
 
 timeout /t 5 /nobreak >nul
 
 echo [3/3] Starting React Frontend...
-start "BudgetSetu Frontend" cmd /k "cd /d D:\BudgetSetu\frontend && npm run dev"
+start "" /D "D:\BudgetSetu\frontend" cmd /k "npm run dev"
 
-timeout /t 5 /nobreak >nul
+timeout /t 3 /nobreak >nul
 
 echo.
 echo ========================================

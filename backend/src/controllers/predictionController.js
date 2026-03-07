@@ -29,35 +29,49 @@ const runPrediction = asyncHandler(async (req, res) => {
     if (isNaN(spentNum) || spentNum < 0) {
         throw new ApiError(400, "spent_amount must be a non-negative number");
     }
+    if (spentNum > allocNum) {
+        throw new ApiError(400, "spent_amount cannot exceed allocated_amount");
+    }
 
-    // ── Lapse prediction logic ────────────────────────────
-    const currentMonth    = new Date().getMonth() + 1; // 1–12
-    const monthsElapsed   = Math.max(currentMonth, 1);
-    const monthlyAvg      = spentNum / monthsElapsed;
-    const remainingMonths = 12 - monthsElapsed;
+    // ── Indian FY starts April (calendar month 4) ─────────
+    const calMonth      = new Date().getMonth() + 1;       // 1–12
+    const monthsElapsed = calMonth >= 4
+        ? calMonth - 3          // Apr=1, May=2 … Mar=12
+        : calMonth + 9;         // Jan=10, Feb=11, Mar=12
+    const remainingMonths = Math.max(12 - monthsElapsed, 0);
 
-    // Project to year end
-    const projectedFinal  = spentNum + (monthlyAvg * remainingMonths);
-    const projected       = parseFloat(Math.min(projectedFinal, allocNum).toFixed(2));
+    // ── Project spend to year end ─────────────────────────
+    const monthlyAvg     = monthsElapsed > 0 ? spentNum / monthsElapsed : 0;
+    const projectedFinal = spentNum + (monthlyAvg * remainingMonths);
+    const projected      = parseFloat(Math.min(projectedFinal, allocNum).toFixed(2));
+
+    // ── Key metrics ───────────────────────────────────────
     const predictedUnused = parseFloat(Math.max(0, allocNum - projected).toFixed(2));
     const lapsePct        = parseFloat(((predictedUnused / allocNum) * 100).toFixed(1));
     const utilization     = parseFloat(((spentNum / allocNum) * 100).toFixed(1));
 
-    // ── Risk level ────────────────────────────────────────
+    // ── Risk level based on PROJECTED utilization ─────────
+    // High unused funds = high risk of lapse
+    // LOW risk    → department is spending well (projected util >= 90%)
+    // MEDIUM risk → some funds likely unused    (projected util 70–89%)
+    // HIGH risk   → significant lapse expected  (projected util 50–69%)
+    // CRITICAL    → major lapse, needs action   (projected util < 50%)
+    const projectedUtil = parseFloat(((projected / allocNum) * 100).toFixed(1));
+
     const risk_level =
-        lapsePct >= 60 ? "CRITICAL" :
-        lapsePct >= 40 ? "HIGH"     :
-        lapsePct >= 20 ? "MEDIUM"   : "LOW";
+        projectedUtil >= 90 ? "LOW"      :
+        projectedUtil >= 70 ? "MEDIUM"   :
+        projectedUtil >= 50 ? "HIGH"     : "CRITICAL";
 
     // ── Reallocation suggestion ───────────────────────────
     const reallocation_suggestion =
         risk_level === "CRITICAL"
-            ? `${department} is projected to leave ₹${predictedUnused} Cr unused (${lapsePct}% lapse risk). Fast-track pending approvals or reallocate to high-demand departments immediately.`
+            ? `CRITICAL: ${department} has only utilized ${utilization}% so far and is projected to leave ₹${predictedUnused} Cr (${lapsePct}%) unused by year-end. Immediate reallocation to high-demand departments or fast-track approval of pending projects is required.`
         : risk_level === "HIGH"
-            ? `${department} has high lapse risk with ₹${predictedUnused} Cr at stake. Review spending pace and escalate to department head.`
+            ? `HIGH RISK: ${department} is projected to leave ₹${predictedUnused} Cr unused (${lapsePct}% lapse). Current utilization is ${utilization}%. Escalate to department head and review pending spending approvals before Q4.`
         : risk_level === "MEDIUM"
-            ? `${department} showing moderate lapse risk of ₹${predictedUnused} Cr. Monitor monthly targets and accelerate Q4 spending.`
-            : `${department} spending is on track with ${utilization}% utilization. Continue monitoring.`;
+            ? `MODERATE RISK: ${department} showing ${utilization}% utilization with ₹${predictedUnused} Cr at risk of lapse. Monitor monthly spending targets and accelerate planned procurement in remaining months.`
+            : `ON TRACK: ${department} is performing well with ${utilization}% current utilization. Projected to utilize ${projectedUtil}% by year-end. Continue monitoring to maintain spending pace.`;
 
     // ── Save to DB ────────────────────────────────────────
     const prediction = new Prediction({
@@ -95,8 +109,9 @@ const getHighRisk = asyncHandler(async (req, res) => {
 });
 
 const getReallocationSuggestions = asyncHandler(async (req, res) => {
+    // Find budgets with utilization below 50% — these are genuinely at risk
     const lowUtilBudgets = await Budget.find({
-        utilization_percentage: { $lt: 30 }
+        utilization_percentage: { $lt: 50 }
     }).sort({ createdAt: -1 });
 
     if (!lowUtilBudgets.length) {
