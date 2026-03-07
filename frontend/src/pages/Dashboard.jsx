@@ -3,7 +3,7 @@ import {
     Building2, IndianRupee, Wallet, TrendingUp
 } from 'lucide-react';
 import {
-    LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+    XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
     BarChart, Bar, Legend
 } from 'recharts';
 import Card from '../components/ui/Card';
@@ -12,7 +12,6 @@ import './Dashboard.css';
 
 export default function Dashboard() {
     const [summary, setSummary] = useState({ totalAllocated: 0, totalSpent: 0, remaining: 0, departments: 0 });
-    const [trends, setTrends] = useState([]);
     const [deptData, setDeptData] = useState([]);
     const [recentActivity, setRecentActivity] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -33,18 +32,6 @@ export default function Dashboard() {
             const remaining = totalAllocated - totalSpent;
             const departments = [...new Set(budgets.map(b => b.department))].length;
             setSummary({ totalAllocated, totalSpent, remaining, departments });
-
-            // Trends — group by month
-            const monthOrder = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-            const monthMap = {};
-            budgets.forEach(b => {
-                if (!monthMap[b.month]) monthMap[b.month] = 0;
-                monthMap[b.month] += b.spent_amount;
-            });
-            const trendsData = monthOrder
-                .filter(m => monthMap[m])
-                .map(m => ({ month: m.slice(0, 3), spent: Math.round(monthMap[m]) }));
-            setTrends(trendsData);
 
             // Department comparison
             const deptMap = {};
@@ -117,66 +104,7 @@ export default function Dashboard() {
                 })}
             </div>
 
-            <div className="grid grid-cols-2 gap-6 mb-6">
-                <Card title="Budget Utilization Trend">
-                    <div className="chart-container" style={{ height: 300 }}>
-                        <ResponsiveContainer width="100%" height="100%">
-                            <LineChart data={trends} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
-                                <XAxis dataKey="month" axisLine={false} tickLine={false} />
-                                <YAxis axisLine={false} tickLine={false} tickFormatter={(val) => `₹${val}Cr`} />
-                                <Tooltip formatter={(value) => [`₹${value} Cr`, 'Spent']} />
-                                <Line type="monotone" dataKey="spent" stroke="var(--primary)" strokeWidth={3} dot={{ r: 4 }} activeDot={{ r: 6 }} />
-                            </LineChart>
-                        </ResponsiveContainer>
-                    </div>
-                </Card>
-
-                <Card title="Department Spending Comparison" className="comparison-card w-full">
-                    <div style={{ width: '100%', height: '400px' }}>
-                        <ResponsiveContainer width="100%" height="100%">
-                            <BarChart 
-                                data={deptData} 
-                                margin={{ top: 20, right: 40, bottom: 100, left: 80 }}
-                                barCategoryGap="20%"
-                            >
-                                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
-                                <XAxis 
-                                    dataKey="name" 
-                                    axisLine={false} 
-                                    tickLine={false} 
-                                    angle={-40} 
-                                    textAnchor="end" 
-                                    interval={0}
-                                    tick={{ fontSize: 12, fill: '#374151' }}
-                                    height={90}
-                                    tickMargin={15}
-                                />
-                                <YAxis 
-                                    axisLine={false} 
-                                    tickLine={false} 
-                                    tickFormatter={(val) => `₹${val}Cr`}
-                                    width={80}
-                                    tick={{ fontSize: 12, fill: '#374151' }}
-                                    tickMargin={10}
-                                />
-                                <Tooltip 
-                                    formatter={(value) => `₹${value} Cr`}
-                                    contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
-                                />
-                                <Legend 
-                                    iconType="circle" 
-                                    wrapperStyle={{ paddingTop: '20px' }}
-                                />
-                                <Bar dataKey="allocated" name="Allocated" fill="var(--primary)" radius={[4, 4, 0, 0]} maxBarSize={60} />
-                                <Bar dataKey="spent" name="Spent" fill="var(--accent)" radius={[4, 4, 0, 0]} maxBarSize={60} />
-                            </BarChart>
-                        </ResponsiveContainer>
-                    </div>
-                </Card>
-            </div>
-
-            <Card title="Recent Budget Activity">
+            <Card title="Recent Budget Activity" className="mb-6">
                 <div className="table-responsive">
                     <table className="data-table">
                         <thead>
@@ -216,6 +144,53 @@ export default function Dashboard() {
                             })}
                         </tbody>
                     </table>
+                </div>
+            </Card>
+
+            <Card className="mt-6">
+                <div className="mb-4">
+                    <h3 className="text-lg font-semibold">Department Spending Comparison</h3>
+                    <p className="text-sm text-muted">Allocated vs Spent by Department (₹ Cr)</p>
+                </div>
+                <div style={{ width: '100%', minWidth: 0 }}>
+                    <ResponsiveContainer width="100%" height={400}>
+                        <BarChart 
+                            data={deptData} 
+                            margin={{ top: 20, right: 40, bottom: 100, left: 80 }}
+                            barCategoryGap="20%"
+                        >
+                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
+                            <XAxis 
+                                dataKey="name" 
+                                axisLine={false} 
+                                tickLine={false} 
+                                angle={-40} 
+                                textAnchor="end" 
+                                interval={0}
+                                tick={{ fontSize: 12, fill: '#374151' }}
+                                height={90}
+                                tickMargin={15}
+                            />
+                            <YAxis 
+                                axisLine={false} 
+                                tickLine={false} 
+                                tickFormatter={(val) => `₹${val}Cr`}
+                                width={80}
+                                tick={{ fontSize: 12, fill: '#374151' }}
+                                tickMargin={10}
+                            />
+                            <Tooltip 
+                                formatter={(value) => `₹${value} Cr`}
+                                contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+                            />
+                            <Legend 
+                                iconType="circle" 
+                                wrapperStyle={{ paddingTop: '20px' }}
+                            />
+                            <Bar dataKey="allocated" name="Allocated" fill="var(--primary)" radius={[4, 4, 0, 0]} maxBarSize={60} />
+                            <Bar dataKey="spent" name="Spent" fill="var(--accent)" radius={[4, 4, 0, 0]} maxBarSize={60} />
+                        </BarChart>
+                    </ResponsiveContainer>
                 </div>
             </Card>
         </div>
