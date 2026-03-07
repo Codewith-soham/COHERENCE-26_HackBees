@@ -132,17 +132,44 @@ export default function Dashboard() {
                     </div>
                 </Card>
 
-                <Card title="Department Spending Comparison">
-                    <div className="chart-container" style={{ height: 300 }}>
+                <Card title="Department Spending Comparison" className="comparison-card w-full">
+                    <div style={{ width: '100%', height: '400px' }}>
                         <ResponsiveContainer width="100%" height="100%">
-                            <BarChart data={deptData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                            <BarChart 
+                                data={deptData} 
+                                margin={{ top: 20, right: 40, bottom: 100, left: 80 }}
+                                barCategoryGap="20%"
+                            >
                                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
-                                <XAxis dataKey="name" axisLine={false} tickLine={false} />
-                                <YAxis axisLine={false} tickLine={false} tickFormatter={(val) => `₹${val}Cr`} />
-                                <Tooltip formatter={(value) => `₹${value} Cr`} />
-                                <Legend iconType="circle" />
-                                <Bar dataKey="allocated" name="Allocated" fill="var(--primary)" radius={[4, 4, 0, 0]} />
-                                <Bar dataKey="spent" name="Spent" fill="var(--accent)" radius={[4, 4, 0, 0]} />
+                                <XAxis 
+                                    dataKey="name" 
+                                    axisLine={false} 
+                                    tickLine={false} 
+                                    angle={-40} 
+                                    textAnchor="end" 
+                                    interval={0}
+                                    tick={{ fontSize: 12, fill: '#374151' }}
+                                    height={90}
+                                    tickMargin={15}
+                                />
+                                <YAxis 
+                                    axisLine={false} 
+                                    tickLine={false} 
+                                    tickFormatter={(val) => `₹${val}Cr`}
+                                    width={80}
+                                    tick={{ fontSize: 12, fill: '#374151' }}
+                                    tickMargin={10}
+                                />
+                                <Tooltip 
+                                    formatter={(value) => `₹${value} Cr`}
+                                    contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+                                />
+                                <Legend 
+                                    iconType="circle" 
+                                    wrapperStyle={{ paddingTop: '20px' }}
+                                />
+                                <Bar dataKey="allocated" name="Allocated" fill="var(--primary)" radius={[4, 4, 0, 0]} maxBarSize={60} />
+                                <Bar dataKey="spent" name="Spent" fill="var(--accent)" radius={[4, 4, 0, 0]} maxBarSize={60} />
                             </BarChart>
                         </ResponsiveContainer>
                     </div>

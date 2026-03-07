@@ -1,74 +1,117 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { ShieldCheck } from 'lucide-react';
-import Button from '../components/ui/Button';
-import Input from '../components/ui/Input';
-import './AuthPages.css';
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { LogIn, Eye, EyeOff, Loader2, AlertTriangle } from "lucide-react";
 
 export default function Login() {
-    const [formData, setFormData] = useState({
-        identifier: '',
-        password: ''
-    });
-    const navigate = useNavigate();
+  const { login, isAuthenticated, loading } = useAuth();
+  const navigate  = useNavigate();
+  const location  = useLocation();
+  const from      = location.state?.from?.pathname || "/dashboard";
+  const expired   = new URLSearchParams(location.search).get("expired");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // In a real application, perform authentication here
-        console.log('Login attempt with:', formData);
-        // Simulate successful login
-        navigate('/dashboard');
-    };
+  const [form,    setForm]    = useState({ identifier: "", password: "" });
+  const [showPwd, setShowPwd] = useState(false);
+  const [error,   setError]   = useState(expired ? "Session expired. Please log in again." : "");
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-    };
+  useEffect(() => {
+    if (isAuthenticated) navigate(from, { replace: true });
+  }, [isAuthenticated]);
 
-    return (
-        <div className="auth-container animate-fade-in">
-            <div className="auth-header text-center mb-6">
-                <div className="auth-logo mb-4 mx-auto flex justify-center text-primary">
-                    <ShieldCheck size={48} />
-                </div>
-                <h2 className="text-primary mb-2">BudgetSetu</h2>
-                <h4 className="text-muted">Officer Login</h4>
-            </div>
+  const handleSubmit = async () => {
+    if (!form.identifier || !form.password) {
+      setError("Please enter your email/Officer ID and password.");
+      return;
+    }
+    setError("");
+    const result = await login({ identifier: form.identifier, password: form.password });
+    if (result.success) {
+      navigate(from, { replace: true });
+    } else {
+      setError(result.message || "Login failed. Please try again.");
+    }
+  };
 
-            <form onSubmit={handleSubmit} className="auth-form flex flex-col gap-4">
-                <Input
-                    label="Email / Officer ID"
-                    name="identifier"
-                    placeholder="Enter your email or ID"
-                    value={formData.identifier}
-                    onChange={handleChange}
-                    required
-                />
-                <Input
-                    label="Password"
-                    name="password"
-                    type="password"
-                    placeholder="Enter your password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
+  const handleKey = (e) => { if (e.key === "Enter") handleSubmit(); };
 
-                <div className="flex justify-between items-center mt-2 mb-4">
-                    <label className="flex items-center gap-2 text-sm text-muted">
-                        <input type="checkbox" /> Remember me
-                    </label>
-                    <a href="#" className="text-sm text-primary hover-underline">Forgot password?</a>
-                </div>
-
-                <Button type="submit" size="lg" className="w-full">
-                    Login
-                </Button>
-            </form>
-
-            <div className="auth-footer text-center mt-6 text-sm text-muted">
-                Don't have an account? <Link to="/signup" className="text-primary font-medium hover-underline">Create Account</Link>
-            </div>
+  return (
+    <div className="min-h-screen bg-gray-950 flex items-center justify-center p-4">
+      <div className="w-full max-w-md">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-indigo-600 mb-4">
+            <LogIn size={26} className="text-white" />
+          </div>
+          <h1 className="text-2xl font-bold text-white tracking-tight">BudgetSetu</h1>
+          <p className="text-gray-400 text-sm mt-1">Government Budget Intelligence Portal</p>
         </div>
-    );
+
+        <div className="rounded-2xl border border-gray-800 bg-gray-900/60 p-8 space-y-5">
+          <h2 className="text-lg font-semibold text-white">Officer Login</h2>
+
+          {error && (
+            <div className="flex items-start gap-2 rounded-xl bg-red-900/30 border border-red-700/50 p-3 text-sm text-red-300">
+              <AlertTriangle size={16} className="mt-0.5 shrink-0" />
+              {error}
+            </div>
+          )}
+
+          <div className="space-y-1.5">
+            <label className="text-xs font-medium text-gray-300 uppercase tracking-wide">
+              Email or Officer ID
+            </label>
+            <input
+              type="text"
+              placeholder="officer@gov.in or OFC001"
+              value={form.identifier}
+              onChange={(e) => setForm(f => ({ ...f, identifier: e.target.value }))}
+              onKeyDown={handleKey}
+              className="w-full rounded-lg bg-gray-800 border border-gray-700 hover:border-gray-500
+                         focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20
+                         text-sm text-gray-100 px-3 py-2.5 outline-none transition-colors"
+            />
+          </div>
+
+          <div className="space-y-1.5">
+            <label className="text-xs font-medium text-gray-300 uppercase tracking-wide">
+              Password
+            </label>
+            <div className="relative">
+              <input
+                type={showPwd ? "text" : "password"}
+                placeholder="••••••••"
+                value={form.password}
+                onChange={(e) => setForm(f => ({ ...f, password: e.target.value }))}
+                onKeyDown={handleKey}
+                className="w-full rounded-lg bg-gray-800 border border-gray-700 hover:border-gray-500
+                           focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20
+                           text-sm text-gray-100 px-3 py-2.5 pr-10 outline-none transition-colors"
+              />
+              <button type="button" onClick={() => setShowPwd(v => !v)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-200">
+                {showPwd ? <EyeOff size={16} /> : <Eye size={16} />}
+              </button>
+            </div>
+          </div>
+
+          <button onClick={handleSubmit} disabled={loading}
+            className="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500
+                       disabled:opacity-50 disabled:cursor-not-allowed
+                       font-semibold text-sm text-white transition-colors
+                       flex items-center justify-center gap-2">
+            {loading
+              ? <><Loader2 size={16} className="animate-spin" /> Logging in...</>
+              : <><LogIn size={16} /> Login</>
+            }
+          </button>
+
+          <p className="text-center text-sm text-gray-400">
+            Don't have an account?{" "}
+            <Link to="/signup" className="text-indigo-400 hover:text-indigo-300 font-medium">
+              Register here
+            </Link>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }

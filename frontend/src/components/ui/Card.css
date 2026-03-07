@@ -3,8 +3,9 @@
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
-    overflow: hidden;
+    overflow: visible;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
 }
 
 .card:hover {
