@@ -1,6 +1,11 @@
 """
 Anomaly Detection Model
 Loads pre-trained Isolation Forest from trained_models/anomaly_model.pkl
+
+PRODUCTION BEHAVIOR:
+- Model MUST be pre-trained and available at startup.
+- If the pickle file is missing, startup fails immediately.
+- No on-demand training occurs during request handling.
 """
 
 import numpy as np
@@ -30,9 +35,10 @@ class AnomalyDetector:
             self.is_pretrained = True
             print(f"[AnomalyDetector] Loaded pre-trained model (trained: {data.get('trained_at', 'unknown')})")
         else:
-            print("[AnomalyDetector] WARNING: No trained model found! Run: python train_anomaly_model.py")
-            self.model = IsolationForest(contamination=0.13, n_estimators=100, random_state=42)
-            self.scaler = StandardScaler()
+            raise RuntimeError(
+                f"[AnomalyDetector] FATAL: Pre-trained model not found at '{path}'. "
+                f"Run 'python train_anomaly_model.py' to generate it before starting the server."
+            )
 
     def _extract_features(self, transactions):
         """Convert transactions to 9 numerical features — MUST match training"""
@@ -140,18 +146,11 @@ class AnomalyDetector:
         if len(transactions) < 3:
             return self._rule_based_only(transactions)
 
-        # LAYER 1: ML (Isolation Forest)
+        # LAYER 1: ML (Isolation Forest) — always uses pre-trained model
         features = self._extract_features(transactions)
-
-        if self.is_pretrained:
-            features_scaled = self.scaler.transform(features)
-            predictions = self.model.predict(features_scaled)
-            raw_scores = self.model.decision_function(features_scaled)
-        else:
-            features_scaled = self.scaler.fit_transform(features)
-            self.model.fit(features_scaled)
-            predictions = self.model.predict(features_scaled)
-            raw_scores = self.model.decision_function(features_scaled)
+        features_scaled = self.scaler.transform(features)
+        predictions = self.model.predict(features_scaled)
+        raw_scores = self.model.decision_function(features_scaled)
 
         # Normalize ML scores to 0-1
         min_s, max_s = raw_scores.min(), raw_scores.max()

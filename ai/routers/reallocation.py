@@ -56,7 +56,7 @@ NEEDY_MAP = {
 
 
 @router.post("/suggest-reallocation", response_model=ReallocationResponse)
-async def suggest_reallocation(req: ReallocationRequest):
+def suggest_reallocation(req: ReallocationRequest):
 
     departments = req.departments
 

@@ -4,11 +4,9 @@ from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List, Optional
 import numpy as np
-from models.prediction_model import LapsePredictor
+from models import predictor
 
 router = APIRouter()
-
-predictor = LapsePredictor()
 
 
 class DepartmentBudgetInput(BaseModel):
@@ -47,7 +45,7 @@ class LapsePredictionResponse(BaseModel):
 
 
 @router.post("/predict-lapse", response_model=LapsePredictionResponse)
-async def predict_lapse(req: LapsePredictionRequest):
+def predict_lapse(req: LapsePredictionRequest):
 
     dept_data = [d.model_dump() for d in req.departments]
     results = predictor.predict_batch(dept_data)

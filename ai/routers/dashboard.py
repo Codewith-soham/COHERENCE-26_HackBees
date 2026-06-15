@@ -13,7 +13,7 @@ router = APIRouter()
 
 
 @router.get("/dashboard/summary")
-async def dashboard_summary():
+def dashboard_summary():
     """One API call → All data needed for dashboard stat cards and charts"""
 
     # Load department data

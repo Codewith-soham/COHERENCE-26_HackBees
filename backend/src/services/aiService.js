@@ -3,20 +3,49 @@
  *  AI SERVICE
  *  Provides communication layer between Node.js backend and
  *  Python FastAPI AI service running on port 8000.
+ *
+ *  PRODUCTION BEHAVIOR:
+ *  - All requests have a 5-second timeout via AbortController.
+ *  - If the AI service hangs or is unreachable, graceful
+ *    fallback responses are returned.
+ *  - The backend never crashes due to AI service failures.
  * ============================================================
  */
 
 import config from '../config/index.js';
 
 const AI_BASE_URL = config.AI_SERVICE_URL;
+const AI_TIMEOUT_MS = 5000; // 5 second timeout
+
+/**
+ * Create a fetch request with an AbortController timeout.
+ * Returns the Response object or throws on timeout/network error.
+ */
+const fetchWithTimeout = async (url, options = {}) => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), AI_TIMEOUT_MS);
+
+    try {
+        const response = await fetch(url, {
+            ...options,
+            signal: controller.signal,
+        });
+        return response;
+    } finally {
+        clearTimeout(timeoutId);
+    }
+};
 
 // ── Health Check ─────────────────────────────────────────────
 export const checkAIHealth = async () => {
     try {
-        const response = await fetch(`${AI_BASE_URL}/ai/health`);
+        const response = await fetchWithTimeout(`${AI_BASE_URL}/ai/health`);
         const result = await response.json();
         return result.status === 'ok' || result.status === 'running';
     } catch (error) {
+        if (error.name === 'AbortError') {
+            console.error('AI Health check timed out after 5s');
+        }
         return false;
     }
 };
@@ -24,7 +53,7 @@ export const checkAIHealth = async () => {
 // ── Anomaly Check ─────────────────────────────────────────────
 export const checkAnomaly = async (budgetData) => {
     try {
-        const response = await fetch(`${AI_BASE_URL}/ai/anomaly-check`, {
+        const response = await fetchWithTimeout(`${AI_BASE_URL}/ai/anomaly-check`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(budgetData),
@@ -41,7 +70,11 @@ export const checkAnomaly = async (budgetData) => {
             severity:         result.severity         ?? 'LOW',
         };
     } catch (error) {
-        console.error('AI Service unavailable:', error.message);
+        if (error.name === 'AbortError') {
+            console.error('AI anomaly-check timed out after 5s — returning fallback');
+        } else {
+            console.error('AI Service unavailable:', error.message);
+        }
         return getDefaultAnomalyResult();
     }
 };
@@ -49,7 +82,7 @@ export const checkAnomaly = async (budgetData) => {
 // ── Predict Utilization ───────────────────────────────────────
 export const predictUtilization = async (predictionData) => {
     try {
-        const response = await fetch(`${AI_BASE_URL}/ai/predict-utilization`, {
+        const response = await fetchWithTimeout(`${AI_BASE_URL}/ai/predict-utilization`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(predictionData),
@@ -66,7 +99,11 @@ export const predictUtilization = async (predictionData) => {
             reallocation_suggestion: result.reallocation_suggestion ?? null,
         };
     } catch (error) {
-        console.error('AI Service unavailable:', error.message);
+        if (error.name === 'AbortError') {
+            console.error('AI predict-utilization timed out after 5s — returning fallback');
+        } else {
+            console.error('AI Service unavailable:', error.message);
+        }
         return getDefaultPredictionResult(predictionData.allocated_amount);
     }
 };
@@ -85,7 +122,7 @@ export const suggestReallocation = async (departments) => {
             demand_indicator: d.utilization_percentage < 30 ? 0.2 : 0.7,
         }));
 
-        const response = await fetch(`${AI_BASE_URL}/ai/suggest-reallocation`, {
+        const response = await fetchWithTimeout(`${AI_BASE_URL}/ai/suggest-reallocation`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ departments: mapped }),
@@ -113,7 +150,11 @@ export const suggestReallocation = async (departments) => {
         };
 
     } catch (error) {
-        console.warn('AI reallocation failed, using local logic:', error.message);
+        if (error.name === 'AbortError') {
+            console.warn('AI reallocation timed out after 5s, using local logic');
+        } else {
+            console.warn('AI reallocation failed, using local logic:', error.message);
+        }
 
         // ── Local fallback — always returns useful data ───────
         const suggestions = departments.map(d => {
