@@ -89,7 +89,9 @@ async def anomaly_check(req: AnomalyCheckRequest):
     if our_result is None:
         our_result = results[0]
 
-    his_score = round(our_result['anomaly_score'] * 100, 1)
+    # FIX: Keep anomaly_score as 0.0-1.0 float (frontend multiplies by 100 for display)
+    his_score = round(float(our_result['anomaly_score']), 4)
+
     severity_map = {"critical": "HIGH", "high": "HIGH", "medium": "MEDIUM", "low": "LOW"}
     his_severity = severity_map.get(our_result['severity'], "LOW")
 

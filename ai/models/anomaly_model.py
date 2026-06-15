@@ -9,6 +9,7 @@ import os
 from sklearn.ensemble import IsolationForest
 from sklearn.preprocessing import StandardScaler
 from datetime import datetime
+from config import config
 
 
 class AnomalyDetector:
@@ -20,7 +21,7 @@ class AnomalyDetector:
         self._load_model()
 
     def _load_model(self):
-        path = "trained_models/anomaly_model.pkl"
+        path = os.path.join(config.MODEL_DIR, "anomaly_model.pkl")
         if os.path.exists(path):
             with open(path, "rb") as f:
                 data = pickle.load(f)

@@ -1,0 +1,199 @@
+import { useState, useEffect } from 'react';
+import {
+    Building2, IndianRupee, Wallet, TrendingUp
+} from 'lucide-react';
+import {
+    XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+    BarChart, Bar, Legend
+} from 'recharts';
+import Card from '../components/ui/Card';
+import Badge from '../components/ui/Badge';
+import { API_BASE_URL } from '../config/api';
+import './Dashboard.css';
+
+export default function Dashboard() {
+    const [summary, setSummary] = useState({ totalAllocated: 0, totalSpent: 0, remaining: 0, departments: 0 });
+    const [deptData, setDeptData] = useState([]);
+    const [recentActivity, setRecentActivity] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetchDashboardData();
+    }, []);
+
+    const fetchDashboardData = async () => {
+        setLoading(true);
+        try {
+            const res = await fetch(`${API_BASE_URL}/api/budget/all`);
+            const json = await res.json();
+            const budgets = json.data || [];
+
+            const totalAllocated = budgets.reduce((sum, b) => sum + b.allocated_amount, 0);
+            const totalSpent = budgets.reduce((sum, b) => sum + b.spent_amount, 0);
+            const remaining = totalAllocated - totalSpent;
+            const departments = [...new Set(budgets.map(b => b.department))].length;
+            setSummary({ totalAllocated, totalSpent, remaining, departments });
+
+            // Department comparison
+            const deptMap = {};
+            budgets.forEach(b => {
+                if (!deptMap[b.department]) deptMap[b.department] = { allocated: 0, spent: 0 };
+                deptMap[b.department].allocated += b.allocated_amount;
+                deptMap[b.department].spent += b.spent_amount;
+            });
+            const deptArr = Object.entries(deptMap).map(([name, vals]) => ({
+                name,
+                allocated: Math.round(vals.allocated),
+                spent: Math.round(vals.spent),
+            }));
+            setDeptData(deptArr);
+
+            // Recent activity — latest 5
+            const recent = budgets.slice(0, 5).map((b, i) => ({
+                id: i + 1,
+                state: b.state || 'N/A',
+                district: b.district,
+                dept: b.department,
+                allocated: `₹${b.allocated_amount} Cr`,
+                spent: `₹${b.spent_amount} Cr`,
+                remaining: `₹${(b.allocated_amount - b.spent_amount).toFixed(1)} Cr`,
+                remainingRaw: b.allocated_amount - b.spent_amount,
+                allocated_amount: b.allocated_amount,
+                fy: b.financial_year,
+            }));
+            setRecentActivity(recent);
+
+        } catch (err) {
+            console.error('Dashboard fetch error:', err);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const summaryCards = [
+        { title: 'Total Budget Allocated', value: `₹${summary.totalAllocated.toFixed(1)} Cr`, icon: IndianRupee, color: 'primary' },
+        { title: 'Total Budget Spent', value: `₹${summary.totalSpent.toFixed(1)} Cr`, icon: TrendingUp, color: 'alert' },
+        { title: 'Remaining Funds', value: `₹${summary.remaining.toFixed(1)} Cr`, icon: Wallet, color: 'success' },
+        { title: 'Departments Monitored', value: summary.departments, icon: Building2, color: 'warning' },
+    ];
+
+    if (loading) return <div className="page-container"><p className="text-muted">Loading dashboard...</p></div>;
+
+    return (
+        <div className="page-container animate-fade-in">
+            <div className="page-header mb-6">
+                <h2 className="text-primary">Executive Dashboard</h2>
+                <p className="text-muted">Overview of national budget allocation and spending patterns.</p>
+            </div>
+
+            <div className="grid grid-cols-4 gap-6 mb-6 dashboard-summary">
+                {summaryCards.map((card, idx) => {
+                    const Icon = card.icon;
+                    return (
+                        <Card key={idx} className="summary-card">
+                            <div className="flex justify-between items-start">
+                                <div>
+                                    <p className="text-sm text-muted mb-1">{card.title}</p>
+                                    <h3 className="text-2xl font-bold">{card.value}</h3>
+                                </div>
+                                <div className={`icon-wrapper bg-${card.color}-transparent text-${card.color}`}>
+                                    <Icon size={24} />
+                                </div>
+                            </div>
+                        </Card>
+                    );
+                })}
+            </div>
+
+            <Card title="Recent Budget Activity" className="mb-6">
+                <div className="table-responsive">
+                    <table className="data-table">
+                        <thead>
+                            <tr>
+                                <th>State</th>
+                                <th>District</th>
+                                <th>Department</th>
+                                <th>Allocated</th>
+                                <th>Spent</th>
+                                <th>Remaining</th>
+                                <th>FY</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {recentActivity.length === 0 && (
+                                <tr><td colSpan="8" className="text-center text-muted py-6">No budget data yet.</td></tr>
+                            )}
+                            {recentActivity.map((row) => {
+                                const isLow = row.remainingRaw / row.allocated_amount < 0.10;
+                                return (
+                                    <tr key={row.id}>
+                                        <td>{row.state}</td>
+                                        <td>{row.district}</td>
+                                        <td>{row.dept}</td>
+                                        <td>{row.allocated}</td>
+                                        <td>{row.spent}</td>
+                                        <td className="font-medium">{row.remaining}</td>
+                                        <td>{row.fy}</td>
+                                        <td>
+                                            <Badge variant={isLow ? 'warning' : 'success'}>
+                                                {isLow ? 'Low Funds' : 'On Track'}
+                                            </Badge>
+                                        </td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
+                </div>
+            </Card>
+
+            <Card className="mt-6">
+                <div className="mb-4">
+                    <h3 className="text-lg font-semibold">Department Spending Comparison</h3>
+                    <p className="text-sm text-muted">Allocated vs Spent by Department (₹ Cr)</p>
+                </div>
+                <div style={{ width: '100%', minWidth: 0 }}>
+                    <ResponsiveContainer width="100%" height={400}>
+                        <BarChart 
+                            data={deptData} 
+                            margin={{ top: 20, right: 40, bottom: 100, left: 80 }}
+                            barCategoryGap="20%"
+                        >
+                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
+                            <XAxis 
+                                dataKey="name" 
+                                axisLine={false} 
+                                tickLine={false} 
+                                angle={-40} 
+                                textAnchor="end" 
+                                interval={0}
+                                tick={{ fontSize: 12, fill: '#374151' }}
+                                height={90}
+                                tickMargin={15}
+                            />
+                            <YAxis 
+                                axisLine={false} 
+                                tickLine={false} 
+                                tickFormatter={(val) => `₹${val}Cr`}
+                                width={80}
+                                tick={{ fontSize: 12, fill: '#374151' }}
+                                tickMargin={10}
+                            />
+                            <Tooltip 
+                                formatter={(value) => `₹${value} Cr`}
+                                contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+                            />
+                            <Legend 
+                                iconType="circle" 
+                                wrapperStyle={{ paddingTop: '20px' }}
+                            />
+                            <Bar dataKey="allocated" name="Allocated" fill="var(--primary)" radius={[4, 4, 0, 0]} maxBarSize={60} />
+                            <Bar dataKey="spent" name="Spent" fill="var(--accent)" radius={[4, 4, 0, 0]} maxBarSize={60} />
+                        </BarChart>
+                    </ResponsiveContainer>
+                </div>
+            </Card>
+        </div>
+    );
+}

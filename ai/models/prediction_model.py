@@ -6,6 +6,7 @@ Weighted Moving Average + Trend Detection + optional ML classifier
 import numpy as np
 import pickle
 import os
+from config import config
 
 
 class LapsePredictor:
@@ -21,7 +22,7 @@ class LapsePredictor:
         self._load_classifier()
 
     def _load_classifier(self):
-        path = "trained_models/lapse_classifier.pkl"
+        path = os.path.join(config.MODEL_DIR, "lapse_classifier.pkl")
         if os.path.exists(path):
             with open(path, "rb") as f:
                 data = pickle.load(f)

@@ -11,6 +11,7 @@ from typing import List, Dict
 import numpy as np
 import pickle
 import os
+from config import config
 
 router = APIRouter()
 
@@ -20,7 +21,7 @@ async def explain_anomaly_model():
     """What judges see when they ask 'How does your AI detect fraud?'"""
 
     model_info = {}
-    path = "trained_models/anomaly_model.pkl"
+    path = os.path.join(config.MODEL_DIR, "anomaly_model.pkl")
     if os.path.exists(path):
         with open(path, "rb") as f:
             data = pickle.load(f)
@@ -121,7 +122,7 @@ async def explain_lapse_model():
     """What judges see when they ask 'How do you predict fund lapse?'"""
 
     model_info = {}
-    path = "trained_models/lapse_classifier.pkl"
+    path = os.path.join(config.MODEL_DIR, "lapse_classifier.pkl")
     if os.path.exists(path):
         with open(path, "rb") as f:
             data = pickle.load(f)
