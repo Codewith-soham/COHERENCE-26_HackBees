@@ -19,11 +19,12 @@ import {
     getHighSeverity,
     getAnomalyByDepartment,
 } from "../controllers/anomalyController.js";
+import { protect } from "../middleware/Auth.middleware.js";
 
 const router = Router();
 
-router.get("/all",               getAllAnomalies);
-router.get("/high",              getHighSeverity);
-router.get("/department/:dept",  getAnomalyByDepartment);
+router.get("/all",               protect, getAllAnomalies);
+router.get("/high",              protect, getHighSeverity);
+router.get("/department/:dept",  protect, getAnomalyByDepartment);
 
 export default router;

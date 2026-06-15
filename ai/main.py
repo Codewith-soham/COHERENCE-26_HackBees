@@ -1,7 +1,46 @@
+import os
+import sys
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+from config import config
 
+
+# ── Startup Validation ────────────────────────────────────────
+def validate_startup():
+    """Fail fast if critical assets are missing."""
+
+    # 1. Verify model directory exists
+    if not os.path.isdir(config.MODEL_DIR):
+        print(f"[STARTUP] FATAL: Model directory '{config.MODEL_DIR}' does not exist.")
+        sys.exit(1)
+
+    # 2. Verify critical model file exists
+    anomaly_model_path = os.path.join(config.MODEL_DIR, "anomaly_model.pkl")
+    if not os.path.isfile(anomaly_model_path):
+        print(
+            f"[STARTUP] FATAL: Required model file '{anomaly_model_path}' not found.\n"
+            f"         Run: python train_anomaly_model.py"
+        )
+        sys.exit(1)
+
+    # 3. Optional classifier — warn but don't fail
+    classifier_path = os.path.join(config.MODEL_DIR, "lapse_classifier.pkl")
+    if not os.path.isfile(classifier_path):
+        print(
+            f"[STARTUP] WARNING: Optional classifier '{classifier_path}' not found.\n"
+            f"          Lapse prediction will use math-only mode.\n"
+            f"          Run: python train_lapse_model.py"
+        )
+
+    print("[STARTUP] Asset validation passed.")
+
+
+# Run validation before anything else imports models
+validate_startup()
+
+
+# ── Application ───────────────────────────────────────────────
 app = FastAPI(
     title="BudgetGuard AI Service",
     description="AI-powered budget analysis for government fund tracking",
@@ -10,12 +49,12 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=config.ALLOWED_ORIGINS,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Import all routers
+# Import all routers (these trigger model loading via models/__init__.py)
 from routers.backend_bridge import router as backend_bridge_router
 from routers.anomaly import router as anomaly_router
 from routers.lapse_prediction import router as lapse_prediction_router
@@ -34,6 +73,13 @@ app.include_router(realtime_analysis_router, prefix="/ai", tags=["Real-time Anal
 app.include_router(demo_router, prefix="/ai", tags=["Demo Data"])
 app.include_router(explainability_router, prefix="/ai", tags=["AI Explainability"])
 app.include_router(dashboard_router, prefix="/ai", tags=["Dashboard Analytics"])
+
+@app.get("/health")
+async def root_health():
+    return {
+        "status": "ok",
+        "service": "ai"
+    }
 
 @app.get("/ai/health")
 async def health():
@@ -66,4 +112,4 @@ async def health():
     }
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host=config.HOST, port=config.PORT, reload=False)

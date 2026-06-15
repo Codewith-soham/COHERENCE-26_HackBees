@@ -37,6 +37,12 @@ const budgetSchema = new mongoose.Schema({
   timestamps: true
 });
 
+// Indexes for optimized querying and sorting
+budgetSchema.index({ createdAt: -1 });
+budgetSchema.index({ department: 1, createdAt: -1 });
+budgetSchema.index({ district: 1, createdAt: -1 });
+budgetSchema.index({ utilization_percentage: 1, createdAt: -1 });
+
 budgetSchema.pre('save', function() {
   if (this.allocated_amount > 0) {
     this.utilization_percentage = (this.spent_amount / this.allocated_amount) * 100;

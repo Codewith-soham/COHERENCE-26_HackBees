@@ -17,12 +17,13 @@ import {
     getHighRisk,
     getReallocationSuggestions,
 } from "../controllers/predictionController.js";
+import { protect, adminOnly } from "../middleware/Auth.middleware.js";
 
 const router = Router();
 
-router.post("/run",             runPrediction);
-router.get("/all",              getAllPredictions);
-router.get("/high-risk",        getHighRisk);
-router.post("/reallocation",    getReallocationSuggestions);
+router.post("/run",             protect, adminOnly, runPrediction);
+router.get("/all",              protect, getAllPredictions);
+router.get("/high-risk",        protect, getHighRisk);
+router.post("/reallocation",    protect, getReallocationSuggestions);
 
 export default router;

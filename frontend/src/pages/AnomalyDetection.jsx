@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Info } from 'lucide-react';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
+import { API_BASE_URL } from '../config/api';
 import Button from '../components/ui/Button';
 
 export default function AnomalyDetection() {
@@ -15,7 +16,7 @@ export default function AnomalyDetection() {
     const fetchAnomalies = async () => {
         setLoading(true);
         try {
-            const res = await fetch('http://localhost:5000/api/anomaly/all');
+            const res = await fetch(`${API_BASE_URL}/api/anomaly/all`);
             const json = await res.json();
             const data = json.data || [];
 

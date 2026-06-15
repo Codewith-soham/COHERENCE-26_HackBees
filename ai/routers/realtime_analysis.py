@@ -55,7 +55,7 @@ class NewEntryResponse(BaseModel):
 
 
 @router.post("/analyze-new-entry", response_model=NewEntryResponse)
-async def analyze_new_entry(entry: NewEntryRequest):
+def analyze_new_entry(entry: NewEntryRequest):
 
     anomaly_result = _check_entry_anomaly(entry)
     lapse_result = _update_lapse_risk(entry)

@@ -8,6 +8,7 @@ import {
 } from 'recharts';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
+import { API_BASE_URL } from '../config/api';
 import './Dashboard.css';
 
 export default function Dashboard() {
@@ -23,7 +24,7 @@ export default function Dashboard() {
     const fetchDashboardData = async () => {
         setLoading(true);
         try {
-            const res = await fetch('http://localhost:5000/api/budget/all');
+            const res = await fetch(`${API_BASE_URL}/api/budget/all`);
             const json = await res.json();
             const budgets = json.data || [];
 

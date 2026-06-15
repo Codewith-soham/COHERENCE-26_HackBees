@@ -39,6 +39,12 @@ const anomalySchema = new mongoose.Schema({
   timestamps: true
 });
 
+// Indexes for optimized querying and sorting
+anomalySchema.index({ createdAt: -1 });
+anomalySchema.index({ department: 1, createdAt: -1 });
+anomalySchema.index({ severity: 1, createdAt: -1 });
+anomalySchema.index({ budget_id: 1 });
+
 const Anomaly = mongoose.model('Anomaly', anomalySchema);
 
 export default Anomaly;

@@ -5,6 +5,7 @@ import Input from '../components/ui/Input';
 import Select from '../components/ui/Select';
 import Button from '../components/ui/Button';
 import { Filter } from 'lucide-react';
+import { API_BASE_URL } from '../config/api';
 
 const INDIA_STATES_DISTRICTS = {
   "Andhra Pradesh": ["Visakhapatnam", "Vijayawada", "Guntur", "Nellore", "Kurnool", "Kadapa", "Tirupati", "Anantapur"],
@@ -71,7 +72,7 @@ export default function BudgetMonitoring() {
     const fetchBudgets = async () => {
         setLoading(true);
         try {
-            const res = await fetch('http://localhost:5000/api/budget/all');
+            const res = await fetch(`${API_BASE_URL}/api/budget/all`);
             const json = await res.json();
             const data = json.data || [];
             setBudgets(data);

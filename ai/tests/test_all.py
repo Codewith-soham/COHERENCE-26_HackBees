@@ -6,7 +6,10 @@ Make sure server is running first: python main.py
 import requests
 import sys
 
-BASE = "http://localhost:8000"
+import os
+from config import config
+
+BASE = f"http://{config.HOST}:{config.PORT}"
 passed = 0
 failed = 0
 

@@ -39,6 +39,10 @@ const predictionSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
+// Indexes for optimized querying and sorting
+predictionSchema.index({ createdAt: -1 });
+predictionSchema.index({ risk_level: 1, createdAt: -1 });
+
 const Prediction = mongoose.model('Prediction', predictionSchema);
 
 export default Prediction;

@@ -3,11 +3,9 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List, Optional
-from models.anomaly_model import AnomalyDetector
+from models import detector
 
 router = APIRouter()
-
-detector = AnomalyDetector()
 
 
 class TransactionInput(BaseModel):
@@ -45,7 +43,7 @@ class AnomalyResponse(BaseModel):
 
 
 @router.post("/detect-anomalies", response_model=AnomalyResponse)
-async def detect_anomalies(req: AnomalyRequest):
+def detect_anomalies(req: AnomalyRequest):
 
     transactions_data = [txn.model_dump() for txn in req.transactions]
     results = detector.detect(transactions_data)

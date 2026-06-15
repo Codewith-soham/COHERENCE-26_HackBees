@@ -8,13 +8,9 @@ from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import Optional
 import numpy as np
-from models.anomaly_model import AnomalyDetector
-from models.prediction_model import LapsePredictor
+from models import detector, predictor
 
 router = APIRouter()
-
-detector = AnomalyDetector()
-predictor = LapsePredictor()
 
 
 # ============ ANOMALY CHECK ============
@@ -36,7 +32,7 @@ class AnomalyCheckResponse(BaseModel):
 
 
 @router.post("/anomaly-check", response_model=AnomalyCheckResponse)
-async def anomaly_check(req: AnomalyCheckRequest):
+def anomaly_check(req: AnomalyCheckRequest):
 
     month_map = {
         "january": 1, "february": 2, "march": 3, "april": 4,
@@ -125,7 +121,7 @@ class PredictUtilizationResponse(BaseModel):
 
 
 @router.post("/predict-utilization", response_model=PredictUtilizationResponse)
-async def predict_utilization(req: PredictUtilizationRequest):
+def predict_utilization(req: PredictUtilizationRequest):
 
     month_map = {
         "january": 10, "february": 11, "march": 12,

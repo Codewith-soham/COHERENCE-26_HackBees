@@ -3,7 +3,9 @@ import { FileText, FileSpreadsheet, Download, RotateCcw, CheckCircle } from 'luc
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 
-const API = 'http://localhost:5000/api';
+import { API_BASE_URL } from '../config/api';
+
+const API = `${API_BASE_URL}/api`;
 
 const INDIA_STATES_DISTRICTS = {
   "Maharashtra": ["Mumbai", "Pune", "Nagpur", "Nashik", "Aurangabad", "Solapur", "Thane", "Kolhapur"],

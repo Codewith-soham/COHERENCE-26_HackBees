@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
+import { API_BASE_URL } from '../config/api';
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_BASE = API_BASE_URL;
 const TOKEN_KEY = "budgetsetu_token";
 const USER_KEY = "budgetsetu_user";
 

@@ -4,6 +4,7 @@ import Card from '../components/ui/Card';
 import Input from '../components/ui/Input';
 import Select from '../components/ui/Select';
 import Button from '../components/ui/Button';
+import { API_BASE_URL } from '../config/api';
 
 const INDIA_STATES_DISTRICTS = {
   "Andhra Pradesh": ["Visakhapatnam", "Vijayawada", "Guntur", "Nellore", "Kurnool", "Kadapa", "Tirupati", "Anantapur"],
@@ -119,7 +120,7 @@ export default function RealTimeEntry() {
         setMessage(null);
 
         try {
-            const response = await fetch('http://localhost:5000/api/budget/analyze', {
+            const response = await fetch(`${API_BASE_URL}/api/budget/analyze`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

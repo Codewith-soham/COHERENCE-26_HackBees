@@ -1,11 +1,18 @@
 """
 Lapse Prediction Model
 Weighted Moving Average + Trend Detection + optional ML classifier
+
+PRODUCTION BEHAVIOR:
+- Core prediction uses math (WMA + trend). No pickle file required.
+- Optional ML classifier loaded from lapse_classifier.pkl at startup.
+- If classifier is missing, a warning is logged but the service still starts.
+- No model training occurs during request handling.
 """
 
 import numpy as np
 import pickle
 import os
+from config import config
 
 
 class LapsePredictor:
@@ -18,19 +25,23 @@ class LapsePredictor:
     def __init__(self):
         self.classifier = None
         self.has_classifier = False
+        self.label_names = {0: "Low", 1: "Medium", 2: "High", 3: "Critical"}
         self._load_classifier()
 
     def _load_classifier(self):
-        path = "trained_models/lapse_classifier.pkl"
+        path = os.path.join(config.MODEL_DIR, "lapse_classifier.pkl")
         if os.path.exists(path):
             with open(path, "rb") as f:
                 data = pickle.load(f)
             self.classifier = data["model"]
-            self.label_names = data.get("label_names", {0: "Low", 1: "Medium", 2: "High", 3: "Critical"})
+            self.label_names = data.get("label_names", self.label_names)
             self.has_classifier = True
             print(f"[LapsePredictor] Loaded classifier (accuracy: {data.get('accuracy', 'unknown')})")
         else:
-            print("[LapsePredictor] No classifier found. Using math-only approach.")
+            print(
+                f"[LapsePredictor] WARNING: Classifier not found at '{path}'. "
+                f"Math-only prediction active. Run 'python train_lapse_model.py' for ML second opinion."
+            )
 
     def predict_single(self, dept_data):
         """Predict lapse risk for one department"""

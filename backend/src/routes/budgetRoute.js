@@ -24,16 +24,17 @@ import {
     getBudgetByDepartment,
     getBudgetByDistrict,
 } from "../controllers/budgetController.js";
+import { protect, adminOnly } from "../middleware/Auth.middleware.js";
 
 const router = Router();
 
 // -- Specific named routes first --
-router.post("/analyze",           analyzeBudget);
-router.get("/all",                getAllBudgets);
-router.get("/department/:dept",   getBudgetByDepartment);
-router.get("/district/:dist",     getBudgetByDistrict);
+router.post("/analyze",           protect, adminOnly, analyzeBudget);
+router.get("/all",                protect, getAllBudgets);
+router.get("/department/:dept",   protect, getBudgetByDepartment);
+router.get("/district/:dist",     protect, getBudgetByDistrict);
 
 // -- Parameterized route last to avoid conflicts --
-router.get("/:id",                getBudgetById);
+router.get("/:id",                protect, getBudgetById);
 
 export default router;

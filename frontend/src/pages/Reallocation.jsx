@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
+import { API_BASE_URL } from '../config/api';
 
 export default function Reallocation() {
     const [reallocations, setReallocations] = useState([]);
@@ -15,7 +16,7 @@ export default function Reallocation() {
     const fetchReallocations = async () => {
         setLoading(true);
         try {
-            const res = await fetch('http://localhost:5000/api/prediction/reallocation', {
+            const res = await fetch(`${API_BASE_URL}/api/prediction/reallocation`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({})

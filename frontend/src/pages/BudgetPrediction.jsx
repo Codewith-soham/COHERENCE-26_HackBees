@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { TrendingUp } from 'lucide-react';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
+import { API_BASE_URL } from '../config/api';
 import {
     XAxis, YAxis, CartesianGrid, Tooltip,
     ResponsiveContainer, BarChart, Bar, Cell, Legend,
@@ -21,7 +22,7 @@ export default function BudgetPrediction() {
         setLoading(true);
         setError(null);
         try {
-            const res  = await fetch('http://localhost:5000/api/prediction/all');
+            const res  = await fetch(`${API_BASE_URL}/api/prediction/all`);
             const json = await res.json();
             const raw  = json.data || [];
 

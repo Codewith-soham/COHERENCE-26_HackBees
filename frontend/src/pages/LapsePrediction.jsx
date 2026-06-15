@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import { API_BASE_URL } from '../config/api';
 
 export default function LapsePrediction() {
     const [predictions, setPredictions] = useState([]);
@@ -14,7 +15,7 @@ export default function LapsePrediction() {
         setLoading(true);
         setError(null);
         try {
-            const res  = await fetch('http://localhost:5000/api/prediction/all');
+            const res  = await fetch(`${API_BASE_URL}/api/prediction/all`);
             const json = await res.json();
             const data = json.data || [];
 
