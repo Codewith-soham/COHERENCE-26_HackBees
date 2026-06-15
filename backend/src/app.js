@@ -3,6 +3,8 @@
 // ============================================================
 import express from "express";
 import cors from "cors";
+import helmet from "helmet";
+import rateLimit from "express-rate-limit";
 import config from "./config/index.js";
 
 import budgetRoutes     from "./routes/budgetRoute.js";
@@ -12,6 +14,15 @@ import authRoutes       from "./routes/AuthRoutes.js";          // ← NEW
 import { errorHandler } from "./middleware/errorhandler.js";
 
 const app = express();
+
+app.use(helmet());
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: { success: false, error: "Too many requests from this IP, please try again later." }
+});
+app.use(limiter);
 
 app.use(cors({
   origin: [
@@ -39,7 +50,7 @@ app.get("/", (req, res) => {
   res.json({ message: "BudgetFlow AI Backend is running" });
 });
 app.get("/health", (req, res) => {
-  res.status(200).json({ success: true, message: "BudgetFlow API is running" });
+  res.status(200).json({ status: "ok", service: "backend" });
 });
 
 // ── Global Error Handler ──────────────────────────────────────

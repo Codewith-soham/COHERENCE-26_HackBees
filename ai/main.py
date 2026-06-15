@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+from config import config
 
 app = FastAPI(
     title="BudgetGuard AI Service",
@@ -10,7 +11,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=config.ALLOWED_ORIGINS,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -34,6 +35,13 @@ app.include_router(realtime_analysis_router, prefix="/ai", tags=["Real-time Anal
 app.include_router(demo_router, prefix="/ai", tags=["Demo Data"])
 app.include_router(explainability_router, prefix="/ai", tags=["AI Explainability"])
 app.include_router(dashboard_router, prefix="/ai", tags=["Dashboard Analytics"])
+
+@app.get("/health")
+async def root_health():
+    return {
+        "status": "ok",
+        "service": "ai"
+    }
 
 @app.get("/ai/health")
 async def health():
@@ -65,7 +73,5 @@ async def health():
         ],
     }
 
-from config import config
-
 if __name__ == "__main__":
-    uvicorn.run("main:app", host=config.HOST, port=config.PORT, reload=True)
+    uvicorn.run("main:app", host=config.HOST, port=config.PORT, reload=False)
