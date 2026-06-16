@@ -4,6 +4,7 @@ import { suggestReallocation } from "../services/aiService.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
+import { parsePagination, paginatedResponse } from "../utils/pagination.js";
 
 const runPrediction = asyncHandler(async (req, res) => {
     const {
@@ -93,26 +94,49 @@ const runPrediction = asyncHandler(async (req, res) => {
 });
 
 const getAllPredictions = asyncHandler(async (req, res) => {
-    const predictions = await Prediction.find().sort({ createdAt: -1 });
+    const { page, limit, skip } = parsePagination(req);
+
+    const [predictions, total] = await Promise.all([
+        Prediction.find()
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit)
+            .lean(),
+        Prediction.countDocuments(),
+    ]);
+
     return res
         .status(200)
-        .json(new ApiResponse(200, predictions, "Predictions fetched successfully"));
+        .json(paginatedResponse(200, predictions, total, page, limit, "Predictions fetched successfully"));
 });
 
 const getHighRisk = asyncHandler(async (req, res) => {
-    const predictions = await Prediction.find({
-        risk_level: { $in: ["HIGH", "CRITICAL"] }
-    }).sort({ createdAt: -1 });
+    const { page, limit, skip } = parsePagination(req);
+    const filter = { risk_level: { $in: ["HIGH", "CRITICAL"] } };
+
+    const [predictions, total] = await Promise.all([
+        Prediction.find(filter)
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit)
+            .lean(),
+        Prediction.countDocuments(filter),
+    ]);
+
     return res
         .status(200)
-        .json(new ApiResponse(200, predictions, "High risk predictions fetched successfully"));
+        .json(paginatedResponse(200, predictions, total, page, limit, "High risk predictions fetched successfully"));
 });
 
 const getReallocationSuggestions = asyncHandler(async (req, res) => {
     // Find budgets with utilization below 50% — these are genuinely at risk
+    // Use .lean() for read-only access and limit to 50 worst performers
     const lowUtilBudgets = await Budget.find({
         utilization_percentage: { $lt: 50 }
-    }).sort({ createdAt: -1 });
+    })
+        .sort({ utilization_percentage: 1 })
+        .limit(50)
+        .lean();
 
     if (!lowUtilBudgets.length) {
         return res
