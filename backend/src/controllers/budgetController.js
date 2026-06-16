@@ -4,6 +4,7 @@ import { checkAnomaly } from "../services/aiService.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
+import { parsePagination, paginatedResponse } from "../utils/pagination.js";
 
 const analyzeBudget = asyncHandler(async (req, res) => {
     const {
@@ -70,14 +71,24 @@ const analyzeBudget = asyncHandler(async (req, res) => {
 });
 
 const getAllBudgets = asyncHandler(async (req, res) => {
-    const budgets = await Budget.find().sort({ createdAt: -1 });
+    const { page, limit, skip } = parsePagination(req);
+
+    const [budgets, total] = await Promise.all([
+        Budget.find()
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit)
+            .lean(),
+        Budget.countDocuments(),
+    ]);
+
     return res
         .status(200)
-        .json(new ApiResponse(200, budgets, "Budgets fetched successfully"));
+        .json(paginatedResponse(200, budgets, total, page, limit, "Budgets fetched successfully"));
 });
 
 const getBudgetById = asyncHandler(async (req, res) => {
-    const budget = await Budget.findById(req.params.id);
+    const budget = await Budget.findById(req.params.id).lean();
     if (!budget) {
         throw new ApiError(404, "Budget not found");
     }
@@ -87,23 +98,47 @@ const getBudgetById = asyncHandler(async (req, res) => {
 });
 
 const getBudgetByDepartment = asyncHandler(async (req, res) => {
-    const budgets = await Budget.find({ department: req.params.dept }).sort({ createdAt: -1 });
-    if (!budgets.length) {
+    const { page, limit, skip } = parsePagination(req);
+    const filter = { department: req.params.dept };
+
+    const [budgets, total] = await Promise.all([
+        Budget.find(filter)
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit)
+            .lean(),
+        Budget.countDocuments(filter),
+    ]);
+
+    if (!budgets.length && page === 1) {
         throw new ApiError(404, `No budgets found for department: ${req.params.dept}`);
     }
+
     return res
         .status(200)
-        .json(new ApiResponse(200, budgets, "Budgets fetched successfully"));
+        .json(paginatedResponse(200, budgets, total, page, limit, "Budgets fetched successfully"));
 });
 
 const getBudgetByDistrict = asyncHandler(async (req, res) => {
-    const budgets = await Budget.find({ district: req.params.dist }).sort({ createdAt: -1 });
-    if (!budgets.length) {
+    const { page, limit, skip } = parsePagination(req);
+    const filter = { district: req.params.dist };
+
+    const [budgets, total] = await Promise.all([
+        Budget.find(filter)
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit)
+            .lean(),
+        Budget.countDocuments(filter),
+    ]);
+
+    if (!budgets.length && page === 1) {
         throw new ApiError(404, `No budgets found for district: ${req.params.dist}`);
     }
+
     return res
         .status(200)
-        .json(new ApiResponse(200, budgets, "Budgets fetched successfully"));
+        .json(paginatedResponse(200, budgets, total, page, limit, "Budgets fetched successfully"));
 });
 
 export {
