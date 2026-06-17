@@ -78,3 +78,15 @@ Docker Compose creates a shared bridge network (`budgetguard-net`). Services res
 - **Secrets Management**: Passing `JWT_SECRET` via plain environment variables in docker-compose is fine for testing, but in a real production environment, use Docker Swarm Secrets, Kubernetes Secrets, or a vault service.
 - **Persistent Data**: MongoDB data is persisted in a local Docker volume. Consider using a managed database service (e.g., MongoDB Atlas) for higher availability and automated backups.
 - **Frontend API URL**: The frontend is currently built targeting `http://localhost:5000`. If deploying to a remote server, update the `VITE_API_BASE_URL` build argument to point to the server's public IP or domain.
+
+## MongoDB Atlas Setup
+
+To use MongoDB Atlas instead of a local instance:
+
+1. **Create Atlas Cluster**: Create a free or dedicated cluster on MongoDB Atlas.
+2. **Create Database User**: Create a user with read/write access to your databases.
+3. **Configure Network Access**: Whitelist `0.0.0.0/0` (Allow Access from Anywhere) if deploying to a PaaS like Render or Railway.
+4. **Configure Environment Variables**: Set `MONGODB_URI` in your production environment (e.g., `mongodb+srv://user:pass@cluster.mongodb.net/budgetguard?appName=budgetsetu`).
+5. **Seed Admin User**: Run `node backend/scripts/create-admin.js` with `MONGODB_URI`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, and `ADMIN_OFFICER_ID` to seed the first admin user.
+6. **Validate Connection**: Run `node backend/scripts/check-atlas.js` to ensure your deployment environment can reach Atlas.
+7. **Start Services**: Use `docker-compose -f docker-compose.prod.yml up -d` to start the production suite pointing to Atlas.
