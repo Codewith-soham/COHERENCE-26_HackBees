@@ -32,7 +32,13 @@ services:
     networks:
       - budgetguard-net
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/health', timeout=5).getcode()==200 else 1)",
+        ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -61,7 +67,13 @@ services:
     networks:
       - budgetguard-net
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://localhost:5000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
       interval: 30s
       timeout: 10s
       retries: 3
